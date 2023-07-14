@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://r8mfx3cskh87"]
+
+[ext_resource type="Texture2D" uid="uid://1reosfd6ndti" path="res://Assets/Weapon/Shooter1.png" id="1_p2qhw"]
+[ext_resource type="Script" path="res://Scripts/Entities/Player/Weapon/Weapon.gd" id="1_vr3ts"]
+[ext_resource type="Texture2D" uid="uid://2id7keudx0cg" path="res://Assets/Weapon/Shooter2.png" id="2_gkvm6"]
+[ext_resource type="Texture2D" uid="uid://dapvg6u81dgns" path="res://Assets/Weapon/Shooter3.png" id="3_xomke"]
+[ext_resource type="Texture2D" uid="uid://c34qt30vku6j3" path="res://Assets/Weapon/Shooter4.png" id="4_6iue1"]
+[ext_resource type="Texture2D" uid="uid://ipkcchtcv5st" path="res://Assets/Weapon/Shooter5.png" id="5_re4vx"]
+[ext_resource type="Texture2D" uid="uid://bgje81jq2fdqs" path="res://Assets/Weapon/Shooter6.png" id="6_8jm7s"]
+[ext_resource type="Texture2D" uid="uid://cnv5afb647q2k" path="res://Assets/Weapon/Shooter7.png" id="7_pwokd"]
+[ext_resource type="Texture2D" uid="uid://b3hy00yjugn1l" path="res://Assets/Weapon/Shooter8.png" id="8_qsqeg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vsgmb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_p2qhw")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gkvm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xomke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6iue1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_re4vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8jm7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pwokd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qsqeg")
+}],
+"loop": true,
+"name": &"Shoot",
+"speed": 5.0
+}]
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1_vr3ts")
+
+[node name="Pivot" type="Marker2D" parent="."]
+rotation = 0.0174533
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot"]
+position = Vector2(35.9945, -0.628287)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_vsgmb")
+animation = &"Idle"

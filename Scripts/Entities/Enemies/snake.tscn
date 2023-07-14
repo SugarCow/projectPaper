@@ -1,0 +1,98 @@
+[gd_scene load_steps=20 format=3 uid="uid://dop8v0pdlbjpl"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_qa1gr"]
+[ext_resource type="Texture2D" uid="uid://5lsceoq8m72o" path="res://Assets/Enemies/Snake/Snake11.png" id="2_352lb"]
+[ext_resource type="Texture2D" uid="uid://q6ufpalcfwxr" path="res://Assets/Enemies/Snake/Snake12.png" id="3_vmbmf"]
+[ext_resource type="Texture2D" uid="uid://b7v4ah0kch7ai" path="res://Assets/Enemies/Snake/Snake13.png" id="4_048po"]
+[ext_resource type="Texture2D" uid="uid://vnxtcyc7ripp" path="res://Assets/Enemies/Snake/Snake14.png" id="5_wbqbv"]
+[ext_resource type="Texture2D" uid="uid://bakvw13vn0vel" path="res://Assets/Enemies/Snake/Snake15.png" id="6_bcexb"]
+[ext_resource type="Texture2D" uid="uid://0ujk66yt4ip0" path="res://Assets/Enemies/Scorpion/Scorpion1.png" id="6_gnsd5"]
+[ext_resource type="Texture2D" uid="uid://dyy4tcouvhafn" path="res://Assets/Enemies/Scorpion/Scorpion2.png" id="7_hg5na"]
+[ext_resource type="Texture2D" uid="uid://btxbrxt6nrmvq" path="res://Assets/Enemies/Snake/Snake16.png" id="7_qvf0a"]
+[ext_resource type="Texture2D" uid="uid://go6dk5ayreel" path="res://Assets/Enemies/Snake/Snake17.png" id="8_062jw"]
+[ext_resource type="Texture2D" uid="uid://d06pwdokg7fpa" path="res://Assets/Enemies/Scorpion/Scorpion3.png" id="8_ef8bw"]
+[ext_resource type="Texture2D" uid="uid://djsnjw221fxn2" path="res://Assets/Enemies/Scorpion/Scorpion4.png" id="9_1mh6a"]
+[ext_resource type="Texture2D" uid="uid://b7uipbsak5nqa" path="res://Assets/Enemies/Snake/Snake18.png" id="9_wkr0j"]
+[ext_resource type="Texture2D" uid="uid://dkxju5ipd32e3" path="res://Assets/Enemies/Snake/Snake19.png" id="10_v6ijh"]
+[ext_resource type="Texture2D" uid="uid://c6wq7joj8sedy" path="res://Assets/Enemies/Snake/Snake20.png" id="11_x336m"]
+[ext_resource type="Texture2D" uid="uid://cksy2axr548ao" path="res://Assets/Enemies/Snake/Snake21.png" id="12_fvot0"]
+[ext_resource type="Texture2D" uid="uid://ck4a8s84eofx3" path="res://Assets/Enemies/Snake/Snake22.png" id="13_a2uhd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wibpg"]
+size = Vector2(10.8333, 4.16667)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rwu0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_352lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vmbmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_048po")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wbqbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bcexb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qvf0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_062jw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wkr0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v6ijh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_x336m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fvot0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_a2uhd")
+}],
+"loop": true,
+"name": &"MoveLeft",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gnsd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hg5na")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ef8bw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1mh6a")
+}],
+"loop": true,
+"name": &"MoveRight",
+"speed": 10.0
+}]
+
+[node name="Snake" type="CharacterBody2D"]
+scale = Vector2(1.2, 1.2)
+script = ExtResource("1_qa1gr")
+speed = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.66667)
+shape = SubResource("RectangleShape2D_wibpg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_0rwu0")
+animation = &"MoveLeft"
+frame_progress = 0.776641

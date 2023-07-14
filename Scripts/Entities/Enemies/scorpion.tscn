@@ -1,0 +1,65 @@
+[gd_scene load_steps=12 format=3 uid="uid://toq0yjwod2xk"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_kwu6x"]
+[ext_resource type="Texture2D" uid="uid://dnabloc5yr45g" path="res://Assets/Enemies/Scorpion/Scorpion5.png" id="2_6mtwj"]
+[ext_resource type="Texture2D" uid="uid://d1lk8j4226mp0" path="res://Assets/Enemies/Scorpion/Scorpion6.png" id="3_h225s"]
+[ext_resource type="Texture2D" uid="uid://cm05vwdv405rq" path="res://Assets/Enemies/Scorpion/Scorpion7.png" id="4_7ftn5"]
+[ext_resource type="Texture2D" uid="uid://dr4w5dk7mwxpl" path="res://Assets/Enemies/Scorpion/Scorpion8.png" id="5_85co7"]
+[ext_resource type="Texture2D" uid="uid://0ujk66yt4ip0" path="res://Assets/Enemies/Scorpion/Scorpion1.png" id="6_lk43y"]
+[ext_resource type="Texture2D" uid="uid://dyy4tcouvhafn" path="res://Assets/Enemies/Scorpion/Scorpion2.png" id="7_c2l7j"]
+[ext_resource type="Texture2D" uid="uid://d06pwdokg7fpa" path="res://Assets/Enemies/Scorpion/Scorpion3.png" id="8_fabdx"]
+[ext_resource type="Texture2D" uid="uid://djsnjw221fxn2" path="res://Assets/Enemies/Scorpion/Scorpion4.png" id="9_u1nes"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wibpg"]
+size = Vector2(12.5, 5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rwu0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6mtwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h225s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7ftn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_85co7")
+}],
+"loop": true,
+"name": &"MoveLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_lk43y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_c2l7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fabdx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u1nes")
+}],
+"loop": true,
+"name": &"MoveRight",
+"speed": 10.0
+}]
+
+[node name="Scorpion" type="CharacterBody2D"]
+scale = Vector2(1.2, 1.2)
+script = ExtResource("1_kwu6x")
+speed = 35
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.416667, -2.5)
+shape = SubResource("RectangleShape2D_wibpg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_0rwu0")
+animation = &"MoveLeft"
