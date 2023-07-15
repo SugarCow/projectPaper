@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://688adwb4a5jo"]
+[gd_scene load_steps=82 format=3 uid="uid://688adwb4a5jo"]
 
 [ext_resource type="Texture2D" uid="uid://dte1blqbinphj" path="res://Assets/Player/Rob1.png" id="1_itg61"]
 [ext_resource type="Script" path="res://Scripts/Entities/Player/player.gd" id="1_xvunx"]
@@ -62,6 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://dbmhtrcafsb6l" path="res://Assets/Player/Rob59.png" id="59_ip7vk"]
 [ext_resource type="Texture2D" uid="uid://cu60lo7uuwgxv" path="res://Assets/Player/Rob60.png" id="60_bjvrq"]
 [ext_resource type="PackedScene" uid="uid://r8mfx3cskh87" path="res://Scripts/Entities/Player/Weapon/Weapon.tscn" id="62_giqej"]
+[ext_resource type="PackedScene" uid="uid://cqsf7gpsdnpg3" path="res://Scripts/enemy_spawner.tscn" id="63_pdbp3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qalai"]
 animations = [{
@@ -460,13 +461,15 @@ states/Idle/position = Vector2(439, 91)
 states/Move/node = SubResource("AnimationNodeBlendSpace2D_a6mll")
 states/Move/position = Vector2(613, 100)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmcqd"]
-size = Vector2(11, 6)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buouy"]
 size = Vector2(14, 28)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5xhcs"]
+radius = 25.1794
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 16
 script = ExtResource("1_xvunx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -486,10 +489,6 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Move/blend_position = Vector2(0, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -3)
-shape = SubResource("RectangleShape2D_qmcqd")
-
 [node name="Weapon" parent="." instance=ExtResource("62_giqej")]
 position = Vector2(0, -14)
 
@@ -501,5 +500,40 @@ shape = SubResource("RectangleShape2D_buouy")
 
 [node name="DustParticleCD" type="Timer" parent="."]
 wait_time = 0.25
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 16
+
+[node name="PickUpArea" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_5xhcs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("63_pdbp3")]
+position = Vector2(0, 186)
+
+[node name="EnemySpawner2" parent="." instance=ExtResource("63_pdbp3")]
+position = Vector2(335, 0)
+
+[node name="EnemySpawner5" parent="." instance=ExtResource("63_pdbp3")]
+position = Vector2(254, 186)
+
+[node name="EnemySpawner6" parent="." instance=ExtResource("63_pdbp3")]
+position = Vector2(-301, 186)
+
+[node name="EnemySpawner7" parent="." instance=ExtResource("63_pdbp3")]
+position = Vector2(324, -226)
+
+[node name="EnemySpawner8" parent="." instance=ExtResource("63_pdbp3")]
+position = Vector2(-301, -215)
+
+[node name="EnemySpawner3" parent="." instance=ExtResource("63_pdbp3")]
+position = Vector2(0, -226)
+
+[node name="EnemySpawner4" parent="." instance=ExtResource("63_pdbp3")]
+position = Vector2(-320, 0)
 
 [connection signal="timeout" from="DustParticleCD" to="." method="_on_dust_particle_cd_timeout"]

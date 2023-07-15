@@ -1,18 +1,81 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjvbmylovwvdc"]
+[gd_scene load_steps=24 format=3 uid="uid://bjvbmylovwvdc"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_yvrvg"]
 [ext_resource type="Texture2D" uid="uid://bm12me2ejpfc" path="res://Assets/Enemies/Crab/Crab4.png" id="2_aji0r"]
+[ext_resource type="Texture2D" uid="uid://byicyslas0a5f" path="res://Assets/Enemies/Crab/Crab7.png" id="2_gbstn"]
+[ext_resource type="Texture2D" uid="uid://bcb1piwyrjclq" path="res://Assets/Particles/Death/DeathAnimation1.png" id="2_wxcmg"]
+[ext_resource type="Texture2D" uid="uid://vvc1mc8i67ts" path="res://Assets/Enemies/Crab/Crab8.png" id="3_mktj6"]
 [ext_resource type="Texture2D" uid="uid://blyr2s0byq18v" path="res://Assets/Enemies/Crab/Crab5.png" id="3_pubjm"]
+[ext_resource type="Texture2D" uid="uid://c12a7rt640qoj" path="res://Assets/Particles/Death/DeathAnimation2.png" id="3_qaviv"]
+[ext_resource type="Texture2D" uid="uid://kornfrf0n2lv" path="res://Assets/Enemies/Crab/Crab9.png" id="4_2tbot"]
 [ext_resource type="Texture2D" uid="uid://dawhdtdi2qbxe" path="res://Assets/Enemies/Crab/Crab6.png" id="4_b051y"]
+[ext_resource type="Texture2D" uid="uid://bs7a5s4oe548m" path="res://Assets/Particles/Death/DeathAnimation3.png" id="4_s8tra"]
+[ext_resource type="Texture2D" uid="uid://bj8g02c0qixtb" path="res://Assets/Particles/Death/DeathAnimation4.png" id="5_0x48y"]
 [ext_resource type="Texture2D" uid="uid://dnh43r4hdpbvy" path="res://Assets/Enemies/Crab/Crab1.png" id="5_2ilyx"]
+[ext_resource type="Texture2D" uid="uid://cbp1l26x72pyx" path="res://Assets/Enemies/Crab/Crab10.png" id="5_qnh3e"]
+[ext_resource type="Texture2D" uid="uid://w8duofwkvxvr" path="res://Assets/Particles/Death/DeathAnimation5.png" id="6_mc3ox"]
 [ext_resource type="Texture2D" uid="uid://bf3q2264glao2" path="res://Assets/Enemies/Crab/Crab2.png" id="6_sg1eg"]
+[ext_resource type="Texture2D" uid="uid://prexvslhgxss" path="res://Assets/Enemies/Crab/Crab11.png" id="6_stwk4"]
 [ext_resource type="Texture2D" uid="uid://b8hn01ovu5roe" path="res://Assets/Enemies/Crab/Crab3.png" id="7_lcy73"]
+[ext_resource type="Texture2D" uid="uid://dumuelbwf7dgk" path="res://Assets/Enemies/Crab/Crab12.png" id="7_o3g3f"]
+[ext_resource type="Texture2D" uid="uid://b7qfw0m2sc8u6" path="res://Assets/Particles/Death/DeathAnimation6.png" id="7_vchut"]
+[ext_resource type="Texture2D" uid="uid://bpagvbvecx1kb" path="res://Assets/Particles/Death/DeathAnimation7.png" id="8_syoaw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wibpg"]
-size = Vector2(8.33333, 5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ewxv"]
+radius = 4.16667
+height = 8.33333
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0rwu0"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wxcmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qaviv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s8tra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0x48y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mc3ox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vchut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_syoaw")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gbstn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mktj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2tbot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qnh3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_stwk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o3g3f")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 30.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_aji0r")
@@ -42,16 +105,30 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ooupt"]
+radius = 5.83333
+
 [node name="Crab" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_yvrvg")
 speed = 25
+max_health = 60.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9.93411e-08, -2.5)
-shape = SubResource("RectangleShape2D_wibpg")
+position = Vector2(-7.10543e-15, -2.5)
+shape = SubResource("CapsuleShape2D_0ewxv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_0rwu0")
-animation = &"MoveLeft"
+animation = &"Death"
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-0.833333, -5)
+shape = SubResource("CircleShape2D_ooupt")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

@@ -1,13 +1,26 @@
-[gd_scene load_steps=12 format=3 uid="uid://toq0yjwod2xk"]
+[gd_scene load_steps=26 format=3 uid="uid://toq0yjwod2xk"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_kwu6x"]
+[ext_resource type="Texture2D" uid="uid://bcb1piwyrjclq" path="res://Assets/Particles/Death/DeathAnimation1.png" id="2_0gps7"]
 [ext_resource type="Texture2D" uid="uid://dnabloc5yr45g" path="res://Assets/Enemies/Scorpion/Scorpion5.png" id="2_6mtwj"]
+[ext_resource type="Texture2D" uid="uid://ct3frh4jf5qxc" path="res://Assets/Enemies/Scorpion/Scorpion9.png" id="2_aergy"]
 [ext_resource type="Texture2D" uid="uid://d1lk8j4226mp0" path="res://Assets/Enemies/Scorpion/Scorpion6.png" id="3_h225s"]
+[ext_resource type="Texture2D" uid="uid://d1orhtydvhfob" path="res://Assets/Enemies/Scorpion/Scorpion10.png" id="3_m70w2"]
+[ext_resource type="Texture2D" uid="uid://c12a7rt640qoj" path="res://Assets/Particles/Death/DeathAnimation2.png" id="3_wmarw"]
 [ext_resource type="Texture2D" uid="uid://cm05vwdv405rq" path="res://Assets/Enemies/Scorpion/Scorpion7.png" id="4_7ftn5"]
+[ext_resource type="Texture2D" uid="uid://bs7a5s4oe548m" path="res://Assets/Particles/Death/DeathAnimation3.png" id="4_c5ovi"]
+[ext_resource type="Texture2D" uid="uid://bwb0u00ypig3s" path="res://Assets/Enemies/Scorpion/Scorpion11.png" id="4_hb1qy"]
 [ext_resource type="Texture2D" uid="uid://dr4w5dk7mwxpl" path="res://Assets/Enemies/Scorpion/Scorpion8.png" id="5_85co7"]
+[ext_resource type="Texture2D" uid="uid://bj8g02c0qixtb" path="res://Assets/Particles/Death/DeathAnimation4.png" id="5_gnvb3"]
+[ext_resource type="Texture2D" uid="uid://ci6mnhs20hy4b" path="res://Assets/Enemies/Scorpion/Scorpion12.png" id="5_spka2"]
+[ext_resource type="Texture2D" uid="uid://w8duofwkvxvr" path="res://Assets/Particles/Death/DeathAnimation5.png" id="6_dn6t8"]
 [ext_resource type="Texture2D" uid="uid://0ujk66yt4ip0" path="res://Assets/Enemies/Scorpion/Scorpion1.png" id="6_lk43y"]
+[ext_resource type="Texture2D" uid="uid://dcn7i45bw8ww8" path="res://Assets/Enemies/Scorpion/Scorpion13.png" id="6_uxh4j"]
+[ext_resource type="Texture2D" uid="uid://b7qfw0m2sc8u6" path="res://Assets/Particles/Death/DeathAnimation6.png" id="7_8bkt2"]
 [ext_resource type="Texture2D" uid="uid://dyy4tcouvhafn" path="res://Assets/Enemies/Scorpion/Scorpion2.png" id="7_c2l7j"]
+[ext_resource type="Texture2D" uid="uid://dl0lt2yyyyltu" path="res://Assets/Enemies/Scorpion/Scorpion14.png" id="7_rhkwv"]
 [ext_resource type="Texture2D" uid="uid://d06pwdokg7fpa" path="res://Assets/Enemies/Scorpion/Scorpion3.png" id="8_fabdx"]
+[ext_resource type="Texture2D" uid="uid://bpagvbvecx1kb" path="res://Assets/Particles/Death/DeathAnimation7.png" id="8_hy74a"]
 [ext_resource type="Texture2D" uid="uid://djsnjw221fxn2" path="res://Assets/Enemies/Scorpion/Scorpion4.png" id="9_u1nes"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wibpg"]
@@ -15,6 +28,55 @@ size = Vector2(12.5, 5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0rwu0"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0gps7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wmarw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c5ovi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gnvb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dn6t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8bkt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hy74a")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aergy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m70w2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hb1qy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_spka2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uxh4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rhkwv")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 30.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_6mtwj")
@@ -50,10 +112,14 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdvxp"]
+radius = 5.83333
+
 [node name="Scorpion" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_kwu6x")
-speed = 35
+speed = 30
+max_health = 30.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.416667, -2.5)
@@ -62,4 +128,14 @@ shape = SubResource("RectangleShape2D_wibpg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_0rwu0")
-animation = &"MoveLeft"
+animation = &"Death"
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-0.833333, -5)
+shape = SubResource("CircleShape2D_kdvxp")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

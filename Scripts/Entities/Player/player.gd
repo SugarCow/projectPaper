@@ -31,7 +31,7 @@ func _process(delta):
 	input_dir = Vector2(Input.get_action_raw_strength("ui_left") - Input.get_action_strength("ui_right"), 
 						Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
 	input_dir = input_dir.normalized()
-	print(input_dir)
+	
 	
 	
 	#state machine
@@ -50,7 +50,7 @@ func move_state(delta):
 	if particle_ready == true:
 		var my_dust = dust_particle.instantiate()
 		main.add_child(my_dust)
-		my_dust.global_position = $CollisionShape2D.global_position
+		my_dust.global_position = $Area2D.global_position + Vector2(-3,0)
 		particle_ready = false
 		$DustParticleCD.start()
 		

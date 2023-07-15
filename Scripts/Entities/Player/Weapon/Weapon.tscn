@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://r8mfx3cskh87"]
+[gd_scene load_steps=15 format=3 uid="uid://r8mfx3cskh87"]
 
 [ext_resource type="Texture2D" uid="uid://1reosfd6ndti" path="res://Assets/Weapon/Shooter1.png" id="1_p2qhw"]
 [ext_resource type="Script" path="res://Scripts/Entities/Player/Weapon/Weapon.gd" id="1_vr3ts"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bgje81jq2fdqs" path="res://Assets/Weapon/Shooter6.png" id="6_8jm7s"]
 [ext_resource type="Texture2D" uid="uid://cnv5afb647q2k" path="res://Assets/Weapon/Shooter7.png" id="7_pwokd"]
 [ext_resource type="Texture2D" uid="uid://b3hy00yjugn1l" path="res://Assets/Weapon/Shooter8.png" id="8_qsqeg"]
+[ext_resource type="Texture2D" uid="uid://cbxnmqqjt6im" path="res://Assets/Weapon/ShotFlash1.png" id="10_nh0g1"]
+[ext_resource type="Texture2D" uid="uid://du8kc6nhqff3a" path="res://Assets/Weapon/ShotFlash2.png" id="11_hmlii"]
+[ext_resource type="Texture2D" uid="uid://nept48v4oet7" path="res://Assets/Weapon/ShotFlash3.png" id="12_aelpi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vsgmb"]
 animations = [{
@@ -42,19 +45,52 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_qsqeg")
 }],
-"loop": true,
+"loop": false,
 "name": &"Shoot",
-"speed": 5.0
+"speed": 20.0
 }]
 
-[node name="Weapon" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqwhx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_nh0g1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hmlii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aelpi")
+}],
+"loop": false,
+"name": &"animate",
+"speed": 15.0
+}]
+
+[node name="ProtectorOrb" type="Node2D"]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_vr3ts")
 
 [node name="Pivot" type="Marker2D" parent="."]
-rotation = 0.0174533
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot"]
-position = Vector2(35.9945, -0.628287)
+[node name="Weapon" type="AnimatedSprite2D" parent="Pivot"]
+position = Vector2(14.5, 1.00171)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_vsgmb")
-animation = &"Idle"
+animation = &"Shoot"
+frame = 6
+frame_progress = 1.0
+
+[node name="muzzleFlash" type="AnimatedSprite2D" parent="Pivot"]
+position = Vector2(21.9955, 1)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_gqwhx")
+animation = &"animate"
+frame = 2
+frame_progress = 1.0
+
+[node name="AttackCD" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="AttackCD" to="." method="_on_attack_cd_timeout"]

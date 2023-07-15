@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var animation = $AnimatedSprite2D
+@onready var exp = preload("res://Scripts/Entities/Pickups/exp.tscn")
+@onready var main =  get_tree().current_scene
 # Called when the node enters the scene tree for the first time.
 enum{
 	FOLLOW,
@@ -8,10 +10,13 @@ enum{
 	STUN
 }
 @export var speed: int 
+@export var max_health: float
+
+@onready var health = max_health
 var state: int
 var player
 func _ready():
-	player = $"../../Player"
+	player = $"../Player"
 	state = FOLLOW
 
 
@@ -21,7 +26,11 @@ func _process(delta):
 	match state:
 		FOLLOW:
 			follow_state()
-	pass
+		DEAD:
+			dead_state()
+		STUN:
+			stun_state()
+
 
 func follow_state():
 	animation.play("MoveLeft")
@@ -33,3 +42,27 @@ func follow_state():
 	else: animation.flip_h = false
 	velocity = velocity.move_toward(target_direction * speed , 200)
 	move_and_slide()
+
+func dead_state():
+	$HurtBox/CollisionShape2D.disabled =true
+	animation.transform
+	animation.play("Death")
+	await animation.animation_finished
+	var my_exp = exp.instantiate()
+	main.get_node("World").add_child(my_exp)
+	my_exp.get_node("AnimatedSprite2D").play("animate")
+	my_exp.global_position = animation.global_position
+	queue_free()
+
+func stun_state():
+	animation.play("Hurt")
+	await animation.animation_finished
+	state = FOLLOW
+
+func _on_hurt_box_area_entered(area):
+	
+	health -=15
+	if health <=0:
+		state = DEAD
+	else:
+		state = STUN

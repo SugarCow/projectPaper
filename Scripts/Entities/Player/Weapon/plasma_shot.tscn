@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhaiqft65vjpx"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Player/Weapon/projectile.gd" id="1_ovjei"]
+[ext_resource type="Texture2D" uid="uid://cgna5o4fuvkjl" path="res://Assets/Weapon/laser.png" id="1_xf4jw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ac53x"]
+radius = 4.0
+height = 14.0
+
+[node name="PlasmaShot" type="CharacterBody2D"]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ovjei")
+projectile_speed = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.53, 0)
+texture = ExtResource("1_xf4jw")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CapsuleShape2D_ac53x")
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
