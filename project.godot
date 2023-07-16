@@ -16,6 +16,10 @@ run/main_scene="res://Scripts/game.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+mouse_cursor/custom_image="res://Assets/UI/Cursor/Reticle12.png"
+
 [input]
 
 ui_left={
@@ -63,6 +67,7 @@ Shoot={
 2d_physics/layer_3="Hitbox"
 2d_physics/layer_4="Hurtbox"
 2d_physics/layer_5="pickup"
+2d_physics/layer_6="enemy"
 
 [rendering]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dybsjdkd1imoe"]
+[gd_scene load_steps=11 format=3 uid="uid://dybsjdkd1imoe"]
 
 [ext_resource type="Texture2D" uid="uid://dyagkr7bsrkd5" path="res://Assets/Tiles/Tile.png" id="1_8hr7n"]
 [ext_resource type="PackedScene" uid="uid://688adwb4a5jo" path="res://Scripts/Entities/Player/player.tscn" id="2_upit4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://toq0yjwod2xk" path="res://Scripts/Entities/Enemies/scorpion.tscn" id="5_u5w1u"]
 [ext_resource type="PackedScene" uid="uid://dop8v0pdlbjpl" path="res://Scripts/Entities/Enemies/snake.tscn" id="6_vu1yh"]
 [ext_resource type="PackedScene" uid="uid://bihb8hibkm3ny" path="res://Scripts/Entities/Pickups/exp.tscn" id="7_yv6cn"]
+[ext_resource type="PackedScene" uid="uid://bgwvh31hpyodo" path="res://Scripts/Entities/Enemies/OrcBoss.tscn" id="8_x8snr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_csufo"]
 texture = ExtResource("1_8hr7n")
@@ -41,3 +42,6 @@ position = Vector2(144, 164)
 position = Vector2(242, 126)
 
 [node name="EXP" parent="World" instance=ExtResource("7_yv6cn")]
+
+[node name="OrcBoss" parent="World" instance=ExtResource("8_x8snr")]
+position = Vector2(252, 72)

@@ -16,6 +16,8 @@ var speed: int = 100
 var acceleration: int = 300
 var dust_particle = load("res://Scripts/Particle/dustParticle.tscn")
 var particle_ready = true
+var invincible = false
+
 @onready var main = get_tree().current_scene
 
 # Called when the node enters the scene tree for the first time.
@@ -50,7 +52,7 @@ func move_state(delta):
 	if particle_ready == true:
 		var my_dust = dust_particle.instantiate()
 		main.add_child(my_dust)
-		my_dust.global_position = $Area2D.global_position + Vector2(-3,0)
+		my_dust.global_position = $Area2D2.global_position + Vector2(-3,0)
 		particle_ready = false
 		$DustParticleCD.start()
 		
@@ -93,4 +95,18 @@ func idle_state():
 
 func _on_dust_particle_cd_timeout():
 	particle_ready = true
+	
+
+
+func _on_hurt_box_area_entered(area):
+	if invincible == false:
+		print("ouch")
+		invincible == true
+		$HurtTimer.start()
+		$HurtBox/CollisionShape2D.disabled = true
+
+
+func _on_hurt_timer_timeout():
+	$HurtBox/CollisionShape2D.disabled = false
+	invincible == false
 	

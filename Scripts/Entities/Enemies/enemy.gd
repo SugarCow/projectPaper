@@ -11,7 +11,7 @@ enum{
 }
 @export var speed: int 
 @export var max_health: float
-
+@export var is_boss: bool
 @onready var health = max_health
 var state: int
 var player
@@ -46,8 +46,16 @@ func follow_state():
 func dead_state():
 	$HurtBox/CollisionShape2D.disabled =true
 	animation.transform
-	animation.play("Death")
-	await animation.animation_finished
+	if is_boss == true:
+		animation.play("PreDeath")
+		await animation.animation_finished
+		animation.play("Death")
+	
+	else:
+		animation.play("Death")
+	
+	if animation.is_playing() == true:
+		await animation.animation_finished
 	var my_exp = exp.instantiate()
 	main.get_node("World").add_child(my_exp)
 	my_exp.get_node("AnimatedSprite2D").play("animate")

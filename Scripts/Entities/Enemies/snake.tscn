@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dop8v0pdlbjpl"]
+[gd_scene load_steps=35 format=3 uid="uid://dop8v0pdlbjpl"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_qa1gr"]
 [ext_resource type="Texture2D" uid="uid://5lsceoq8m72o" path="res://Assets/Enemies/Snake/Snake11.png" id="2_352lb"]
@@ -148,6 +148,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ov2pq"]
 radius = 5.83333
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_l5oqe"]
+radius = 7.5
+
 [node name="Snake" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_qa1gr")
@@ -173,5 +176,13 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(-0.833333, -5)
 shape = SubResource("CircleShape2D_ov2pq")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -8.33333)
+shape = SubResource("CircleShape2D_l5oqe")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

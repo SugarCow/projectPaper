@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://beosgjakieydx"]
+[gd_scene load_steps=29 format=3 uid="uid://beosgjakieydx"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_m46wg"]
 [ext_resource type="Texture2D" uid="uid://badhojq3lh0mh" path="res://Assets/Enemies/Bat/bat13.png" id="2_acw2u"]
@@ -123,8 +123,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_mhhjk"]
 radius = 5.83333
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gs8s7"]
+radius = 7.5
+
 [node name="Bat" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
+collision_layer = 32
+collision_mask = 0
 script = ExtResource("1_m46wg")
 speed = 40
 max_health = 15.0
@@ -145,5 +150,13 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, -8.33333)
 shape = SubResource("CircleShape2D_mhhjk")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -8.33333)
+shape = SubResource("CircleShape2D_gs8s7")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

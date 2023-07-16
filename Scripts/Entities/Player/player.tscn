@@ -461,11 +461,11 @@ states/Idle/position = Vector2(439, 91)
 states/Move/node = SubResource("AnimationNodeBlendSpace2D_a6mll")
 states/Move/position = Vector2(613, 100)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_buouy"]
-size = Vector2(14, 28)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_5xhcs"]
 radius = 25.1794
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0dppj"]
+radius = 5.83333
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -491,12 +491,6 @@ parameters/Move/blend_position = Vector2(0, 0)
 
 [node name="Weapon" parent="." instance=ExtResource("62_giqej")]
 position = Vector2(0, -14)
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="HurtBox" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -14)
-shape = SubResource("RectangleShape2D_buouy")
 
 [node name="DustParticleCD" type="Timer" parent="."]
 wait_time = 0.25
@@ -536,4 +530,16 @@ position = Vector2(0, -226)
 [node name="EnemySpawner4" parent="." instance=ExtResource("63_pdbp3")]
 position = Vector2(-320, 0)
 
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-0.833333, -5)
+shape = SubResource("CircleShape2D_0dppj")
+
+[node name="HurtTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="DustParticleCD" to="." method="_on_dust_particle_cd_timeout"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="timeout" from="HurtTimer" to="." method="_on_hurt_timer_timeout"]

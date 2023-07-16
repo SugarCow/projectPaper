@@ -26,9 +26,10 @@ func _on_hit_box_area_entered(area):
 	var my_hit_effect = hit_effect.instantiate()
 	main.add_child(my_hit_effect)
 	
-	my_hit_effect.global_position = area.global_position
+	my_hit_effect.global_position = self.global_position
 	my_hit_effect.play("animate")
 	$Sprite2D.visible = false
-	
+	await my_hit_effect.animation_finished
+	my_hit_effect.queue_free()
 	queue_free()
 

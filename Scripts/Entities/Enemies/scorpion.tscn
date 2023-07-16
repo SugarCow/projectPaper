@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://toq0yjwod2xk"]
+[gd_scene load_steps=27 format=3 uid="uid://toq0yjwod2xk"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_kwu6x"]
 [ext_resource type="Texture2D" uid="uid://bcb1piwyrjclq" path="res://Assets/Particles/Death/DeathAnimation1.png" id="2_0gps7"]
@@ -115,6 +115,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_kdvxp"]
 radius = 5.83333
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lpalj"]
+radius = 7.5
+
 [node name="Scorpion" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_kwu6x")
@@ -137,5 +140,13 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(-0.833333, -5)
 shape = SubResource("CircleShape2D_kdvxp")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -8.33333)
+shape = SubResource("CircleShape2D_lpalj")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
