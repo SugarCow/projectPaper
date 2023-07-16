@@ -26,6 +26,8 @@ func follow_state():
 	move_and_slide()
 
 	if abs(player.position - self.position) <=Vector2(3,3):
+		$AudioStreamPlayer2D.play()
+		await $AudioStreamPlayer2D.finished
 		queue_free()
 
 func _on_area_2d_area_entered(area):

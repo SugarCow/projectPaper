@@ -60,7 +60,7 @@ func move_state(delta):
 	if input_dir.x > 0:
 		animation_player.play("MoveRight")
 		facing_dir.x = input_dir.x
-	
+
 	if input_dir.x < 0:
 		animation_player.play("MoveLeft")
 		facing_dir.x = input_dir.x
