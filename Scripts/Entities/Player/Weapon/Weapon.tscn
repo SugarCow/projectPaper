@@ -90,7 +90,7 @@ frame = 2
 frame_progress = 1.0
 
 [node name="AttackCD" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.117
 autostart = true
 
 [connection signal="timeout" from="AttackCD" to="." method="_on_attack_cd_timeout"]

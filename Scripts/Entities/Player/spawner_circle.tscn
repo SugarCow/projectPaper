@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://ks7duoqdnx2b"]
+
+[ext_resource type="PackedScene" uid="uid://cqsf7gpsdnpg3" path="res://Scripts/enemy_spawner.tscn" id="1_1g1wa"]
+
+[node name="SpawnerCircle" type="Node2D"]
+
+[node name="EnemySpawner" parent="." instance=ExtResource("1_1g1wa")]
+position = Vector2(101, 205)
+
+[node name="EnemySpawner2" parent="." instance=ExtResource("1_1g1wa")]
+position = Vector2(367, -127)
+
+[node name="EnemySpawner5" parent="." instance=ExtResource("1_1g1wa")]
+position = Vector2(254, 188)
+
+[node name="EnemySpawner6" parent="." instance=ExtResource("1_1g1wa")]
+position = Vector2(-301, 186)
+
+[node name="EnemySpawner7" parent="." instance=ExtResource("1_1g1wa")]
+position = Vector2(324, -226)
+
+[node name="EnemySpawner8" parent="." instance=ExtResource("1_1g1wa")]
+position = Vector2(-301, -215)
+
+[node name="EnemySpawner3" parent="." instance=ExtResource("1_1g1wa")]
+position = Vector2(-128, -226)
+
+[node name="EnemySpawner4" parent="." instance=ExtResource("1_1g1wa")]
+position = Vector2(-301, 73)
+
+[node name="EnemySpawner9" parent="." instance=ExtResource("1_1g1wa")]
+position = Vector2(-385, 0)
+
+[node name="EnemySpawner10" parent="." instance=ExtResource("1_1g1wa")]
+position = Vector2(0, -269)
+
+[node name="EnemySpawner11" parent="." instance=ExtResource("1_1g1wa")]
+position = Vector2(401, 2)
+
+[node name="EnemySpawner12" parent="." instance=ExtResource("1_1g1wa")]
+position = Vector2(0, 240)

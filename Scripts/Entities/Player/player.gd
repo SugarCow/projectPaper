@@ -28,7 +28,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	
 	input_dir = Vector2(Input.get_action_raw_strength("ui_left") - Input.get_action_strength("ui_right"), 
 						Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
@@ -41,12 +41,12 @@ func _process(delta):
 		IDLE:
 			idle_state()
 		MOVE:
-			move_state(delta)
+			move_state()
 			
 	if input_dir != Vector2.ZERO:
 		state = MOVE
 
-func move_state(delta):
+func move_state():
 	
 	#walking dust particle
 	if particle_ready == true:
@@ -98,15 +98,15 @@ func _on_dust_particle_cd_timeout():
 	
 
 
-func _on_hurt_box_area_entered(area):
+func _on_hurt_box_area_entered(_area):
 	if invincible == false:
-		print("ouch")
-		invincible == true
+		
+		invincible = true
 		$HurtTimer.start()
-		$HurtBox/CollisionShape2D.disabled = true
+		$HurtBox/CollisionShape2D.set_deferred("disabled", true)
 
 
 func _on_hurt_timer_timeout():
 	$HurtBox/CollisionShape2D.disabled = false
-	invincible == false
+	invincible = false
 	

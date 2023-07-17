@@ -13,7 +13,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	match state:
 		"idle":
 			pass
@@ -26,10 +26,10 @@ func follow_state():
 	move_and_slide()
 
 	if abs(player.position - self.position) <=Vector2(3,3):
-		$AudioStreamPlayer2D.play()
-		await $AudioStreamPlayer2D.finished
+#		$AudioStreamPlayer2D.play()
+#		await $AudioStreamPlayer2D.finished
 		queue_free()
 
-func _on_area_2d_area_entered(area):
+func _on_area_2d_area_entered(_area):
 	state = "follow"
 	

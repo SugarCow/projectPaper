@@ -45,5 +45,7 @@ func _process(delta):
 
 func _on_timer_timeout():
 	spawn_enemy()
+	$Timer.set_deferred("wait_time", randf_range(2,6))
+	print($Timer.wait_time)
 	
 	

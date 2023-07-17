@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
 @onready var animation = $AnimatedSprite2D
-@onready var exp = preload("res://Scripts/Entities/Pickups/exp.tscn")
+@onready var experience = preload("res://Scripts/Entities/Pickups/exp.tscn")
 @onready var main =  get_tree().current_scene
+@onready var hit_effect = preload("res://Scripts/Particle/hit_effect.tscn")
+
 # Called when the node enters the scene tree for the first time.
 enum{
 	FOLLOW,
@@ -21,7 +23,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 
 	match state:
 		FOLLOW:
@@ -44,8 +46,9 @@ func follow_state():
 	move_and_slide()
 
 func dead_state():
+	print(self.name + " is dead")
 	$HurtBox/CollisionShape2D.disabled =true
-	animation.transform
+	
 	if is_boss == true:
 		animation.play("PreDeath")
 		await animation.animation_finished
@@ -56,21 +59,27 @@ func dead_state():
 	
 	if animation.is_playing() == true:
 		await animation.animation_finished
-	var my_exp = exp.instantiate()
+	var my_exp = experience.instantiate()
 	main.get_node("World").add_child(my_exp)
 	my_exp.get_node("AnimatedSprite2D").play("animate")
 	my_exp.global_position = animation.global_position
 	queue_free()
 
 func stun_state():
+	
 	animation.play("Hurt")
 	await animation.animation_finished
 	state = FOLLOW
 
-func _on_hurt_box_area_entered(area):
-	
+func _on_hurt_box_area_entered(_area):
+	print("minus health")
 	health -=15
 	if health <=0:
 		state = DEAD
 	else:
+		
+		print("stunned")
 		state = STUN
+
+func handle_hit_marker():
+	pass

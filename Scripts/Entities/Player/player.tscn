@@ -62,7 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://dbmhtrcafsb6l" path="res://Assets/Player/Rob59.png" id="59_ip7vk"]
 [ext_resource type="Texture2D" uid="uid://cu60lo7uuwgxv" path="res://Assets/Player/Rob60.png" id="60_bjvrq"]
 [ext_resource type="PackedScene" uid="uid://r8mfx3cskh87" path="res://Scripts/Entities/Player/Weapon/Weapon.tscn" id="62_giqej"]
-[ext_resource type="PackedScene" uid="uid://cqsf7gpsdnpg3" path="res://Scripts/enemy_spawner.tscn" id="63_pdbp3"]
+[ext_resource type="PackedScene" uid="uid://ks7duoqdnx2b" path="res://Scripts/Entities/Player/spawner_circle.tscn" id="63_2o7t2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qalai"]
 animations = [{
@@ -506,30 +506,6 @@ shape = SubResource("CircleShape2D_5xhcs")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
-[node name="EnemySpawner" parent="." instance=ExtResource("63_pdbp3")]
-position = Vector2(0, 186)
-
-[node name="EnemySpawner2" parent="." instance=ExtResource("63_pdbp3")]
-position = Vector2(335, 0)
-
-[node name="EnemySpawner5" parent="." instance=ExtResource("63_pdbp3")]
-position = Vector2(254, 186)
-
-[node name="EnemySpawner6" parent="." instance=ExtResource("63_pdbp3")]
-position = Vector2(-301, 186)
-
-[node name="EnemySpawner7" parent="." instance=ExtResource("63_pdbp3")]
-position = Vector2(324, -226)
-
-[node name="EnemySpawner8" parent="." instance=ExtResource("63_pdbp3")]
-position = Vector2(-301, -215)
-
-[node name="EnemySpawner3" parent="." instance=ExtResource("63_pdbp3")]
-position = Vector2(0, -226)
-
-[node name="EnemySpawner4" parent="." instance=ExtResource("63_pdbp3")]
-position = Vector2(-320, 0)
-
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 32
@@ -539,6 +515,9 @@ position = Vector2(-0.833333, -5)
 shape = SubResource("CircleShape2D_0dppj")
 
 [node name="HurtTimer" type="Timer" parent="."]
+
+[node name="SpawnerCircle" parent="." instance=ExtResource("63_2o7t2")]
+position = Vector2(0, -14)
 
 [connection signal="timeout" from="DustParticleCD" to="." method="_on_dust_particle_cd_timeout"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
