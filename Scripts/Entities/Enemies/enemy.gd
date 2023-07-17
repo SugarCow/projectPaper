@@ -37,7 +37,7 @@ func _process(_delta):
 func follow_state():
 	animation.play("MoveLeft")
 	
-	var target_direction = ((player.position - self.position)- Vector2(0,10)).normalized()
+	var target_direction = ((player.position - self.position)- Vector2(2,2)).normalized()
 	
 	if target_direction.x > 0:
 		animation.flip_h = true
@@ -66,10 +66,12 @@ func dead_state():
 	queue_free()
 
 func stun_state():
-	
-	animation.play("Hurt")
-	await animation.animation_finished
-	state = FOLLOW
+	velocity = Vector2.ZERO
+	if animation.animation != "Hurt":
+		animation.stop()
+		animation.play("Hurt")
+		await animation.animation_finished
+		state = FOLLOW
 
 func _on_hurt_box_area_entered(_area):
 
