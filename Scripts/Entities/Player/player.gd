@@ -6,7 +6,9 @@ var animation_player
 enum {
 	IDLE, 
 	MOVE,
-	ATTACK
+	ATTACK,
+	STUN,
+	DEAD
 }
 
 var state: int
@@ -42,7 +44,8 @@ func _process(_delta):
 			idle_state()
 		MOVE:
 			move_state()
-			
+		STUN:
+			stun_state()
 	if input_dir != Vector2.ZERO:
 		state = MOVE
 
@@ -93,18 +96,29 @@ func idle_state():
 		animation_player.play("IdleRight")
 
 
+	animation_player.play("Hurt")
+	await animation_player.animation_finished
+	state = IDLE
+
+func stun_state():
+	print("ouch")
+	animation_player.play("Hurt")
+	await animation_player.animation_finished
+	
+
+
 func _on_dust_particle_cd_timeout():
 	particle_ready = true
 	
 
-
+#handles player being hurt
 func _on_hurt_box_area_entered(_area):
 	if invincible == false:
 		
 		invincible = true
 		$HurtTimer.start()
 		$HurtBox/CollisionShape2D.set_deferred("disabled", true)
-
+		state = STUN
 
 func _on_hurt_timer_timeout():
 	$HurtBox/CollisionShape2D.disabled = false

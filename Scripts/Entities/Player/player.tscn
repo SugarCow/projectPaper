@@ -1,13 +1,19 @@
-[gd_scene load_steps=82 format=3 uid="uid://688adwb4a5jo"]
+[gd_scene load_steps=89 format=3 uid="uid://688adwb4a5jo"]
 
 [ext_resource type="Texture2D" uid="uid://dte1blqbinphj" path="res://Assets/Player/Rob1.png" id="1_itg61"]
 [ext_resource type="Script" path="res://Scripts/Entities/Player/player.gd" id="1_xvunx"]
+[ext_resource type="Texture2D" uid="uid://tqdaywiwn1b1" path="res://Assets/Player/Rob61.png" id="2_nuoly"]
 [ext_resource type="Texture2D" uid="uid://d2641b4wssnf7" path="res://Assets/Player/Rob2.png" id="2_uf5vl"]
 [ext_resource type="Texture2D" uid="uid://bqb8qgw3musa3" path="res://Assets/Player/Rob3.png" id="3_3bbmn"]
+[ext_resource type="Texture2D" uid="uid://cp1u4cxwh1wmt" path="res://Assets/Player/Rob62.png" id="3_7xtu6"]
+[ext_resource type="Texture2D" uid="uid://ce35twpdrx1c0" path="res://Assets/Player/Rob63.png" id="4_4jfr8"]
 [ext_resource type="Texture2D" uid="uid://biijq45g6ipi2" path="res://Assets/Player/Rob4.png" id="4_nf0ac"]
 [ext_resource type="Texture2D" uid="uid://ri8ygb466dh2" path="res://Assets/Player/Rob5.png" id="5_cbcyb"]
+[ext_resource type="Texture2D" uid="uid://bie3enrhujejo" path="res://Assets/Player/Rob64.png" id="5_nggwp"]
+[ext_resource type="Texture2D" uid="uid://bamokwbsxp7b3" path="res://Assets/Player/Rob65.png" id="6_1ep5g"]
 [ext_resource type="Texture2D" uid="uid://d1udbd7dl6nbb" path="res://Assets/Player/Rob6.png" id="6_xopg4"]
 [ext_resource type="Texture2D" uid="uid://co1b852uhc7ke" path="res://Assets/Player/Rob7.png" id="7_e24wj"]
+[ext_resource type="Texture2D" uid="uid://b3vs60ulnkhuo" path="res://Assets/Player/Rob66.png" id="7_kp4n3"]
 [ext_resource type="Texture2D" uid="uid://byxd26asg2y58" path="res://Assets/Player/Rob8.png" id="8_bxs7e"]
 [ext_resource type="Texture2D" uid="uid://dr28u53ckwscn" path="res://Assets/Player/Rob9.png" id="9_mtvgd"]
 [ext_resource type="Texture2D" uid="uid://o5hmlj2xajxg" path="res://Assets/Player/Rob10.png" id="10_kdm6f"]
@@ -66,6 +72,29 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qalai"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nuoly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7xtu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4jfr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nggwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1ep5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kp4n3")
+}],
+"loop": true,
+"name": &"Hurt",
+"speed": 20.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_itg61")
@@ -412,8 +441,36 @@ tracks/1/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_3rr1w"]
+resource_name = "Hurt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Hurt"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 1, 2, 1, 2, 5]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8nn8f"]
 _data = {
+"Hurt": SubResource("Animation_3rr1w"),
 "IdleLeft": SubResource("Animation_ryvm6"),
 "IdleRight": SubResource("Animation_wpolo"),
 "MoveLeft": SubResource("Animation_4rfwd"),
@@ -515,6 +572,7 @@ position = Vector2(-0.833333, -5)
 shape = SubResource("CircleShape2D_0dppj")
 
 [node name="HurtTimer" type="Timer" parent="."]
+wait_time = 5.69
 
 [node name="SpawnerCircle" parent="." instance=ExtResource("63_2o7t2")]
 position = Vector2(0, -14)

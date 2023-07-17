@@ -46,7 +46,7 @@ func follow_state():
 	move_and_slide()
 
 func dead_state():
-	print(self.name + " is dead")
+	
 	$HurtBox/CollisionShape2D.disabled =true
 	
 	if is_boss == true:
@@ -72,13 +72,11 @@ func stun_state():
 	state = FOLLOW
 
 func _on_hurt_box_area_entered(_area):
-	print("minus health")
+
 	health -=15
 	if health <=0:
 		state = DEAD
 	else:
-		
-		print("stunned")
 		state = STUN
 
 func handle_hit_marker():

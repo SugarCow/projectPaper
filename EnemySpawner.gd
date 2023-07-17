@@ -34,7 +34,7 @@ func load_enemies():
 	
 	for scenePath in scenePaths:
 		var scene = ResourceLoader.load(scenePath)
-		print(scenePath)
+
 		scenes.append(scene)
 	
 
@@ -46,6 +46,6 @@ func _process(delta):
 func _on_timer_timeout():
 	spawn_enemy()
 	$Timer.set_deferred("wait_time", randf_range(2,6))
-	print($Timer.wait_time)
+
 	
 	
