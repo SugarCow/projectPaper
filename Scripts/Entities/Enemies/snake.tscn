@@ -1,15 +1,19 @@
-[gd_scene load_steps=35 format=3 uid="uid://dop8v0pdlbjpl"]
+[gd_scene load_steps=40 format=3 uid="uid://dop8v0pdlbjpl"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_qa1gr"]
 [ext_resource type="Texture2D" uid="uid://5lsceoq8m72o" path="res://Assets/Enemies/Snake/Snake11.png" id="2_352lb"]
+[ext_resource type="Texture2D" uid="uid://bpr0hk2ka8lbg" path="res://Assets/Enemies/Snake/Snake6.png" id="2_iq80w"]
 [ext_resource type="Texture2D" uid="uid://bcb1piwyrjclq" path="res://Assets/Particles/Death/DeathAnimation1.png" id="2_m5m2d"]
 [ext_resource type="Texture2D" uid="uid://vq00o13erbmg" path="res://Assets/Enemies/Snake/Snake35.png" id="2_vpj1r"]
 [ext_resource type="Texture2D" uid="uid://c12a7rt640qoj" path="res://Assets/Particles/Death/DeathAnimation2.png" id="3_dhu00"]
 [ext_resource type="Texture2D" uid="uid://dtb0w8uyv5pg" path="res://Assets/Enemies/Snake/Snake36.png" id="3_mgbf7"]
+[ext_resource type="Texture2D" uid="uid://6nddfbd1a5io" path="res://Assets/Enemies/Snake/Snake7.png" id="3_nxw6b"]
 [ext_resource type="Texture2D" uid="uid://q6ufpalcfwxr" path="res://Assets/Enemies/Snake/Snake12.png" id="3_vmbmf"]
+[ext_resource type="Texture2D" uid="uid://5r4bmccb8gsb" path="res://Assets/Enemies/Snake/Snake8.png" id="4_14b15"]
 [ext_resource type="Texture2D" uid="uid://b7v4ah0kch7ai" path="res://Assets/Enemies/Snake/Snake13.png" id="4_048po"]
 [ext_resource type="Texture2D" uid="uid://c31opmj5woolj" path="res://Assets/Enemies/Snake/Snake37.png" id="4_gu7fl"]
 [ext_resource type="Texture2D" uid="uid://bs7a5s4oe548m" path="res://Assets/Particles/Death/DeathAnimation3.png" id="4_pjetw"]
+[ext_resource type="Texture2D" uid="uid://cfeahpt6c6l7c" path="res://Assets/Enemies/Snake/Snake9.png" id="5_2vld2"]
 [ext_resource type="Texture2D" uid="uid://hssdaenkihw6" path="res://Assets/Enemies/Snake/Snake38.png" id="5_bhr74"]
 [ext_resource type="Texture2D" uid="uid://bj8g02c0qixtb" path="res://Assets/Particles/Death/DeathAnimation4.png" id="5_thyqt"]
 [ext_resource type="Texture2D" uid="uid://vnxtcyc7ripp" path="res://Assets/Enemies/Snake/Snake14.png" id="5_wbqbv"]
@@ -17,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://ccebxii5e3vvf" path="res://Assets/Enemies/Snake/Snake39.png" id="6_duojw"]
 [ext_resource type="Texture2D" uid="uid://w8duofwkvxvr" path="res://Assets/Particles/Death/DeathAnimation5.png" id="6_flbsk"]
 [ext_resource type="Texture2D" uid="uid://0ujk66yt4ip0" path="res://Assets/Enemies/Scorpion/Scorpion1.png" id="6_gnsd5"]
+[ext_resource type="Texture2D" uid="uid://myh44uuxpdwa" path="res://Assets/Enemies/Snake/Snake10.png" id="6_pb44t"]
 [ext_resource type="Texture2D" uid="uid://b7qfw0m2sc8u6" path="res://Assets/Particles/Death/DeathAnimation6.png" id="7_66u54"]
 [ext_resource type="Texture2D" uid="uid://dyy4tcouvhafn" path="res://Assets/Enemies/Scorpion/Scorpion2.png" id="7_hg5na"]
 [ext_resource type="Texture2D" uid="uid://btxbrxt6nrmvq" path="res://Assets/Enemies/Snake/Snake16.png" id="7_qvf0a"]
@@ -37,6 +42,26 @@ height = 5.00001
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0rwu0"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iq80w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nxw6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_14b15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2vld2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pb44t")
+}],
+"loop": false,
+"name": &"AttackLeft",
+"speed": 20.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_m5m2d")
@@ -165,9 +190,7 @@ shape = SubResource("CapsuleShape2D_ssqo4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_0rwu0")
-animation = &"Death"
-frame = 6
-frame_progress = 1.0
+animation = &"AttackLeft"
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 8
@@ -179,10 +202,11 @@ shape = SubResource("CircleShape2D_ov2pq")
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 32
-collision_mask = 0
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -8.33333)
 shape = SubResource("CircleShape2D_l5oqe")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

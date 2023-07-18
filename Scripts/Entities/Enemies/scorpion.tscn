@@ -30,6 +30,23 @@ size = Vector2(12.5, 5)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_6mtwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h225s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7ftn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_85co7")
+}],
+"loop": false,
+"name": &"AttackLeft",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_0gps7")
 }, {
 "duration": 1.0,
@@ -131,7 +148,7 @@ shape = SubResource("RectangleShape2D_wibpg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_0rwu0")
-animation = &"Death"
+animation = &"AttackLeft"
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 8
@@ -143,10 +160,11 @@ shape = SubResource("CircleShape2D_kdvxp")
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 32
-collision_mask = 0
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -8.33333)
 shape = SubResource("CircleShape2D_lpalj")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

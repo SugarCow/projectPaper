@@ -9,7 +9,8 @@ extends CharacterBody2D
 enum{
 	FOLLOW,
 	DEAD,
-	STUN
+	STUN,
+	ATTACK
 }
 @export var speed: int 
 @export var max_health: float
@@ -28,6 +29,8 @@ func _process(_delta):
 	match state:
 		FOLLOW:
 			follow_state()
+		ATTACK:
+			attack_state()
 		DEAD:
 			dead_state()
 		STUN:
@@ -44,6 +47,17 @@ func follow_state():
 	else: animation.flip_h = false
 	velocity = velocity.move_toward(target_direction * speed , 200)
 	move_and_slide()
+
+func attack_state():
+	velocity = Vector2.ZERO
+	animation.play("AttackLeft")
+	var target_direction = ((player.position - self.position)- Vector2(2,2)).normalized()
+	if target_direction.x > 0:
+		animation.flip_h = true
+	else: animation.flip_h = false
+	
+	await animation.animation_finished
+	state = FOLLOW
 
 func dead_state():
 	
@@ -81,5 +95,8 @@ func _on_hurt_box_area_entered(_area):
 	else:
 		state = STUN
 
-func handle_hit_marker():
-	pass
+
+
+
+func _on_hit_box_area_entered(area):
+	state = ATTACK

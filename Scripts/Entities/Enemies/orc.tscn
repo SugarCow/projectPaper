@@ -1,16 +1,22 @@
-[gd_scene load_steps=39 format=3 uid="uid://dgacv2a8ohwt2"]
+[gd_scene load_steps=45 format=3 uid="uid://dgacv2a8ohwt2"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_2tas8"]
 [ext_resource type="Texture2D" uid="uid://bcb1piwyrjclq" path="res://Assets/Particles/Death/DeathAnimation1.png" id="2_3d4uo"]
+[ext_resource type="Texture2D" uid="uid://ctiksjqe8hwyg" path="res://Assets/Enemies/Orcs/Phase1/Bonker/OrcBonkerPhase1.png" id="2_ccbiq"]
 [ext_resource type="Texture2D" uid="uid://bvukpjic568o" path="res://Assets/Enemies/Orcs/Phase1/Bonker/OrcBonkerPhase7.png" id="2_i2w4m"]
 [ext_resource type="Texture2D" uid="uid://c12a7rt640qoj" path="res://Assets/Particles/Death/DeathAnimation2.png" id="3_v40ew"]
+[ext_resource type="Texture2D" uid="uid://bdpvo4ecnpn3t" path="res://Assets/Enemies/Orcs/Phase1/Bonker/OrcBonkerPhase2.png" id="3_xwwfs"]
 [ext_resource type="Texture2D" uid="uid://qhrwqjvrbvri" path="res://Assets/Enemies/Orcs/Phase1/Bonker/OrcBonkerPhase8.png" id="3_yeh4d"]
 [ext_resource type="Texture2D" uid="uid://bs7a5s4oe548m" path="res://Assets/Particles/Death/DeathAnimation3.png" id="4_ce7cu"]
+[ext_resource type="Texture2D" uid="uid://t2i1u60vv6l2" path="res://Assets/Enemies/Orcs/Phase1/Bonker/OrcBonkerPhase3.png" id="4_snhln"]
 [ext_resource type="Texture2D" uid="uid://cip7ivqvsrrqt" path="res://Assets/Enemies/Orcs/Phase1/Bonker/OrcBonkerPhase9.png" id="4_tt0ls"]
 [ext_resource type="Texture2D" uid="uid://bj8g02c0qixtb" path="res://Assets/Particles/Death/DeathAnimation4.png" id="5_ah68c"]
+[ext_resource type="Texture2D" uid="uid://bcdu4ctv4flhf" path="res://Assets/Enemies/Orcs/Phase1/Bonker/OrcBonkerPhase4.png" id="5_ejtdm"]
 [ext_resource type="Texture2D" uid="uid://bepcgl7q63gue" path="res://Assets/Enemies/Orcs/Phase1/Bonker/OrcBonkerPhase10.png" id="5_ww2vq"]
 [ext_resource type="Texture2D" uid="uid://dky1u0b52cvu3" path="res://Assets/Enemies/Orcs/Phase1/Bonker/OrcBonkerPhase11.png" id="6_4tulp"]
+[ext_resource type="Texture2D" uid="uid://d1o1i6lpdxi43" path="res://Assets/Enemies/Orcs/Phase1/Bonker/OrcBonkerPhase5.png" id="6_khege"]
 [ext_resource type="Texture2D" uid="uid://w8duofwkvxvr" path="res://Assets/Particles/Death/DeathAnimation5.png" id="6_t20gv"]
+[ext_resource type="Texture2D" uid="uid://c3hnl1xjjm4rn" path="res://Assets/Enemies/Orcs/Phase1/Bonker/OrcBonkerPhase6.png" id="7_2wfad"]
 [ext_resource type="Texture2D" uid="uid://jn7fi4ecabha" path="res://Assets/Enemies/Orcs/Phase1/Bonker/OrcBonkerPhase12.png" id="7_7hg2n"]
 [ext_resource type="Texture2D" uid="uid://b7qfw0m2sc8u6" path="res://Assets/Particles/Death/DeathAnimation6.png" id="7_taemr"]
 [ext_resource type="Texture2D" uid="uid://bpagvbvecx1kb" path="res://Assets/Particles/Death/DeathAnimation7.png" id="8_3bmqj"]
@@ -40,6 +46,34 @@ radius = 2.5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0rwu0"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ccbiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xwwfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_snhln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ejtdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_khege")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2wfad")
+}],
+"loop": false,
+"name": &"AttackLeft",
+"speed": 20.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"AttackRight",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_i2w4m")
@@ -181,7 +215,7 @@ shape = SubResource("CircleShape2D_oall4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -14.545)
 sprite_frames = SubResource("SpriteFrames_0rwu0")
-animation = &"Death"
+animation = &"AttackLeft"
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 8
@@ -193,10 +227,11 @@ shape = SubResource("CircleShape2D_mhhjk")
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 32
-collision_mask = 0
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -8.33333)
 shape = SubResource("CircleShape2D_gs8s7")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
