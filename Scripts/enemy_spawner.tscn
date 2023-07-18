@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqsf7gpsdnpg3"]
 
-[ext_resource type="Script" path="res://EnemySpawner.gd" id="1_ikt17"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawner.gd" id="1_mt0we"]
 
 [sub_resource type="PackedScene" id="PackedScene_epkfb"]
 
 [node name="EnemySpawner" type="Node2D"]
-script = ExtResource("1_ikt17")
+script = ExtResource("1_mt0we")
 list_of_enemies = SubResource("PackedScene_epkfb")
 
 [node name="Timer" type="Timer" parent="."]

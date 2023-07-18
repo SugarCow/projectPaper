@@ -43,3 +43,8 @@ func _on_hit_box_area_entered(area):
 		my_hit_effect.queue_free()
 		call_deferred("queue_free")
 	print("pass")
+
+
+func _on_self_deleted_timer_timeout():
+	self.queue_free()
+

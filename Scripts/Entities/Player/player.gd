@@ -65,7 +65,7 @@ func move_state():
 		$DustParticleCD.start()
 		
 	#Animating moving Right and left
-	print(animation_player.current_animation)
+	
 	if animation_player.current_animation.contains("Hurt") == false:
 #		print("im in pain")
 #		await animation_player.animation_finished(animation_player.current_animation)
@@ -117,7 +117,7 @@ func idle_state():
 #	state = IDLE
 
 func stun_state():
-	print(animation_player.current_animation) 
+	
 	if animation_player.current_animation.contains("Hurt") == false:
 		animation_player.stop()
 		
@@ -154,7 +154,7 @@ func stun_state():
 		
 		
 		
-		print(animation_player.current_animation)
+		
 		state = MOVE
 
 
@@ -167,7 +167,7 @@ func _on_hurt_box_area_entered(_area):
 	if invincible == false:
 
 		ouch_countrer +=1 
-		print("ouch", ouch_countrer)
+		
 		invincible = true
 		$HurtTimer.start()
 		$HurtBox/CollisionShape2D.set_deferred("disabled", true)
@@ -181,6 +181,6 @@ func _on_hurt_timer_timeout():
 
 
 func _on_animation_player_animation_finished(anim_name):
-	if anim_name == "HurtRight" or anim_name == "HurtLeft":
+	if anim_name.contains("Hurt"):
 		state = MOVE
 

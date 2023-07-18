@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://18x3rj0f8wap"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Sceneries/scenery.gd" id="1_2qpxp"]
+[ext_resource type="Texture2D" uid="uid://b2yhgl1wwsuv2" path="res://Assets/Sceneries/Trees/trees1.png" id="2_cytcc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2l3th"]
+size = Vector2(5, 20)
+
+[node name="Rocks" type="StaticBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_2qpxp")
+scene_type = "Rocks"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -16)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_cytcc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_2l3th")

@@ -26,4 +26,8 @@ shape = SubResource("CapsuleShape2D_ac53x")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
+[node name="SelfDeletedTimer" type="Timer" parent="."]
+wait_time = 6.0
+
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="timeout" from="SelfDeletedTimer" to="." method="_on_self_deleted_timer_timeout"]

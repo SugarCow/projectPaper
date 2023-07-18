@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://q6ndt8bg4nkn"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Sceneries/scenery.gd" id="1_87xsq"]
+[ext_resource type="Texture2D" uid="uid://b2yhgl1wwsuv2" path="res://Assets/Sceneries/Trees/trees1.png" id="2_64v67"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2l3th"]
+size = Vector2(5, 20)
+
+[node name="Trees" type="StaticBody2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_87xsq")
+scene_type = "Trees"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -16)
+texture = ExtResource("2_64v67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_2l3th")
