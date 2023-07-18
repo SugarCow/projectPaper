@@ -26,7 +26,7 @@ func set_direction(dir: Vector2):
 	rotation += dir.angle()
 
 
-func _on_hit_box_area_entered(area):
+func _on_hit_box_area_entered(_area):
 
 	if get_parent() != null:
 		var my_hit_effect = hit_effect.instantiate()
@@ -35,14 +35,15 @@ func _on_hit_box_area_entered(area):
 		my_hit_effect.global_position = self.global_position
 		
 		my_hit_effect.play("animate")
-#		print(get_parent())
+		print(get_parent())
 		get_parent().call_deferred("remove_child", self)
+
 #		print(get_parent())
 #		$Sprite2D.visible = false
 		await my_hit_effect.animation_finished
 		my_hit_effect.queue_free()
 		call_deferred("queue_free")
-	print("pass")
+	
 
 
 func _on_self_deleted_timer_timeout():

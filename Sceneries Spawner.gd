@@ -16,13 +16,13 @@ func generateSceneries():
 		for y in range(int(spawnArea.size.y * sceneryDensity)):
 			if randf() <= sceneryDensity:
 				var randomTemplateIndex = randi() % scenes.size()
-				print(randomTemplateIndex)
+				
 				var sceneryInstance = scenes[randomTemplateIndex].instantiate()
 #				print(sceneryInstance.owner)
 #				print( sceneryInstance.owner.get_children())
-				var position = Vector2(x, y) * sceneryInstance.get_node("Sprite2D").texture.get_size()
-				position += spawnArea.position
-				sceneryInstance.position = position
+				var pos = Vector2(x, y) * sceneryInstance.get_node("Sprite2D").texture.get_size()
+				pos += spawnArea.position
+				sceneryInstance.position = pos
 				add_child(sceneryInstance)
 				
 				

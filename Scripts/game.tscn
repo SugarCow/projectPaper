@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dybsjdkd1imoe"]
+[gd_scene load_steps=11 format=3 uid="uid://dybsjdkd1imoe"]
 
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_2tutj"]
 [ext_resource type="Texture2D" uid="uid://dyagkr7bsrkd5" path="res://Assets/Tiles/Tile.png" id="1_8hr7n"]
 [ext_resource type="PackedScene" uid="uid://688adwb4a5jo" path="res://Scripts/Entities/Player/player.tscn" id="2_upit4"]
+[ext_resource type="PackedScene" uid="uid://bjvbmylovwvdc" path="res://Scripts/Entities/Enemies/crab.tscn" id="5_gukon"]
 [ext_resource type="PackedScene" uid="uid://dop8v0pdlbjpl" path="res://Scripts/Entities/Enemies/snake.tscn" id="5_mqh8v"]
 [ext_resource type="PackedScene" uid="uid://bp1f8w7iwi556" path="res://Scripts/sceneries_spawner.tscn" id="5_r3xwy"]
+[ext_resource type="PackedScene" uid="uid://toq0yjwod2xk" path="res://Scripts/Entities/Enemies/scorpion.tscn" id="7_whd6i"]
+[ext_resource type="PackedScene" uid="uid://dgacv2a8ohwt2" path="res://Scripts/Entities/Enemies/orc.tscn" id="9_y0ec3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_csufo"]
 texture = ExtResource("1_8hr7n")
@@ -13,6 +17,7 @@ texture = ExtResource("1_8hr7n")
 sources/0 = SubResource("TileSetAtlasSource_csufo")
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_2tutj")
 
 [node name="World" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -30,3 +35,9 @@ position = Vector2(216, 101)
 
 [node name="Snake" parent="World" instance=ExtResource("5_mqh8v")]
 position = Vector2(178, 131)
+
+[node name="Crab" parent="World" instance=ExtResource("5_gukon")]
+
+[node name="Orc" parent="World" instance=ExtResource("9_y0ec3")]
+
+[node name="Scorpion" parent="World" instance=ExtResource("7_whd6i")]

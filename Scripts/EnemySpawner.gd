@@ -38,14 +38,12 @@ func load_enemies():
 		scenes.append(scene)
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
 
 
 func _on_timer_timeout():
 	spawn_enemy()
-	$Timer.set_deferred("wait_time", randf_range(2,6))
+	$Timer.set_deferred("wait_time", randf_range(5,6))
 
 	
 	
