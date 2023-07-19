@@ -18,6 +18,7 @@ enum{
 @onready var health = max_health
 var state: int
 var player
+var dropped_exp: bool = false
 func _ready():
 	player = $"../Player"
 	state = FOLLOW
@@ -73,10 +74,12 @@ func dead_state():
 	
 	if animation.is_playing() == true:
 		await animation.animation_finished
-	var my_exp = experience.instantiate()
-	main.get_node("World").add_child(my_exp)
-	my_exp.get_node("AnimatedSprite2D").play("animate")
-	my_exp.global_position = animation.global_position
+	if dropped_exp == false:
+		var my_exp = experience.instantiate()
+		main.get_node("World").add_child(my_exp)
+		my_exp.get_node("AnimatedSprite2D").play("animate")
+		my_exp.global_position = animation.global_position
+		dropped_exp = true
 	queue_free()
 
 func stun_state():

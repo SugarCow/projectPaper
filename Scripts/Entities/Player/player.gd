@@ -30,7 +30,7 @@ func _ready():
 	
 	state = IDLE
 	facing_dir = Vector2(1,1)
-	
+	speed = PlayerStats.movement_speed 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -166,7 +166,7 @@ func _on_dust_particle_cd_timeout():
 func _on_hurt_box_area_entered(_area):
 	if invincible == false:
 
-		ouch_countrer +=1 
+		PlayerStats.health -=1
 		
 		invincible = true
 		$HurtTimer.start()

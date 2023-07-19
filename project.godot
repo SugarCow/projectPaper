@@ -16,6 +16,10 @@ run/main_scene="res://Scripts/game.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerStats="*res://Scripts/Entities/Player/player_stats.tscn"
+
 [display]
 
 mouse_cursor/custom_image="res://Assets/UI/Cursor/Reticle12.png"
