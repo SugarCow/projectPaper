@@ -4,8 +4,10 @@ extends CharacterBody2D
 
 var state 
 var player
-var speed : int = 400 
+var speed : int = 250
 var exp_spent: bool
+
+signal increase_difficulty
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	exp_spent = false
@@ -24,7 +26,7 @@ func _process(_delta):
 
 func follow_state():
 	var target_direction = (player.global_position - self.global_position).normalized()
-	velocity = velocity.move_toward(target_direction * speed , 100)
+	velocity = velocity.move_toward(target_direction * speed , 3)
 	move_and_slide()
 
 	if abs(player.position - self.position) <=Vector2(3,3):

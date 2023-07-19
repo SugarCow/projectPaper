@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerStats="*res://Scripts/Entities/Player/player_stats.tscn"
+Game="*res://Scripts/game.gd"
 
 [display]
 
