@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1g6ohx2hddyk"]
+
+[ext_resource type="Script" path="res://Scripts/game_over_screen.gd" id="1_3dman"]
+
+[node name="GameOverScreen" type="Node2D"]
+script = ExtResource("1_3dman")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 148.0
+offset_right = 369.0
+offset_bottom = 188.0
+scale = Vector2(4.95, 4.95)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Game Over..."
+
+[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Retry"
+flat = true
+
+[node name="Button2" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+flat = true
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

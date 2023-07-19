@@ -15,6 +15,7 @@ var health:
 		
 		if health <= 0:
 			emit_signal("no_health")
+			get_tree().change_scene_to_file("res://Scripts/game_over_screen.tscn")
 		
 var experience_threshold:
 	get: return experience_threshold
