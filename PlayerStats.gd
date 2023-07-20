@@ -42,6 +42,8 @@ var movement_speed:
 			movement_speed = base_speed
 		else:
 			movement_speed = movement_speed + movement_speed*value
+
+
 func _ready():
 	max_health = 3
 	health = max_health

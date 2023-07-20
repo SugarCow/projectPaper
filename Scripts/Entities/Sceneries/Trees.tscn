@@ -6,10 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2l3th"]
 size = Vector2(5, 20)
 
-[node name="Trees" type="StaticBody2D"]
+[node name="Grass" type="StaticBody2D"]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_87xsq")
-scene_type = "Trees"
+scene_type = "Grass"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -16)

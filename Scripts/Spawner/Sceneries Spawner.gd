@@ -3,7 +3,7 @@ extends Node2D
 var scenes = []
 	
 var spawnArea = Rect2(0, 0, 800, 600)
-var sceneryDensity = 0.1  # Adjust as desired
+var sceneryDensity = 0.25  # Adjust as desired
 
 func _ready():
 	
