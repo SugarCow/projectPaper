@@ -3,8 +3,8 @@ extends Node2D
 var scenes = []
 	
 var spawnArea = Rect2(0, 0, 800, 600)
-var sceneryDensity = 0.0  # Adjust as desired
-
+var sceneryDensity = 0.1  # Adjust as desired
+@onready var main = get_tree().current_scene
 func _ready():
 	
 	load_scenes()
@@ -22,10 +22,9 @@ func generateSceneries():
 #				print( sceneryInstance.owner.get_children())
 				var pos = Vector2(x, y) * sceneryInstance.get_node("Sprite2D").texture.get_size()
 				pos += spawnArea.position
-				sceneryInstance.position = pos
-				add_child(sceneryInstance)
-				
-				
+				sceneryInstance.global_position = pos
+				main.add_child(sceneryInstance)
+
 func load_scenes():
 	var scenePaths = []
 	var folder_path = "res://Scripts/Entities/Sceneries/"
@@ -41,7 +40,7 @@ func load_scenes():
 
 	directory.list_dir_end()
 
-	
+
 	for scenePath in scenePaths:
 		var scene = ResourceLoader.load(scenePath)
 

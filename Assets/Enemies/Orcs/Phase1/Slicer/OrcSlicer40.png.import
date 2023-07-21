@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bycgvsy78acqi"
-path="res://.godot/imported/trees4.png-af256edc209a9e71d63211b1df5dfe61.ctex"
+uid="uid://rgm5sppbg6y3"
+path="res://.godot/imported/OrcSlicer40.png-1f5ac2912a377c39775ce514231f6769.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sceneries/Trees/trees4.png"
-dest_files=["res://.godot/imported/trees4.png-af256edc209a9e71d63211b1df5dfe61.ctex"]
+source_file="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer40.png"
+dest_files=["res://.godot/imported/OrcSlicer40.png-1f5ac2912a377c39775ce514231f6769.ctex"]
 
 [params]
 

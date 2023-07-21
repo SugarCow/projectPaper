@@ -64,13 +64,8 @@ func dead_state():
 	
 	$HurtBox/CollisionShape2D.disabled =true
 	
-	if is_boss == true:
-		animation.play("PreDeath")
-		await animation.animation_finished
-		animation.play("Death")
 	
-	else:
-		animation.play("Death")
+	animation.play("Death")
 	
 	if animation.is_playing() == true:
 		await animation.animation_finished

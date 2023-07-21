@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://18x3rj0f8wap"]
+[gd_scene load_steps=4 format=3 uid="uid://sxsoyugflbjm"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Sceneries/scenery.gd" id="1_2qpxp"]
-[ext_resource type="Texture2D" uid="uid://b2yhgl1wwsuv2" path="res://Assets/Sceneries/Trees/trees1.png" id="2_cytcc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5n57n"]
+load_path = "res://.godot/imported/trees1.png-95865674c89a7b85ae38a443a7f250e6.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2l3th"]
 size = Vector2(5, 20)
@@ -14,7 +16,7 @@ scene_type = "other"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -16)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_cytcc")
+texture = SubResource("CompressedTexture2D_5n57n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cckjqryn2thqs"
-path="res://.godot/imported/trees2.png-712ffa429944f93da475c705c9ec0baf.ctex"
+uid="uid://ds88ujuqivk0g"
+path="res://.godot/imported/FireBowl7.png-722d0dadc2bc0950eec1a9265c15f980.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sceneries/Trees/trees2.png"
-dest_files=["res://.godot/imported/trees2.png-712ffa429944f93da475c705c9ec0baf.ctex"]
+source_file="res://Assets/Sceneries/FireBowl/FireBowl7.png"
+dest_files=["res://.godot/imported/FireBowl7.png-722d0dadc2bc0950eec1a9265c15f980.ctex"]
 
 [params]
 
