@@ -217,7 +217,7 @@ shape = SubResource("CircleShape2D_oall4")
 position = Vector2(-0.833333, -14.1667)
 sprite_frames = SubResource("SpriteFrames_0rwu0")
 animation = &"MoveLeft"
-frame_progress = 0.242534
+frame_progress = 0.732463
 
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 8
