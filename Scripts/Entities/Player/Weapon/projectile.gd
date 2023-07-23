@@ -11,7 +11,7 @@ var direction:= Vector2.ZERO
 @onready var main = get_tree().current_scene
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	$AnimatedSprite2D.play("animate")
 	pass # Replace with function body.
 
 
@@ -35,7 +35,7 @@ func _on_hit_box_area_entered(_area):
 		my_hit_effect.global_position = self.global_position
 		
 		my_hit_effect.play("animate")
-		print(get_parent())
+		
 		get_parent().call_deferred("remove_child", self)
 
 #		print(get_parent())

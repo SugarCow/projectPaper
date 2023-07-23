@@ -70,11 +70,13 @@ Shoot={
 
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
-2d_physics/layer_3="Hitbox"
-2d_physics/layer_4="Hurtbox"
-2d_physics/layer_5="pickup"
-2d_physics/layer_6="enemy"
+2d_physics/layer_3="EnemyHitbox"
+2d_physics/layer_4="EnemyHurtbox"
+2d_physics/layer_5="Pickup"
+2d_physics/layer_6="Enemy"
 2d_physics/layer_7="PlayerHurtBox"
+2d_physics/layer_8="CostBox"
+2d_physics/layer_9="CoinHitBox"
 
 [rendering]
 

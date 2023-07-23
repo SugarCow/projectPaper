@@ -23,7 +23,7 @@ func generateSceneries():
 				var pos = Vector2(x, y) * sceneryInstance.get_node("Sprite2D").texture.get_size()
 				pos += spawnArea.position
 				sceneryInstance.global_position = pos
-				main.add_child(sceneryInstance)
+#				main.add_child(sceneryInstance)
 
 func load_scenes():
 	var scenePaths = []

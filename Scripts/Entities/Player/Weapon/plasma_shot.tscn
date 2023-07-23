@@ -1,11 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhaiqft65vjpx"]
+[gd_scene load_steps=10 format=3 uid="uid://bhaiqft65vjpx"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Player/Weapon/projectile.gd" id="1_ovjei"]
-[ext_resource type="Texture2D" uid="uid://cgna5o4fuvkjl" path="res://Assets/Weapon/laser.png" id="1_xf4jw"]
+[ext_resource type="Texture2D" uid="uid://xwgcey2rpnfy" path="res://Assets/Drops/Coin4.png" id="2_8gdae"]
+[ext_resource type="Texture2D" uid="uid://bvk8cbgv3kjks" path="res://Assets/Drops/Coin1.png" id="2_cigs3"]
+[ext_resource type="Texture2D" uid="uid://cs3ip7ntq0868" path="res://Assets/Drops/Coin2.png" id="4_5huo2"]
+[ext_resource type="Texture2D" uid="uid://bqlc5kuka0nh0" path="res://Assets/Drops/Coin3.png" id="5_3hu8e"]
+[ext_resource type="Texture2D" uid="uid://o58g8x4odiwd" path="res://Assets/Drops/Coin5.png" id="6_0cygi"]
+[ext_resource type="Texture2D" uid="uid://c7flipg7tkd0x" path="res://Assets/Drops/Coin6.png" id="7_ty8bm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ac53x"]
 radius = 4.0
 height = 14.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lygdq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cigs3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5huo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3hu8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8gdae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0cygi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ty8bm")
+}],
+"loop": true,
+"name": &"animate",
+"speed": 30.0
+}]
 
 [node name="PlasmaShot" type="CharacterBody2D"]
 rotation = 1.5708
@@ -13,13 +44,9 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_ovjei")
 projectile_speed = 2.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.53, 0)
-texture = ExtResource("1_xf4jw")
-
 [node name="HitBox" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 8
+collision_layer = 256
+collision_mask = 128
 
 [node name="CollisionArea2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CapsuleShape2D_ac53x")
@@ -27,7 +54,13 @@ shape = SubResource("CapsuleShape2D_ac53x")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [node name="SelfDeletedTimer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 4.0
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lygdq")
+animation = &"animate"
+frame_progress = 0.850749
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="timeout" from="SelfDeletedTimer" to="." method="_on_self_deleted_timer_timeout"]
