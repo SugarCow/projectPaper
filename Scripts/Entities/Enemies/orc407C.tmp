@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bnh5n6ofktjkb"]
+[gd_scene load_steps=51 format=3 uid="uid://bnh5n6ofktjkb"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_gx5hw"]
 [ext_resource type="Texture2D" uid="uid://bn47w2uqho035" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker2.png" id="2_4yt1b"]
@@ -227,8 +227,6 @@ radius = 7.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r7cf5"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tflih"]
-
 [node name="OrcSpiker" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
 collision_layer = 0
@@ -247,12 +245,12 @@ shape = SubResource("CircleShape2D_oall4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.833333, -14.1667)
 sprite_frames = SubResource("SpriteFrames_0rwu0")
-animation = &"AttackLeft"
+animation = &"IdleLeft"
+frame_progress = 0.635787
 
 [node name="HurtBox" type="Area2D" parent="."]
-position = Vector2(0, -0.833333)
 collision_layer = 8
-collision_mask = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, -8.33333)
@@ -276,7 +274,7 @@ shape = SubResource("CircleShape2D_gs8s7")
 debug_color = Color(0.980392, 0, 0.388235, 0.419608)
 
 [node name="DetectEnemies" type="Area2D" parent="."]
-collision_layer = 512
+collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectEnemies"]
@@ -285,17 +283,7 @@ scale = Vector2(5.29157, 5.23137)
 shape = SubResource("CircleShape2D_r7cf5")
 disabled = true
 
-[node name="MyIdentification" type="Area2D" parent="."]
-collision_layer = 32
-collision_mask = 512
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MyIdentification"]
-position = Vector2(0, -6.66667)
-shape = SubResource("CircleShape2D_tflih")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="CostBox" to="." method="_on_cost_box_area_entered"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="DetectEnemies" to="." method="_on_detect_enemies_area_entered"]
-[connection signal="area_exited" from="DetectEnemies" to="." method="_on_detect_enemies_area_exited"]

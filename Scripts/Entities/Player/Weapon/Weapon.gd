@@ -14,10 +14,10 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.is_pressed():
 			mouse_left_down = true
-			print("down")
+			
 		elif event.button_index ==1 and not event.is_pressed():
 			mouse_left_down = false
-			print("up")
+			
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

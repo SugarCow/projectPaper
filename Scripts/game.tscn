@@ -456,12 +456,6 @@ layer_0/tile_data = PackedInt32Array(-458760, 458752, 11, -393224, 65536, 15, -3
 [node name="OrcSpiker2" parent="World" instance=ExtResource("8_c16j4")]
 position = Vector2(216, -4)
 
-[node name="Ms" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
-
 [node name="Tower" type="Sprite2D" parent="."]
 position = Vector2(348, 227)
 texture = ExtResource("5_f6o17")
-
-[connection signal="timeout" from="Ms" to="." method="_on_timer_timeout"]

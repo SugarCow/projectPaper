@@ -24,6 +24,8 @@ var state: int
 var player
 var dropped_exp: bool = false
 var my_target: CharacterBody2D
+var facing_dir = Vector2(0,0)
+var my_attacker: CharacterBody2D
 func _ready():
 	player = $"../Player"
 	state = FOLLOW
@@ -37,6 +39,8 @@ func _process(_delta):
 		IDLE:
 			idle_state()
 		FOLLOW:
+			
+#			print(my_target.name)
 			follow_state(my_target)
 		ATTACK:
 			attack_state(my_target)
@@ -51,17 +55,25 @@ func idle_state():
 	animation.play("IdleLeft")
 
 func follow_state(target):
+	if my_target == null:
+		state = IDLE
+		return
 	animation.play("MoveLeft")
-	
+
 	var target_direction = ((target.position - self.position)- Vector2(2,2)).normalized()
-	
+
 	if target_direction.x > 0:
 		animation.flip_h = true
-	else: animation.flip_h = false
+		facing_dir = Vector2(1,0)
+	else: 
+		animation.flip_h = false
+		facing_dir = Vector2(-1,0)
 	velocity = velocity.move_toward(target_direction * speed , 200)
 	move_and_slide()
 
 func attack_state(target):
+	:
+		
 	velocity = Vector2.ZERO
 	animation.play("AttackLeft")
 	var target_direction = ((target.position - self.position)- Vector2(2,2)).normalized()
@@ -69,8 +81,13 @@ func attack_state(target):
 		animation.flip_h = true
 	else: animation.flip_h = false
 	
+	if $HitBox.has_overlapping_areas():
+		print($HitBox.get_overlapping_bodies())
+		state = ATTACK
+	else:
+		state == FOLLOW
+		print($HitBox.get_overlapping_bodies())
 	await animation.animation_finished
-	state = FOLLOW
 
 func dead_state():
 	
@@ -94,25 +111,52 @@ func stun_state():
 	if animation.animation != "Hurt":
 		animation.stop()
 		animation.play("Hurt")
+		$HurtBox/CollisionShape2D.disabled = true
 		await animation.animation_finished
+		$HurtBox/CollisionShape2D.disabled = false
+		state = FOLLOW
+
+func knockback_state():
+	velocity = (facing_dir*-1)* 50
+	if animation.animation != "Hurt":
+		animation.stop()
+		animation.play("Hurt")
+		$HurtBox/CollisionShape2D.disabled = true
+		move_and_slide()
+		await animation.animation_finished
+		$HurtBox/CollisionShape2D.disabled = false
 		state = FOLLOW
 func allied_state():
 	$DetectEnemies/CollisionShape2D.set_deferred("disabled", false)
-	print($HitBox.collision_mask) 
+	
 	state = IDLE
-func _on_hurt_box_area_entered(_area):
+	$HurtBox.set_collision_layer_value(4,false)
+	$HurtBox.set_collision_mask_value(12,true)
+	$HitBox.set_collision_layer_value(7, true)
+	$HitBox.set_collision_layer_value(3, false)
+	$HitBox.set_collision_mask_value(7, false)
+	$HitBox.set_collision_mask_value(4, true)
+	$MyIdentification.set_collision_layer_value(2, true)
+	$MyIdentification.set_collision_layer_value(6, false)
+	$HitBox/CollisionShape2D.scale = Vector2(4,4)
+	
+func _on_hurt_box_area_entered(area):
+	if area != $HitBox:
+#		print(area.owner.name)
+		my_attacker = area.owner
+		
+		health -=15
+		if health <=0:
+			state = DEAD
+		else:
+			state = STUN
 
-	health -=15
-	if health <=0:
-		state = DEAD
-	else:
-		state = STUN
 
 
 
-
-func _on_hit_box_area_entered(_area):
-	state = ATTACK
+func _on_hit_box_area_entered(area):
+	if area.owner == my_target:
+		state = ATTACK
 
 
 func _on_cost_box_area_entered(_area):
@@ -124,7 +168,13 @@ func _on_cost_box_area_entered(_area):
 
 
 func _on_detect_enemies_area_entered(area):
-	print(area.owner)
-	print(area.name)
-	my_target = null
+	
+
+	my_target = area.owner
 	state = FOLLOW
+
+
+func _on_detect_enemies_area_exited(area):
+	my_target = null
+	print(my_target)
+

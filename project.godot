@@ -77,6 +77,9 @@ Shoot={
 2d_physics/layer_7="PlayerHurtBox"
 2d_physics/layer_8="CostBox"
 2d_physics/layer_9="CoinHitBox"
+2d_physics/layer_10="EnemyDetector"
+2d_physics/layer_11="AllyHitBox"
+2d_physics/layer_12="AllyHurtBox"
 
 [rendering]
 
