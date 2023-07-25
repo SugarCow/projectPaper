@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://688adwb4a5jo"]
+[gd_scene load_steps=85 format=3 uid="uid://688adwb4a5jo"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Player/player.gd" id="1_xvunx"]
 [ext_resource type="Texture2D" uid="uid://o0i2w2lk22d1" path="res://Assets/Player/Merchant/Merchant42.png" id="2_r30sk"]
@@ -59,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://do543a2veowby" path="res://Assets/Player/Merchant/Merchant24.png" id="57_2kfvh"]
 [ext_resource type="Texture2D" uid="uid://c0ion3eh0moqe" path="res://Assets/Player/Merchant/Merchant25.png" id="58_g32wm"]
 [ext_resource type="Texture2D" uid="uid://cpaprvtfamdm" path="res://Assets/Player/Merchant/Merchant26.png" id="59_1h6bh"]
+[ext_resource type="PackedScene" uid="uid://ks7duoqdnx2b" path="res://Scripts/Entities/Player/spawner_circle.tscn" id="62_fgqy7"]
 [ext_resource type="PackedScene" uid="uid://r8mfx3cskh87" path="res://Scripts/Entities/Player/Weapon/Weapon.tscn" id="62_giqej"]
 [ext_resource type="PackedScene" uid="uid://cgq1aqmy03m0t" path="res://Scripts/UI/player_ui.tscn" id="103_gkl3w"]
 
@@ -645,12 +646,15 @@ position = Vector2(-0.833333, -5)
 shape = SubResource("CircleShape2D_0dppj")
 
 [node name="HurtTimer" type="Timer" parent="."]
+wait_time = 2.0
 
 [node name="PlayerUI" parent="." instance=ExtResource("103_gkl3w")]
 offset_left = -177.0
 offset_top = -95.0
 offset_right = -177.0
 offset_bottom = -95.0
+
+[node name="SpawnerCircle" parent="." instance=ExtResource("62_fgqy7")]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="DustParticleCD" to="." method="_on_dust_particle_cd_timeout"]

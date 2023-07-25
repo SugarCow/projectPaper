@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://e77ptvopk3hn"]
+[gd_scene load_steps=48 format=3 uid="uid://e77ptvopk3hn"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_c52sg"]
 [ext_resource type="Texture2D" uid="uid://ds7epnjbqj43m" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer2.png" id="2_v204y"]
@@ -28,18 +28,19 @@
 [ext_resource type="Texture2D" uid="uid://d1hrrtiynlbp3" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer36.png" id="26_3mne4"]
 [ext_resource type="Texture2D" uid="uid://vybtfrynnbkf" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer37.png" id="27_gyoam"]
 [ext_resource type="Texture2D" uid="uid://bap57jfn4bgjf" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer38.png" id="28_3agcf"]
+[ext_resource type="Texture2D" uid="uid://csrduhns2dh6j" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer18.png" id="29_b6nlc"]
 [ext_resource type="Texture2D" uid="uid://ckv0kwex4tdnn" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer25.png" id="29_l2kf7"]
 [ext_resource type="Texture2D" uid="uid://ch7aevoh31eeq" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer26.png" id="30_saj7v"]
+[ext_resource type="Texture2D" uid="uid://d4mmuem8mdxbk" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer19.png" id="30_x1ld7"]
+[ext_resource type="Texture2D" uid="uid://e2bc3xov5jwe" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer20.png" id="31_lt10x"]
 [ext_resource type="Texture2D" uid="uid://beystuhjqrckf" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer27.png" id="31_ydk7i"]
 [ext_resource type="Texture2D" uid="uid://bnoxm0h53q373" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer28.png" id="32_0skem"]
+[ext_resource type="Texture2D" uid="uid://ci76qmx68c30n" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer21.png" id="32_igmiw"]
 [ext_resource type="Texture2D" uid="uid://e5ie67rf63vy" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer29.png" id="33_i1olw"]
+[ext_resource type="Texture2D" uid="uid://c8avpetbt2g2q" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer22.png" id="33_tr024"]
 [ext_resource type="Texture2D" uid="uid://uf5rfbdq40r" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer30.png" id="34_dkxbv"]
 [ext_resource type="Texture2D" uid="uid://cq13po03sfqqb" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer31.png" id="35_1blms"]
 [ext_resource type="Texture2D" uid="uid://kj6qj6trfeth" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer32.png" id="36_afw00"]
-[ext_resource type="Texture2D" uid="uid://0ujk66yt4ip0" path="res://Assets/Enemies/Scorpion/Scorpion1.png" id="37_6ary1"]
-[ext_resource type="Texture2D" uid="uid://dyy4tcouvhafn" path="res://Assets/Enemies/Scorpion/Scorpion2.png" id="38_hqcvq"]
-[ext_resource type="Texture2D" uid="uid://d06pwdokg7fpa" path="res://Assets/Enemies/Scorpion/Scorpion3.png" id="39_rxi5a"]
-[ext_resource type="Texture2D" uid="uid://djsnjw221fxn2" path="res://Assets/Enemies/Scorpion/Scorpion4.png" id="40_ao3lg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oall4"]
 radius = 2.5
@@ -68,11 +69,6 @@ animations = [{
 "loop": false,
 "name": &"AttackLeft",
 "speed": 20.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"AttackRight",
-"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -149,6 +145,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("29_b6nlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_x1ld7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_lt10x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_igmiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_tr024")
+}],
+"loop": true,
+"name": &"IdleLeft",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("29_l2kf7")
 }, {
 "duration": 1.0,
@@ -175,30 +191,17 @@ animations = [{
 "loop": true,
 "name": &"MoveLeft",
 "speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("37_6ary1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_hqcvq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_rxi5a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_ao3lg")
-}],
-"loop": true,
-"name": &"MoveRight",
-"speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mhhjk"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_6wq78"]
 radius = 5.83333
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gs8s7"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ga2cl"]
 radius = 7.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jrrv4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k30k3"]
 
 [node name="OrcSlicer" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
@@ -215,24 +218,56 @@ shape = SubResource("CircleShape2D_oall4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -14.545)
 sprite_frames = SubResource("SpriteFrames_0rwu0")
-animation = &"MoveLeft"
+animation = &"IdleLeft"
+frame_progress = 0.354182
 
 [node name="HurtBox" type="Area2D" parent="."]
+position = Vector2(0, -0.833333)
 collision_layer = 8
-collision_mask = 4
+collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, -8.33333)
-shape = SubResource("CircleShape2D_mhhjk")
+shape = SubResource("CircleShape2D_6wq78")
+
+[node name="CostBox" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CostBox"]
+position = Vector2(0, -8.33333)
+shape = SubResource("CircleShape2D_6wq78")
 
 [node name="HitBox" type="Area2D" parent="."]
-collision_layer = 32
+collision_layer = 4
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -8.33333)
-shape = SubResource("CircleShape2D_gs8s7")
+shape = SubResource("CircleShape2D_ga2cl")
 debug_color = Color(0.980392, 0, 0.388235, 0.419608)
 
+[node name="DetectEnemies" type="Area2D" parent="."]
+collision_layer = 512
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectEnemies"]
+position = Vector2(-0.833333, -18.3333)
+scale = Vector2(5.29157, 5.23137)
+shape = SubResource("CircleShape2D_jrrv4")
+disabled = true
+
+[node name="MyIdentification" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MyIdentification"]
+position = Vector2(0, -6.66667)
+shape = SubResource("CircleShape2D_k30k3")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_entered" from="CostBox" to="." method="_on_cost_box_area_entered"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_entered" from="DetectEnemies" to="." method="_on_detect_enemies_area_entered"]
+[connection signal="area_exited" from="DetectEnemies" to="." method="_on_detect_enemies_area_exited"]

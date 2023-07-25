@@ -39,8 +39,6 @@ func _process(_delta):
 		IDLE:
 			idle_state()
 		FOLLOW:
-			
-#			print(my_target.name)
 			follow_state(my_target)
 		ATTACK:
 			attack_state(my_target)
@@ -55,9 +53,14 @@ func idle_state():
 	animation.play("IdleLeft")
 
 func follow_state(target):
+	
 	if my_target == null:
 		state = IDLE
 		return
+	if abs(my_target.global_position - self.global_position) <= Vector2(5,5):
+		state = ATTACK
+	
+	
 	animation.play("MoveLeft")
 
 	var target_direction = ((target.position - self.position)- Vector2(2,2)).normalized()
@@ -72,7 +75,10 @@ func follow_state(target):
 	move_and_slide()
 
 func attack_state(target):
-	:
+	
+	if my_target == null:
+		state = IDLE
+		return
 		
 	velocity = Vector2.ZERO
 	animation.play("AttackLeft")
@@ -81,12 +87,15 @@ func attack_state(target):
 		animation.flip_h = true
 	else: animation.flip_h = false
 	
-	if $HitBox.has_overlapping_areas():
-		print($HitBox.get_overlapping_bodies())
+	if $HitBox.has_overlapping_areas() == true:
+		print($HitBox.has_overlapping_areas())
+		print($HitBox.get_overlapping_areas())
 		state = ATTACK
 	else:
-		state == FOLLOW
-		print($HitBox.get_overlapping_bodies())
+		print($HitBox.has_overlapping_areas())
+		await animation.animation_finished
+		state = FOLLOW
+		print($HitBox.get_overlapping_areas())
 	await animation.animation_finished
 
 func dead_state():
@@ -132,7 +141,7 @@ func allied_state():
 	state = IDLE
 	$HurtBox.set_collision_layer_value(4,false)
 	$HurtBox.set_collision_mask_value(12,true)
-	$HitBox.set_collision_layer_value(7, true)
+	$HitBox.set_collision_layer_value(11, true)
 	$HitBox.set_collision_layer_value(3, false)
 	$HitBox.set_collision_mask_value(7, false)
 	$HitBox.set_collision_mask_value(4, true)
@@ -174,7 +183,7 @@ func _on_detect_enemies_area_entered(area):
 	state = FOLLOW
 
 
-func _on_detect_enemies_area_exited(area):
+func _on_detect_enemies_area_exited(_area):
 	my_target = null
 	print(my_target)
 

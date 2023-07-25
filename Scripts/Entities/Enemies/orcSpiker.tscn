@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bnh5n6ofktjkb"]
+[gd_scene load_steps=48 format=3 uid="uid://bnh5n6ofktjkb"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_gx5hw"]
 [ext_resource type="Texture2D" uid="uid://bn47w2uqho035" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker2.png" id="2_4yt1b"]
@@ -41,10 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://cx84168hgaucr" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker33.png" id="34_w13c3"]
 [ext_resource type="Texture2D" uid="uid://bq78bad0dkyos" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker34.png" id="35_7tytt"]
 [ext_resource type="Texture2D" uid="uid://bukqr76uxy7la" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker35.png" id="36_tuy0j"]
-[ext_resource type="Texture2D" uid="uid://0ujk66yt4ip0" path="res://Assets/Enemies/Scorpion/Scorpion1.png" id="37_1gjky"]
-[ext_resource type="Texture2D" uid="uid://dyy4tcouvhafn" path="res://Assets/Enemies/Scorpion/Scorpion2.png" id="38_tbdkc"]
-[ext_resource type="Texture2D" uid="uid://d06pwdokg7fpa" path="res://Assets/Enemies/Scorpion/Scorpion3.png" id="39_m24ov"]
-[ext_resource type="Texture2D" uid="uid://djsnjw221fxn2" path="res://Assets/Enemies/Scorpion/Scorpion4.png" id="40_smgs0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oall4"]
 radius = 3.29711
@@ -72,12 +68,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"AttackLeft",
-"speed": 20.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"AttackRight",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -200,23 +191,6 @@ animations = [{
 "loop": true,
 "name": &"MoveLeft",
 "speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("37_1gjky")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_tbdkc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_m24ov")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_smgs0")
-}],
-"loop": true,
-"name": &"MoveRight",
-"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mhhjk"]
@@ -237,7 +211,6 @@ script = ExtResource("1_gx5hw")
 speed = 40
 max_health = 100.0
 max_cost = 20.0
-is_boss = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.33333)
@@ -252,7 +225,7 @@ animation = &"AttackLeft"
 [node name="HurtBox" type="Area2D" parent="."]
 position = Vector2(0, -0.833333)
 collision_layer = 8
-collision_mask = 0
+collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, -8.33333)
