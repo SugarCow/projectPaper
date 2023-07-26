@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://ddmi1t1s6jcci"]
+[gd_scene load_steps=82 format=3 uid="uid://ddmi1t1s6jcci"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_tedpq"]
 [ext_resource type="Texture2D" uid="uid://c72c3wwke44vl" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian1.png" id="2_67hdh"]
@@ -40,6 +40,40 @@
 [ext_resource type="Texture2D" uid="uid://dsm7n2l14dxsw" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian31.png" id="38_wdn0d"]
 [ext_resource type="Texture2D" uid="uid://2nllyt7uqwuw" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian32.png" id="39_8ebc6"]
 [ext_resource type="Texture2D" uid="uid://7qmm1weya1ly" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian33.png" id="40_cdlbp"]
+[ext_resource type="Texture2D" uid="uid://6ejbkffdg2up" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian39.png" id="41_f2hu5"]
+[ext_resource type="Texture2D" uid="uid://op043d2s0t6a" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian40.png" id="42_q7a7y"]
+[ext_resource type="Texture2D" uid="uid://doy3l0ni1br8q" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian41.png" id="43_avcl2"]
+[ext_resource type="Texture2D" uid="uid://bvget5l40oxmq" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian42.png" id="44_4aoja"]
+[ext_resource type="Texture2D" uid="uid://btf5lch7v2f0e" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian43.png" id="45_riboh"]
+[ext_resource type="Texture2D" uid="uid://b78yfo48bkvyt" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian44.png" id="46_2q7lg"]
+[ext_resource type="Texture2D" uid="uid://crdtpc1gd1um1" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian47.png" id="47_qy3gy"]
+[ext_resource type="Texture2D" uid="uid://bjk1yvqjpxm00" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian48.png" id="48_xbb5c"]
+[ext_resource type="Texture2D" uid="uid://dpf8isghtlllq" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian49.png" id="49_2f5a6"]
+[ext_resource type="Texture2D" uid="uid://k6iu6fah7iem" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian50.png" id="50_frbs1"]
+[ext_resource type="Texture2D" uid="uid://nqsystmammml" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian51.png" id="51_plh46"]
+[ext_resource type="Texture2D" uid="uid://bo6k4f58vm8mw" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian52.png" id="52_nf5il"]
+[ext_resource type="Texture2D" uid="uid://bs3srampqxxbr" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian53.png" id="53_m6ob0"]
+[ext_resource type="Texture2D" uid="uid://c2t0x1p3t3goc" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian54.png" id="54_8xu2a"]
+[ext_resource type="Texture2D" uid="uid://dy0wlhh63iw2o" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian72.png" id="55_0gtis"]
+[ext_resource type="Texture2D" uid="uid://dapn1m6k65btd" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian73.png" id="56_ya63u"]
+[ext_resource type="Texture2D" uid="uid://beeq6x7fsi31e" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian74.png" id="57_11pjt"]
+[ext_resource type="Texture2D" uid="uid://twie1b1on2xv" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian75.png" id="58_fdvwm"]
+[ext_resource type="Texture2D" uid="uid://b5a5iiynaxpyl" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian76.png" id="59_8wgls"]
+[ext_resource type="Texture2D" uid="uid://c3nh6rowkjs6v" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian57.png" id="60_qtbw3"]
+[ext_resource type="Texture2D" uid="uid://d67ia26nphq4" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian58.png" id="61_dsq64"]
+[ext_resource type="Texture2D" uid="uid://d4i87dat26fut" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian59.png" id="62_rdaqv"]
+[ext_resource type="Texture2D" uid="uid://bm6shpdeg3k7e" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian60.png" id="63_6ksiq"]
+[ext_resource type="Texture2D" uid="uid://dej47bc4c2ur8" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian61.png" id="64_o0wr6"]
+[ext_resource type="Texture2D" uid="uid://dpy0yhfkholj7" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian64.png" id="65_6vo7m"]
+[ext_resource type="Texture2D" uid="uid://f0vqxducx3mn" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian65.png" id="66_hmvb0"]
+[ext_resource type="Texture2D" uid="uid://bud5wkdy8tpat" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian66.png" id="67_6xvs8"]
+[ext_resource type="Texture2D" uid="uid://djc7c3ygnulmt" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian67.png" id="68_llm73"]
+[ext_resource type="Texture2D" uid="uid://bfvqlyu3slxqx" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian68.png" id="69_wkvmm"]
+[ext_resource type="Texture2D" uid="uid://b8jfktje5qdo2" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian69.png" id="70_vkmlk"]
+[ext_resource type="Texture2D" uid="uid://l6muwjphnlvx" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian70.png" id="71_indtx"]
+[ext_resource type="Texture2D" uid="uid://cd18f4npni3bh" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian71.png" id="72_vog1m"]
+[ext_resource type="Texture2D" uid="uid://dtlyvahtafbsv" path="res://Assets/UI/HealthBar2.png" id="73_nk86a"]
+[ext_resource type="Texture2D" uid="uid://nh0r3vo0nqg7" path="res://Assets/UI/HealthBar1.png" id="74_sfj5y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oall4"]
 radius = 3.29711
@@ -189,6 +223,151 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_y446f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_f2hu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_q7a7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_avcl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_4aoja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_riboh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_2q7lg")
+}],
+"loop": false,
+"name": &"AttackLeft",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_qy3gy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_xbb5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_2f5a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_frbs1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_plh46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_nf5il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_m6ob0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_8xu2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_edjve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0pr4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_udinp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_y05vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_mn2vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_nfhux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_kbt56")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55_0gtis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_ya63u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_11pjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_fdvwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_8wgls")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60_qtbw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_dsq64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_rdaqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_6ksiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_o0wr6")
+}],
+"loop": true,
+"name": &"IdleLeft",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_6vo7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_hmvb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_6xvs8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_llm73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_wkvmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_vkmlk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_indtx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_vog1m")
+}],
+"loop": true,
+"name": &"MoveLeft",
+"speed": 15.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_mhhjk"]
 radius = 5.83333
 
@@ -214,10 +393,16 @@ position = Vector2(0, -3.33333)
 scale = Vector2(3.04952, 2.42846)
 shape = SubResource("CircleShape2D_oall4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="EnemyMode" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.833333, -14.1667)
 sprite_frames = SubResource("SpriteFrames_0rwu0")
 animation = &"MoveLeft"
+
+[node name="AllyMode" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -14.545)
+sprite_frames = SubResource("SpriteFrames_y446f")
+animation = &"AttackLeft"
 
 [node name="HurtBox" type="Area2D" parent="."]
 position = Vector2(0, -0.833333)
@@ -264,8 +449,22 @@ position = Vector2(0, -6.66667)
 shape = SubResource("CircleShape2D_tflih")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -10.8333
+offset_top = -33.3333
+offset_right = 29.1667
+offset_bottom = 6.66667
+texture_under = ExtResource("73_nk86a")
+texture_progress = ExtResource("74_sfj5y")
+
+[node name="AliveTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="CostBox" to="." method="_on_cost_box_area_entered"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="DetectEnemies" to="." method="_on_detect_enemies_area_entered"]
 [connection signal="area_exited" from="DetectEnemies" to="." method="_on_detect_enemies_area_exited"]
+[connection signal="timeout" from="AliveTimer" to="." method="_on_alive_timer_timeout"]

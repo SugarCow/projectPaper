@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var animation = $AnimatedSprite2D
+@onready var animation = $EnemyMode
 @onready var experience = preload("res://Scripts/Entities/Pickups/exp.tscn")
 @onready var main =  get_tree().current_scene
 @onready var hit_effect = preload("res://Scripts/Particle/hit_effect.tscn")
@@ -30,7 +30,7 @@ func _ready():
 	player = $"../Player"
 	state = FOLLOW
 	my_target = player
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -79,7 +79,7 @@ func attack_state(target):
 	if my_target == null:
 		state = IDLE
 		return
-		
+	$HitBox/CollisionShape2D.disabled = true
 	velocity = Vector2.ZERO
 	animation.play("AttackLeft")
 	var target_direction = ((target.position - self.position)- Vector2(2,2)).normalized()
@@ -88,16 +88,17 @@ func attack_state(target):
 	else: animation.flip_h = false
 	
 	if $HitBox.has_overlapping_areas() == true:
-		print($HitBox.has_overlapping_areas())
-		print($HitBox.get_overlapping_areas())
+		
 		state = ATTACK
 	else:
-		print($HitBox.has_overlapping_areas())
+		
 		await animation.animation_finished
 		state = FOLLOW
-		print($HitBox.get_overlapping_areas())
+	
 	await animation.animation_finished
-
+	$HitBox/CollisionShape2D.disabled = false
+	
+	
 func dead_state():
 	
 	$HurtBox/CollisionShape2D.disabled =true
@@ -148,7 +149,11 @@ func allied_state():
 	$MyIdentification.set_collision_layer_value(2, true)
 	$MyIdentification.set_collision_layer_value(6, false)
 	$HitBox/CollisionShape2D.scale = Vector2(4,4)
-	
+	$EnemyMode.visible = false
+	$AllyMode.visible = true
+	$TextureProgressBar.visible = true
+	$AliveTimer.start()
+	animation = $AllyMode
 func _on_hurt_box_area_entered(area):
 	if area != $HitBox:
 #		print(area.owner.name)
@@ -185,5 +190,10 @@ func _on_detect_enemies_area_entered(area):
 
 func _on_detect_enemies_area_exited(_area):
 	my_target = null
-	print(my_target)
+	
 
+
+
+func _on_alive_timer_timeout():
+	state = DEAD
+	dropped_exp =true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://cgq1aqmy03m0t"]
+[gd_scene load_steps=19 format=3 uid="uid://cgq1aqmy03m0t"]
 
 [ext_resource type="Script" path="res://Scripts/UI/player_ui.gd" id="1_mr2ot"]
 [ext_resource type="Texture2D" uid="uid://c0xnla33ofape" path="res://Assets/UI/Heart/Heartt28.png" id="2_0dabg"]
+[ext_resource type="FontFile" uid="uid://cpr2seqaqt3yg" path="res://Assets/Font/Alkhemikal.ttf" id="2_ae0gy"]
 [ext_resource type="Texture2D" uid="uid://bidsysmtv3h5i" path="res://Assets/UI/Heart/Heartt1.png" id="3_bkf85"]
 [ext_resource type="Texture2D" uid="uid://cialxu0gy5w57" path="res://Assets/UI/Heart/Heartt2.png" id="4_wmchq"]
 [ext_resource type="Texture2D" uid="uid://dx7deehtc4hl7" path="res://Assets/UI/Heart/Heartt11.png" id="5_hhrs8"]
@@ -63,10 +64,17 @@ text = "Experience: "
 
 [node name="timer_text" type="Label" parent="."]
 layout_mode = 0
-offset_left = 269.0
-offset_top = -1.0
-offset_right = 309.0
-offset_bottom = 22.0
+offset_left = 279.0
+offset_top = 4.0
+offset_right = 364.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.823529, 0.788235, 0.647059, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_ae0gy")
+text = "Timer"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1

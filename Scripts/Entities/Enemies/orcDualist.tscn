@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bhnvpym5c46dt"]
+[gd_scene load_steps=83 format=3 uid="uid://bhnvpym5c46dt"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_tlhoo"]
 [ext_resource type="Texture2D" uid="uid://thuc06do8r3m" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist1.png" id="2_lp6fe"]
@@ -40,6 +40,41 @@
 [ext_resource type="Texture2D" uid="uid://dq25naels3016" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist32.png" id="38_ctcim"]
 [ext_resource type="Texture2D" uid="uid://d3fkrxlapmsjj" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist33.png" id="39_jyv8s"]
 [ext_resource type="Texture2D" uid="uid://et6sl3g2ffko" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist34.png" id="40_k2pdr"]
+[ext_resource type="Texture2D" uid="uid://dbgfla3sm8il" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist40.png" id="41_wgsvp"]
+[ext_resource type="Texture2D" uid="uid://84v3itllhuat" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist41.png" id="42_bcqc7"]
+[ext_resource type="Texture2D" uid="uid://5ds3mtkc7nkg" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist42.png" id="43_kq4gg"]
+[ext_resource type="Texture2D" uid="uid://dt6o3pbf4mrgh" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist43.png" id="44_ikeb8"]
+[ext_resource type="Texture2D" uid="uid://cskatj07xqj84" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist44.png" id="45_3gcfc"]
+[ext_resource type="Texture2D" uid="uid://dajwxxbhdwqih" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist45.png" id="46_8igud"]
+[ext_resource type="Texture2D" uid="uid://c3u5q4u557irb" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist48.png" id="47_yhwmq"]
+[ext_resource type="Texture2D" uid="uid://d3fnir5td2rps" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist49.png" id="48_h6awq"]
+[ext_resource type="Texture2D" uid="uid://dtqag7ln7id8m" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist50.png" id="49_1klfi"]
+[ext_resource type="Texture2D" uid="uid://cubi2s7ladkvk" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist51.png" id="50_tilis"]
+[ext_resource type="Texture2D" uid="uid://dp1f1nvy1rsf7" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist52.png" id="51_lbc5a"]
+[ext_resource type="Texture2D" uid="uid://cdc850kl628v7" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist53.png" id="52_58djw"]
+[ext_resource type="Texture2D" uid="uid://i56xayipo4nd" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist54.png" id="53_ttetj"]
+[ext_resource type="Texture2D" uid="uid://dlsyybiv521i2" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist55.png" id="54_tito2"]
+[ext_resource type="Texture2D" uid="uid://mfw2orr1ital" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist74.png" id="55_5xp10"]
+[ext_resource type="Texture2D" uid="uid://dor8b4unsm0kw" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist75.png" id="56_n65cq"]
+[ext_resource type="Texture2D" uid="uid://de7pmure7rjhg" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist76.png" id="57_7dwgf"]
+[ext_resource type="Texture2D" uid="uid://rtgki84qjecr" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist77.png" id="58_t2yu8"]
+[ext_resource type="Texture2D" uid="uid://f3akgu4du7s0" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist78.png" id="59_sl0p4"]
+[ext_resource type="Texture2D" uid="uid://om8ieiqxnmt" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist58.png" id="60_ijulg"]
+[ext_resource type="Texture2D" uid="uid://t6b102bxbn83" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist59.png" id="61_nms3f"]
+[ext_resource type="Texture2D" uid="uid://bfbfd1i7776wf" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist60.png" id="62_on62c"]
+[ext_resource type="Texture2D" uid="uid://hrbpnxyou0m7" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist61.png" id="63_pd8ti"]
+[ext_resource type="Texture2D" uid="uid://dj5ubstk0whgq" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist62.png" id="64_311jp"]
+[ext_resource type="Texture2D" uid="uid://dklrlo5g0f47g" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist65.png" id="65_3xwmq"]
+[ext_resource type="Texture2D" uid="uid://can3hbejj628s" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist66.png" id="66_jbo2a"]
+[ext_resource type="Texture2D" uid="uid://gk3x8bdjl2gh" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist67.png" id="67_o0hr3"]
+[ext_resource type="Texture2D" uid="uid://d4i4sdj4ywqyc" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist68.png" id="68_mywau"]
+[ext_resource type="Texture2D" uid="uid://d076wtdbqvw8" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist69.png" id="69_4ei8x"]
+[ext_resource type="Texture2D" uid="uid://82nvu2cbmqwx" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist70.png" id="70_vgc5f"]
+[ext_resource type="Texture2D" uid="uid://g5wthwugpvqs" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist71.png" id="71_tqxx5"]
+[ext_resource type="Texture2D" uid="uid://c5xy8yhxomj6i" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist72.png" id="72_cv6tj"]
+[ext_resource type="Texture2D" uid="uid://dyqf0mi885gi0" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist73.png" id="73_oqms7"]
+[ext_resource type="Texture2D" uid="uid://dtlyvahtafbsv" path="res://Assets/UI/HealthBar2.png" id="74_km7m5"]
+[ext_resource type="Texture2D" uid="uid://nh0r3vo0nqg7" path="res://Assets/UI/HealthBar1.png" id="75_j0isl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oall4"]
 radius = 3.29711
@@ -189,6 +224,154 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_vq7dq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_wgsvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_bcqc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_kq4gg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ikeb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_3gcfc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_8igud")
+}],
+"loop": false,
+"name": &"AttackLeft",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_yhwmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_h6awq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_1klfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_tilis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_lbc5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_58djw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_ttetj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_tito2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_22gva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_q5ljo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_566s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ii06y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_scw60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_66uvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_wouom")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55_5xp10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_n65cq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_7dwgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_t2yu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_sl0p4")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60_ijulg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_nms3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_on62c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_pd8ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_311jp")
+}],
+"loop": true,
+"name": &"IdleLeft",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_3xwmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_jbo2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_o0hr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_mywau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_4ei8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_vgc5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_tqxx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_cv6tj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_oqms7")
+}],
+"loop": true,
+"name": &"MoveLeft",
+"speed": 15.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_mhhjk"]
 radius = 5.83333
 
@@ -214,11 +397,17 @@ position = Vector2(0, -3.33333)
 scale = Vector2(3.04952, 2.42846)
 shape = SubResource("CircleShape2D_oall4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="EnemyMode" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.833333, -14.1667)
 sprite_frames = SubResource("SpriteFrames_0rwu0")
-animation = &"MoveLeft"
-frame_progress = 0.551183
+animation = &"Death"
+
+[node name="AllyMode" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -14.545)
+sprite_frames = SubResource("SpriteFrames_vq7dq")
+animation = &"IdleLeft"
+frame_progress = 0.112558
 
 [node name="HurtBox" type="Area2D" parent="."]
 position = Vector2(0, -0.833333)
@@ -265,8 +454,22 @@ position = Vector2(0, -6.66667)
 shape = SubResource("CircleShape2D_tflih")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -10.8333
+offset_top = -33.3333
+offset_right = 29.1667
+offset_bottom = 6.66667
+texture_under = ExtResource("74_km7m5")
+texture_progress = ExtResource("75_j0isl")
+
+[node name="AliveTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="CostBox" to="." method="_on_cost_box_area_entered"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="DetectEnemies" to="." method="_on_detect_enemies_area_entered"]
 [connection signal="area_exited" from="DetectEnemies" to="." method="_on_detect_enemies_area_exited"]
+[connection signal="timeout" from="AliveTimer" to="." method="_on_alive_timer_timeout"]
