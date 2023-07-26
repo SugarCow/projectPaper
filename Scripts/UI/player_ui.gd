@@ -25,10 +25,11 @@ var max_exp_charge:
 	set(value):
 		max_exp_charge = max(value, 0)
 		$TextureProgressBar.max_value = max_exp_charge
+		$TextureProgressBar.min_value = 0
 var exp_charge:
 	set(value):
-		exp_charge = clamp(value, 0, max_exp_charge)
-		$TextureProgressBar.max_value = exp_charge
+		exp_charge = clamp(value, 0, max_exp_charge) 
+		$TextureProgressBar.value = exp_charge
 		
 	get:
 		return exp_charge
@@ -43,6 +44,8 @@ func _process(_delta):
 		ms =0
 	if second >59:
 		minute += 1
+		second = 0
+	
 	
 	$timer_text.text = str(minute) + ":" + str(second) + ":" + str(ms)
 	
