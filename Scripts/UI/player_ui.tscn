@@ -1,6 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgq1aqmy03m0t"]
+[gd_scene load_steps=16 format=3 uid="uid://cgq1aqmy03m0t"]
 
 [ext_resource type="Script" path="res://Scripts/UI/player_ui.gd" id="1_mr2ot"]
+[ext_resource type="Texture2D" uid="uid://c0xnla33ofape" path="res://Assets/UI/Heart/Heartt28.png" id="2_0dabg"]
+[ext_resource type="Texture2D" uid="uid://bidsysmtv3h5i" path="res://Assets/UI/Heart/Heartt1.png" id="3_bkf85"]
+[ext_resource type="Texture2D" uid="uid://cialxu0gy5w57" path="res://Assets/UI/Heart/Heartt2.png" id="4_wmchq"]
+[ext_resource type="Texture2D" uid="uid://dx7deehtc4hl7" path="res://Assets/UI/Heart/Heartt11.png" id="5_hhrs8"]
+[ext_resource type="Texture2D" uid="uid://c0idfhr2cxjxd" path="res://Assets/UI/Heart/Heartt12.png" id="6_5keod"]
+[ext_resource type="Texture2D" uid="uid://ctd8gssowpavy" path="res://Assets/UI/Heart/Heartt3.png" id="7_8ep0b"]
+[ext_resource type="Texture2D" uid="uid://csprm5dcnrw8u" path="res://Assets/UI/Heart/Heartt4.png" id="8_2tr7v"]
+[ext_resource type="Texture2D" uid="uid://bxesid7wnf51l" path="res://Assets/UI/Heart/Heartt5.png" id="9_fwhcd"]
+[ext_resource type="Texture2D" uid="uid://dadblun7nhjty" path="res://Assets/UI/Heart/Heartt6.png" id="10_vi3nf"]
+[ext_resource type="Texture2D" uid="uid://detd0xgmrwu1j" path="res://Assets/UI/Heart/Heartt7.png" id="11_0b11o"]
+[ext_resource type="Texture2D" uid="uid://dlumwvy4r7mch" path="res://Assets/UI/Heart/Heartt8.png" id="12_nv41j"]
+[ext_resource type="Texture2D" uid="uid://cylel62rdwjeg" path="res://Assets/UI/Heart/Heartt9.png" id="13_v1w4o"]
+[ext_resource type="Texture2D" uid="uid://ompgs4q1yqjb" path="res://Assets/UI/Heart/Heartt10.png" id="14_vgshq"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_phwry"]
+frames = 12
+speed_scale = 2.0
+frame_0/texture = ExtResource("3_bkf85")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("4_wmchq")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("7_8ep0b")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("8_2tr7v")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("9_fwhcd")
+frame_4/duration = 0.1
+frame_5/texture = ExtResource("10_vi3nf")
+frame_5/duration = 0.1
+frame_6/texture = ExtResource("11_0b11o")
+frame_6/duration = 0.1
+frame_7/texture = ExtResource("12_nv41j")
+frame_7/duration = 0.1
+frame_8/texture = ExtResource("13_v1w4o")
+frame_8/duration = 0.1
+frame_9/texture = ExtResource("14_vgshq")
+frame_9/duration = 0.1
+frame_10/texture = ExtResource("5_hhrs8")
+frame_10/duration = 0.1
+frame_11/texture = ExtResource("6_5keod")
+frame_11/duration = 0.1
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -35,5 +76,23 @@ offset_bottom = 22.0
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="HeartEmpty" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 84.0
+offset_bottom = 24.0
+texture = ExtResource("2_0dabg")
+stretch_mode = 1
+
+[node name="HeartFull" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 83.0
+offset_bottom = 21.0
+texture = SubResource("AnimatedTexture_phwry")
+stretch_mode = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,269 @@
+[gd_scene load_steps=47 format=3 uid="uid://dlfm7hf6nctuv"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_baqxa"]
+[ext_resource type="Texture2D" uid="uid://m3spvf3vya6b" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper1.png" id="2_r2t33"]
+[ext_resource type="Texture2D" uid="uid://cs2hds4qnqwej" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper2.png" id="3_kh5d8"]
+[ext_resource type="Texture2D" uid="uid://66yqdyv10udf" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper3.png" id="4_0vd5x"]
+[ext_resource type="Texture2D" uid="uid://bg4jupsj7q5ja" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper4.png" id="5_656il"]
+[ext_resource type="Texture2D" uid="uid://bt6u84wwr07ai" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper5.png" id="6_4do6j"]
+[ext_resource type="Texture2D" uid="uid://cfo3wd2qkht6p" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper6.png" id="7_mn82k"]
+[ext_resource type="Texture2D" uid="uid://07eak2gcqkp5" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper9.png" id="8_swylx"]
+[ext_resource type="Texture2D" uid="uid://byyumgaxghmpj" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper10.png" id="9_yqvxw"]
+[ext_resource type="Texture2D" uid="uid://dogd27qa301rn" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper11.png" id="10_hrv2x"]
+[ext_resource type="Texture2D" uid="uid://dqo4hi03e8874" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper12.png" id="11_bf7q4"]
+[ext_resource type="Texture2D" uid="uid://d3f6n4o7srj0u" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper13.png" id="12_64u7i"]
+[ext_resource type="Texture2D" uid="uid://cj6m4xixepbbp" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper14.png" id="13_fkogp"]
+[ext_resource type="Texture2D" uid="uid://cem0a3fpqwbjq" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper15.png" id="14_5cpnx"]
+[ext_resource type="Texture2D" uid="uid://b8ikkyf3wrt11" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper16.png" id="15_qqn7n"]
+[ext_resource type="Texture2D" uid="uid://bcb1piwyrjclq" path="res://Assets/Particles/Death/DeathAnimation1.png" id="16_2sijd"]
+[ext_resource type="Texture2D" uid="uid://c12a7rt640qoj" path="res://Assets/Particles/Death/DeathAnimation2.png" id="17_0y07d"]
+[ext_resource type="Texture2D" uid="uid://bs7a5s4oe548m" path="res://Assets/Particles/Death/DeathAnimation3.png" id="18_v2qkk"]
+[ext_resource type="Texture2D" uid="uid://bj8g02c0qixtb" path="res://Assets/Particles/Death/DeathAnimation4.png" id="19_pnhy4"]
+[ext_resource type="Texture2D" uid="uid://w8duofwkvxvr" path="res://Assets/Particles/Death/DeathAnimation5.png" id="20_f2cgj"]
+[ext_resource type="Texture2D" uid="uid://b7qfw0m2sc8u6" path="res://Assets/Particles/Death/DeathAnimation6.png" id="21_p8ha3"]
+[ext_resource type="Texture2D" uid="uid://bpagvbvecx1kb" path="res://Assets/Particles/Death/DeathAnimation7.png" id="22_4yy6t"]
+[ext_resource type="Texture2D" uid="uid://brn20m1tlgf0r" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper35.png" id="23_1jjgw"]
+[ext_resource type="Texture2D" uid="uid://bglvnjinw4e7n" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper36.png" id="24_ugp3x"]
+[ext_resource type="Texture2D" uid="uid://cyuas7cs6bdl5" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper37.png" id="25_8uic8"]
+[ext_resource type="Texture2D" uid="uid://wyckfyi5x8gf" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper38.png" id="26_lyqc7"]
+[ext_resource type="Texture2D" uid="uid://djtuepl6i36tn" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper39.png" id="27_s13pi"]
+[ext_resource type="Texture2D" uid="uid://mm5qhcaayybb" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper19.png" id="28_aux1g"]
+[ext_resource type="Texture2D" uid="uid://c40vhh1ym3qsx" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper20.png" id="29_tqp3j"]
+[ext_resource type="Texture2D" uid="uid://jwo6sksjyn4v" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper21.png" id="30_ws7y5"]
+[ext_resource type="Texture2D" uid="uid://wsml6be73p57" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper22.png" id="31_kufry"]
+[ext_resource type="Texture2D" uid="uid://bhsmmjkuf4jgv" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper23.png" id="32_yvlyt"]
+[ext_resource type="Texture2D" uid="uid://c4lkmxfvwi7s3" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper27.png" id="33_lang0"]
+[ext_resource type="Texture2D" uid="uid://bbkeli6p3k72s" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper28.png" id="34_mussv"]
+[ext_resource type="Texture2D" uid="uid://cprp85eagylhp" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper29.png" id="35_3ji65"]
+[ext_resource type="Texture2D" uid="uid://b3pfbm4hiww1j" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper30.png" id="36_bn3ox"]
+[ext_resource type="Texture2D" uid="uid://da8xgpq21eqf6" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper31.png" id="37_so78d"]
+[ext_resource type="Texture2D" uid="uid://bvll22kelbw13" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper32.png" id="38_8kdoh"]
+[ext_resource type="Texture2D" uid="uid://desbtkq8ygaun" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper33.png" id="39_qf4bg"]
+[ext_resource type="Texture2D" uid="uid://dnvlenkoqf3f1" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper34.png" id="40_ff8ax"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oall4"]
+radius = 2.5
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rwu0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r2t33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kh5d8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0vd5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_656il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4do6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mn82k")
+}],
+"loop": false,
+"name": &"AttackLeft",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_swylx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yqvxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hrv2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bf7q4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_64u7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fkogp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5cpnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qqn7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2sijd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0y07d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_v2qkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_pnhy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_f2cgj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_p8ha3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_4yy6t")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_1jjgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ugp3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8uic8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_lyqc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_s13pi")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_aux1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_tqp3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ws7y5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_kufry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_yvlyt")
+}],
+"loop": true,
+"name": &"IdleLeft",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_lang0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_mussv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_3ji65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_bn3ox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_so78d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_8kdoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_qf4bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ff8ax")
+}],
+"loop": true,
+"name": &"MoveLeft",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q8qww"]
+radius = 5.83333
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2l74b"]
+radius = 7.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0pej6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_npi8f"]
+
+[node name="OrcChopper" type="CharacterBody2D"]
+scale = Vector2(1.2, 1.2)
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_baqxa")
+speed = 40
+max_health = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.33333)
+shape = SubResource("CircleShape2D_oall4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
+sprite_frames = SubResource("SpriteFrames_0rwu0")
+animation = &"MoveLeft"
+frame_progress = 0.735538
+
+[node name="HurtBox" type="Area2D" parent="."]
+position = Vector2(0, -0.833333)
+collision_layer = 8
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -8.33333)
+shape = SubResource("CircleShape2D_q8qww")
+
+[node name="CostBox" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CostBox"]
+position = Vector2(0, -8.33333)
+shape = SubResource("CircleShape2D_q8qww")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -8.33333)
+shape = SubResource("CircleShape2D_2l74b")
+debug_color = Color(0.980392, 0, 0.388235, 0.419608)
+
+[node name="DetectEnemies" type="Area2D" parent="."]
+collision_layer = 512
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectEnemies"]
+position = Vector2(-0.833333, -18.3333)
+scale = Vector2(5.29157, 5.23137)
+shape = SubResource("CircleShape2D_0pej6")
+disabled = true
+
+[node name="MyIdentification" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MyIdentification"]
+position = Vector2(0, -6.66667)
+shape = SubResource("CircleShape2D_npi8f")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_entered" from="CostBox" to="." method="_on_cost_box_area_entered"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_entered" from="DetectEnemies" to="." method="_on_detect_enemies_area_entered"]
+[connection signal="area_exited" from="DetectEnemies" to="." method="_on_detect_enemies_area_exited"]
