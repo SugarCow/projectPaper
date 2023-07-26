@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cgq1aqmy03m0t"]
+[gd_scene load_steps=18 format=3 uid="uid://cgq1aqmy03m0t"]
 
 [ext_resource type="Script" path="res://Scripts/UI/player_ui.gd" id="1_mr2ot"]
 [ext_resource type="Texture2D" uid="uid://c0xnla33ofape" path="res://Assets/UI/Heart/Heartt28.png" id="2_0dabg"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://dlumwvy4r7mch" path="res://Assets/UI/Heart/Heartt8.png" id="12_nv41j"]
 [ext_resource type="Texture2D" uid="uid://cylel62rdwjeg" path="res://Assets/UI/Heart/Heartt9.png" id="13_v1w4o"]
 [ext_resource type="Texture2D" uid="uid://ompgs4q1yqjb" path="res://Assets/UI/Heart/Heartt10.png" id="14_vgshq"]
+[ext_resource type="Texture2D" uid="uid://vukxkndovmx1" path="res://Assets/UI/Exp1.png" id="15_8tgfc"]
+[ext_resource type="Texture2D" uid="uid://ipr0ryv8h7g2" path="res://Assets/UI/Exp2.png" id="16_jiqxr"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_phwry"]
 frames = 12
@@ -52,13 +54,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mr2ot")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-offset_right = 152.0
-offset_bottom = 26.0
-text = "Health: "
-metadata/_edit_use_anchors_ = true
-
 [node name="experience" type="Label" parent="."]
 layout_mode = 0
 offset_left = 112.0
@@ -94,5 +89,14 @@ offset_right = 83.0
 offset_bottom = 21.0
 texture = SubResource("AnimatedTexture_phwry")
 stretch_mode = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 23.0
+offset_right = 130.0
+offset_bottom = 31.0
+texture_under = ExtResource("15_8tgfc")
+texture_progress = ExtResource("16_jiqxr")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

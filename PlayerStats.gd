@@ -15,7 +15,9 @@ var health:
 		
 		if health <= 0:
 			emit_signal("no_health")
+			PlayerStats.reset()
 			get_tree().change_scene_to_file("res://Scripts/game_over_screen.tscn")
+			
 		
 var experience_threshold:
 	get: return experience_threshold
@@ -45,11 +47,14 @@ var movement_speed:
 
 
 func _ready():
-	max_health = 3
+	reset()
+	
+func reset():
+	max_health = 6
 	health = max_health
 	
 	experience_threshold = 2
 	experience = 0
 
 	movement_speed = 150
-	print(movement_speed)
+	
