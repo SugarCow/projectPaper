@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var experience = preload("res://Scripts/Entities/Pickups/exp.tscn")
 @onready var main =  get_tree().current_scene
 @onready var hit_effect = preload("res://Scripts/Particle/hit_effect.tscn")
-
+@onready var projectile = preload("res://Scripts/Entities/enemyProjectile.tscn")
 # Called when the node enters the scene tree for the first time.
 enum{
 	IDLE,
@@ -18,6 +18,7 @@ enum{
 @export var max_health: float
 @export var max_cost: float
 @export var is_boss: bool
+@export var is_range: bool
 @onready var health = max_health
 @onready var cost = max_cost
 var state: int
@@ -72,6 +73,10 @@ func follow_state(target):
 		animation.flip_h = false
 		facing_dir = Vector2(-1,0)
 	velocity = velocity.move_toward(target_direction * speed , 200)
+	print(target.position.distance_to(self.position))
+	if (target.position.distance_to(self.position) <= 100 and is_range == true):
+		state = ATTACK
+	
 	move_and_slide()
 
 func attack_state(target):
@@ -79,6 +84,7 @@ func attack_state(target):
 	if my_target == null:
 		state = IDLE
 		return
+	
 	$HitBox/CollisionShape2D.disabled = true
 	velocity = Vector2.ZERO
 	animation.play("AttackLeft")
@@ -95,10 +101,26 @@ func attack_state(target):
 		await animation.animation_finished
 		state = FOLLOW
 	
+	
+	
 	await animation.animation_finished
+	
+	if is_range == true:
+		spawn_projectile()
+	
 	$HitBox/CollisionShape2D.disabled = false
 	
 	
+func spawn_projectile():
+	var my_projectile = projectile.instantiate()
+	my_projectile.position  = $ProjectileSpawn.global_position
+	
+	var direction = (my_target.global_position - self.global_position).normalized()
+
+	my_projectile.set_direction(direction)
+
+	get_tree().current_scene.call_deferred("add_child", my_projectile)
+
 func dead_state():
 	
 	$HurtBox/CollisionShape2D.disabled =true
@@ -191,7 +213,6 @@ func _on_detect_enemies_area_entered(area):
 func _on_detect_enemies_area_exited(_area):
 	my_target = null
 	
-
 
 
 func _on_alive_timer_timeout():

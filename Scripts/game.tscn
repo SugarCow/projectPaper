@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dybsjdkd1imoe"]
+[gd_scene load_steps=10 format=3 uid="uid://dybsjdkd1imoe"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_2tutj"]
 [ext_resource type="PackedScene" uid="uid://688adwb4a5jo" path="res://Scripts/Entities/Player/player.tscn" id="2_upit4"]
 [ext_resource type="Texture2D" uid="uid://dowlxt1akivcr" path="res://Assets/Sceneries/Tower.png" id="5_f6o17"]
 [ext_resource type="PackedScene" uid="uid://bp1f8w7iwi556" path="res://Scripts/Spawner/sceneries_spawner.tscn" id="5_r3xwy"]
+[ext_resource type="PackedScene" uid="uid://drgr70p0as7gr" path="res://Scripts/Entities/Enemies/orcSorcerer.tscn" id="6_frcbw"]
 [ext_resource type="Texture2D" uid="uid://b454s7jb7ajl8" path="res://Assets/Tiles/grassTile.png" id="8_ad5yg"]
 [ext_resource type="PackedScene" uid="uid://bnh5n6ofktjkb" path="res://Scripts/Entities/Enemies/orcSpiker.tscn" id="8_c16j4"]
 
@@ -453,6 +454,8 @@ layer_0/tile_data = PackedInt32Array(-458760, 458752, 11, -393224, 65536, 15, -3
 
 [node name="OrcSpiker" parent="World" instance=ExtResource("8_c16j4")]
 position = Vector2(4, 34)
+
+[node name="OrcBarbarian" parent="World" instance=ExtResource("6_frcbw")]
 
 [node name="Tower" type="Sprite2D" parent="."]
 position = Vector2(348, 227)

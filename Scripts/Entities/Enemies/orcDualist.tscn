@@ -407,7 +407,7 @@ visible = false
 position = Vector2(0, -14.545)
 sprite_frames = SubResource("SpriteFrames_vq7dq")
 animation = &"IdleLeft"
-frame_progress = 0.112558
+frame_progress = 0.810355
 
 [node name="HurtBox" type="Area2D" parent="."]
 position = Vector2(0, -0.833333)
