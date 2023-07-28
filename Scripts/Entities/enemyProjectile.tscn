@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://cwtttxkwsc5vd"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Player/Weapon/projectile.gd" id="1_britp"]
-[ext_resource type="Texture2D" uid="uid://d16jjky0ddb0b" path="res://Assets/Particles/Projectile/Enemy/EnemyProjectile1.png" id="2_vxrj8"]
-[ext_resource type="Texture2D" uid="uid://cpjj4p5jshk5y" path="res://Assets/Particles/Projectile/Enemy/EnemyProjectile2.png" id="3_u5mbh"]
-[ext_resource type="Texture2D" uid="uid://dkifen22sunkf" path="res://Assets/Particles/Projectile/Enemy/EnemyProjectile3.png" id="4_dy8p5"]
-[ext_resource type="Texture2D" uid="uid://bnujguf24trnt" path="res://Assets/Particles/Projectile/Enemy/EnemyProjectile4.png" id="5_ccugx"]
+[ext_resource type="Texture2D" uid="uid://btwyd3a0ed0re" path="res://Assets/Particles/Projectile/Enemy/EnemyProjectileType2.png" id="2_heko8"]
+[ext_resource type="Texture2D" uid="uid://dpmjhxkrpdyy" path="res://Assets/Particles/Projectile/Enemy/EnemyProjectileType3.png" id="3_ru1bm"]
+[ext_resource type="Texture2D" uid="uid://33yt71os2ob5" path="res://Assets/Particles/Projectile/Enemy/EnemyProjectileType4.png" id="4_d72ie"]
+[ext_resource type="Texture2D" uid="uid://yyyh18ikjtwm" path="res://Assets/Particles/Projectile/Enemy/EnemyProjectileType5.png" id="5_lwg0e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ac53x"]
 radius = 4.0
@@ -14,16 +14,16 @@ height = 14.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vxrj8")
+"texture": ExtResource("2_heko8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_u5mbh")
+"texture": ExtResource("3_ru1bm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_dy8p5")
+"texture": ExtResource("4_d72ie")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ccugx")
+"texture": ExtResource("5_lwg0e")
 }],
 "loop": true,
 "name": &"animate",
@@ -37,10 +37,12 @@ script = ExtResource("1_britp")
 projectile_speed = 1.0
 
 [node name="HitBox" type="Area2D" parent="."]
-collision_layer = 256
-collision_mask = 128
+collision_layer = 4
+collision_mask = 64
 
 [node name="CollisionArea2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(3.27105, -1.448e-05)
+scale = Vector2(2.0055, 1.64002)
 shape = SubResource("CapsuleShape2D_ac53x")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -50,9 +52,11 @@ wait_time = 4.0
 autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -2.17199e-05)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_lygdq")
 animation = &"animate"
-frame_progress = 0.978073
+frame_progress = 0.242739
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="timeout" from="SelfDeletedTimer" to="." method="_on_self_deleted_timer_timeout"]
