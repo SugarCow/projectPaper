@@ -1,0 +1,477 @@
+[gd_scene load_steps=84 format=3 uid="uid://cpmanikfwy0yl"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_gujiw"]
+[ext_resource type="Texture2D" uid="uid://bn47w2uqho035" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker2.png" id="2_wr0u1"]
+[ext_resource type="Texture2D" uid="uid://xihaeeya0l24" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker3.png" id="3_ti01e"]
+[ext_resource type="Texture2D" uid="uid://yl1xsyixniyf" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker4.png" id="4_3ekxi"]
+[ext_resource type="Texture2D" uid="uid://cx034gdejsy4a" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker5.png" id="5_5wlyr"]
+[ext_resource type="Texture2D" uid="uid://y01j5s7xpypw" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker6.png" id="6_r50uq"]
+[ext_resource type="Texture2D" uid="uid://0p1r4244nqpr" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker7.png" id="7_5p6j6"]
+[ext_resource type="Texture2D" uid="uid://bcxypr1yduba1" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker10.png" id="8_5akvm"]
+[ext_resource type="Texture2D" uid="uid://dcxvj8nt4ltru" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker11.png" id="9_ysk3b"]
+[ext_resource type="Texture2D" uid="uid://ctn5wf6kx8gsr" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker12.png" id="10_iisk0"]
+[ext_resource type="Texture2D" uid="uid://p7qqyxnv44vk" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker13.png" id="11_vxx16"]
+[ext_resource type="Texture2D" uid="uid://bwfiyao23v87e" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker14.png" id="12_cbq6n"]
+[ext_resource type="Texture2D" uid="uid://bfaba2l5u8gqk" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker15.png" id="13_26j6u"]
+[ext_resource type="Texture2D" uid="uid://bb2x1epy08am4" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker16.png" id="14_eabwi"]
+[ext_resource type="Texture2D" uid="uid://dbcedipnj5sg8" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker17.png" id="15_oxogm"]
+[ext_resource type="Texture2D" uid="uid://bcb1piwyrjclq" path="res://Assets/Particles/Death/DeathAnimation1.png" id="16_6tjl7"]
+[ext_resource type="Texture2D" uid="uid://c12a7rt640qoj" path="res://Assets/Particles/Death/DeathAnimation2.png" id="17_65kh1"]
+[ext_resource type="Texture2D" uid="uid://bs7a5s4oe548m" path="res://Assets/Particles/Death/DeathAnimation3.png" id="18_lbaal"]
+[ext_resource type="Texture2D" uid="uid://bj8g02c0qixtb" path="res://Assets/Particles/Death/DeathAnimation4.png" id="19_krqtj"]
+[ext_resource type="Texture2D" uid="uid://w8duofwkvxvr" path="res://Assets/Particles/Death/DeathAnimation5.png" id="20_ictqh"]
+[ext_resource type="Texture2D" uid="uid://b7qfw0m2sc8u6" path="res://Assets/Particles/Death/DeathAnimation6.png" id="21_txnaq"]
+[ext_resource type="Texture2D" uid="uid://bpagvbvecx1kb" path="res://Assets/Particles/Death/DeathAnimation7.png" id="22_s1cq5"]
+[ext_resource type="Texture2D" uid="uid://c4e00d4i0qerf" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker36.png" id="23_7tfei"]
+[ext_resource type="Texture2D" uid="uid://bkr142n47kkh6" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker37.png" id="24_oa477"]
+[ext_resource type="Texture2D" uid="uid://46q2vicdp1ij" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker38.png" id="25_57sy8"]
+[ext_resource type="Texture2D" uid="uid://cbmgowpg5yp7n" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker39.png" id="26_catot"]
+[ext_resource type="Texture2D" uid="uid://db4cljhxs2232" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker40.png" id="27_cmy6o"]
+[ext_resource type="Texture2D" uid="uid://bah0w2c1w3t85" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker41.png" id="28_6luha"]
+[ext_resource type="Texture2D" uid="uid://cxtnxlycqorui" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker20.png" id="29_thhs4"]
+[ext_resource type="Texture2D" uid="uid://cf0qu2o0ua5h6" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker21.png" id="30_77upp"]
+[ext_resource type="Texture2D" uid="uid://cyunnjoxqtyun" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker22.png" id="31_21vxb"]
+[ext_resource type="Texture2D" uid="uid://cfwvobpijcam7" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker23.png" id="32_sjrn5"]
+[ext_resource type="Texture2D" uid="uid://ccxtshh5cit3i" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker24.png" id="33_813r2"]
+[ext_resource type="Texture2D" uid="uid://djix2ua6k5dcy" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker28.png" id="34_h150g"]
+[ext_resource type="Texture2D" uid="uid://cunqegbrmwdwj" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker29.png" id="35_cv4g7"]
+[ext_resource type="Texture2D" uid="uid://dub838ei17ecu" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker30.png" id="36_li3vl"]
+[ext_resource type="Texture2D" uid="uid://bwqak1vtsyacp" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker31.png" id="37_xxgst"]
+[ext_resource type="Texture2D" uid="uid://cc6amwrakrsio" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker32.png" id="38_7a8co"]
+[ext_resource type="Texture2D" uid="uid://cx84168hgaucr" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker33.png" id="39_k1102"]
+[ext_resource type="Texture2D" uid="uid://bq78bad0dkyos" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker34.png" id="40_g2vmu"]
+[ext_resource type="Texture2D" uid="uid://bukqr76uxy7la" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker35.png" id="41_sjvqu"]
+[ext_resource type="Texture2D" uid="uid://drsdawfwufpd" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker42.png" id="42_8i48i"]
+[ext_resource type="Texture2D" uid="uid://b1pyjm5clr6ig" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker43.png" id="43_30f1a"]
+[ext_resource type="Texture2D" uid="uid://brh0tuok7hw4x" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker44.png" id="44_0c2ma"]
+[ext_resource type="Texture2D" uid="uid://d2n6cptcy52ue" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker45.png" id="45_okuy6"]
+[ext_resource type="Texture2D" uid="uid://brn4tpcjgsqk5" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker46.png" id="46_6g7g1"]
+[ext_resource type="Texture2D" uid="uid://dkutxsr2k06nj" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker47.png" id="47_0evj6"]
+[ext_resource type="Texture2D" uid="uid://10euae1vex8t" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker50.png" id="48_oafyt"]
+[ext_resource type="Texture2D" uid="uid://dww5r4ojgmxbd" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker51.png" id="49_lnfqy"]
+[ext_resource type="Texture2D" uid="uid://k7f35elr5gfq" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker52.png" id="50_0qj57"]
+[ext_resource type="Texture2D" uid="uid://h4jcyyiou35o" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker53.png" id="51_6edyj"]
+[ext_resource type="Texture2D" uid="uid://duufguxwotre3" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker54.png" id="52_ecg3w"]
+[ext_resource type="Texture2D" uid="uid://3p304j1xl04q" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker55.png" id="53_ffpgd"]
+[ext_resource type="Texture2D" uid="uid://d17dbjbajniv1" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker56.png" id="54_jhksm"]
+[ext_resource type="Texture2D" uid="uid://b75w7dfknvdjs" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker57.png" id="55_vpss2"]
+[ext_resource type="Texture2D" uid="uid://d3w6c2i2dwtvv" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker76.png" id="56_axxe7"]
+[ext_resource type="Texture2D" uid="uid://bn8hun7b88hyn" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker77.png" id="57_nmj7y"]
+[ext_resource type="Texture2D" uid="uid://deeujd2jmf6es" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker78.png" id="58_gb1o1"]
+[ext_resource type="Texture2D" uid="uid://xdfvpmi8skvy" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker79.png" id="59_83ysf"]
+[ext_resource type="Texture2D" uid="uid://c0po8bnsscvqq" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker80.png" id="60_acyqm"]
+[ext_resource type="Texture2D" uid="uid://bw5n1bptup10e" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker81.png" id="61_wsx6s"]
+[ext_resource type="Texture2D" uid="uid://dt6uv0bcln05d" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker60.png" id="62_3fiyd"]
+[ext_resource type="Texture2D" uid="uid://c7vcm6ytbro0j" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker61.png" id="63_lm25o"]
+[ext_resource type="Texture2D" uid="uid://bemvk4qi5nu6n" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker62.png" id="64_lahcw"]
+[ext_resource type="Texture2D" uid="uid://sn8a1peyhkj8" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker63.png" id="65_j14ob"]
+[ext_resource type="Texture2D" uid="uid://c0cgauo6htfkv" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker64.png" id="66_8u2hl"]
+[ext_resource type="Texture2D" uid="uid://jdjsv7yeuwkp" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker68.png" id="67_8bmf6"]
+[ext_resource type="Texture2D" uid="uid://ck7als2eu7ges" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker69.png" id="68_jimcf"]
+[ext_resource type="Texture2D" uid="uid://blxchdf0qnqwv" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker70.png" id="69_kh2ka"]
+[ext_resource type="Texture2D" uid="uid://c3vxmoy1cunfv" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker71.png" id="70_fenw2"]
+[ext_resource type="Texture2D" uid="uid://cpqnhaw7ttwhg" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker72.png" id="71_pmboq"]
+[ext_resource type="Texture2D" uid="uid://kjk1ypocdstq" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker73.png" id="72_nwk2b"]
+[ext_resource type="Texture2D" uid="uid://c7lh6v0dmy335" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker74.png" id="73_ul6nu"]
+[ext_resource type="Texture2D" uid="uid://w0h03nu0l7nm" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker75.png" id="74_5qf56"]
+[ext_resource type="Texture2D" uid="uid://dtlyvahtafbsv" path="res://Assets/UI/HealthBar2.png" id="75_gnkv5"]
+[ext_resource type="Texture2D" uid="uid://nh0r3vo0nqg7" path="res://Assets/UI/HealthBar1.png" id="76_e762m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oall4"]
+radius = 3.29711
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rwu0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wr0u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ti01e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3ekxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5wlyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_r50uq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5p6j6")
+}],
+"loop": false,
+"name": &"AttackLeft",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_5akvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ysk3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_iisk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vxx16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_cbq6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_26j6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_eabwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_oxogm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6tjl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_65kh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_lbaal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_krqtj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ictqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_txnaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_s1cq5")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_7tfei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_oa477")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_57sy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_catot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_cmy6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6luha")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_thhs4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_77upp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_21vxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_sjrn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_813r2")
+}],
+"loop": true,
+"name": &"IdleLeft",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_h150g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_cv4g7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_li3vl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_xxgst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_7a8co")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_k1102")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_g2vmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_sjvqu")
+}],
+"loop": true,
+"name": &"MoveLeft",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5bxli"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_8i48i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_30f1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_0c2ma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_okuy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_6g7g1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_0evj6")
+}],
+"loop": false,
+"name": &"AttackLeft",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48_oafyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_lnfqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_0qj57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_6edyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_ecg3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_ffpgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_jhksm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_vpss2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6tjl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_65kh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_lbaal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_krqtj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ictqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_txnaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_s1cq5")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_axxe7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_nmj7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_gb1o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_83ysf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_acyqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_wsx6s")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("62_3fiyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_lm25o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_lahcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_j14ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_8u2hl")
+}],
+"loop": true,
+"name": &"IdleLeft",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("67_8bmf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_jimcf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_kh2ka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_fenw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_pmboq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_nwk2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_ul6nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_5qf56")
+}],
+"loop": true,
+"name": &"MoveLeft",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mhhjk"]
+radius = 5.83333
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gs8s7"]
+radius = 7.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r7cf5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tflih"]
+
+[node name="OrcSpiker" type="CharacterBody2D"]
+scale = Vector2(1.2, 1.2)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_gujiw")
+speed = 40
+max_health = 100.0
+max_cost = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.33333)
+scale = Vector2(3.04952, 2.42846)
+shape = SubResource("CircleShape2D_oall4")
+
+[node name="EnemyMode" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.833333, -14.1667)
+sprite_frames = SubResource("SpriteFrames_0rwu0")
+animation = &"AttackLeft"
+
+[node name="AllyMode" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-0.833333, -14.1667)
+sprite_frames = SubResource("SpriteFrames_5bxli")
+animation = &"IdleLeft"
+
+[node name="HurtBox" type="Area2D" parent="."]
+position = Vector2(0, -0.833333)
+collision_layer = 8
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -8.33333)
+shape = SubResource("CircleShape2D_mhhjk")
+
+[node name="CostBox" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CostBox"]
+position = Vector2(0, -8.33333)
+shape = SubResource("CircleShape2D_mhhjk")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -8.33333)
+shape = SubResource("CircleShape2D_gs8s7")
+debug_color = Color(0.980392, 0, 0.388235, 0.419608)
+
+[node name="DetectEnemies" type="Area2D" parent="."]
+collision_layer = 512
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectEnemies"]
+position = Vector2(-0.833333, -18.3333)
+scale = Vector2(5.29157, 5.23137)
+shape = SubResource("CircleShape2D_r7cf5")
+disabled = true
+
+[node name="MyIdentification" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MyIdentification"]
+position = Vector2(0, -6.66667)
+shape = SubResource("CircleShape2D_tflih")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -10.8333
+offset_top = -33.3333
+offset_right = 29.1667
+offset_bottom = 6.66667
+texture_under = ExtResource("75_gnkv5")
+texture_progress = ExtResource("76_e762m")
+
+[node name="AliveTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_entered" from="CostBox" to="." method="_on_cost_box_area_entered"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_entered" from="DetectEnemies" to="." method="_on_detect_enemies_area_entered"]
+[connection signal="area_exited" from="DetectEnemies" to="." method="_on_detect_enemies_area_exited"]
+[connection signal="timeout" from="AliveTimer" to="." method="_on_alive_timer_timeout"]
