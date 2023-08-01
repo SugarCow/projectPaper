@@ -378,7 +378,7 @@ radius = 7.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tflih"]
 
-[node name="OrcBarbarian" type="CharacterBody2D"]
+[node name="OrcBarbarianMinion" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
 collision_layer = 0
 collision_mask = 0
@@ -422,8 +422,8 @@ position = Vector2(0, -8.33333)
 shape = SubResource("CircleShape2D_mhhjk")
 
 [node name="HitBox" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 64
+collision_layer = 1024
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -8.33333)

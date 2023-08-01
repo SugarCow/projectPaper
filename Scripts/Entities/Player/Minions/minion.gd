@@ -28,10 +28,10 @@ var my_target: Node2D
 var facing_dir = Vector2(0,0)
 var my_attacker: CharacterBody2D
 func _ready():
-	player = $"../Player"
+	player = $"../Player".get_node("RallyPoint")
 	state = FOLLOW
-	my_target = $"../../EndPoint"
-	print(my_target)
+	my_target = null
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -40,7 +40,7 @@ func _process(_delta):
 		IDLE:
 			idle_state()
 		FOLLOW:
-			follow_state(my_target)
+			follow_state(player)
 		ATTACK:
 			attack_state(my_target)
 		DEAD:
@@ -52,36 +52,42 @@ func _process(_delta):
 
 func idle_state():
 	animation.play("IdleLeft")
+	if player.global_position.distance_to(self.global_position) >= 20:
+		state = FOLLOW
 
 func follow_state(target):
 	
-	if my_target == null:
+	if target.global_position.distance_to(self.global_position) <= randf_range(1,20):
 		state = IDLE
 		return
-	if abs(my_target.global_position - self.global_position) <= Vector2(5,5):
-		state = ATTACK
+	#when close to enemy, attack them
+	if my_target != null:
+		if abs(my_target.global_position - self.global_position) <= Vector2(5,5):
+			state = ATTACK
+		if (my_target.global_position.distance_to(self.global_position) <= 100 and is_range == true):
+			state = ATTACK
+		
 	
-	
+	#play the animation for moving
 	animation.play("MoveLeft")
+#	print(target.global_position)
+	var target_direction = ((target.global_position - self.global_position)- Vector2(2,2)).normalized()
 
-	var target_direction = ((target.position - self.position)- Vector2(2,2)).normalized()
-
+	#Change the facing direction relative to the player's and this object position 
 	if target_direction.x > 0:
 		animation.flip_h = true
 		facing_dir = Vector2(1,0)
 	else: 
 		animation.flip_h = false
 		facing_dir = Vector2(-1,0)
+		
+		
 	velocity = velocity.move_toward(target_direction * speed , 200)
-	print(target.position.distance_to(self.position))
-	if (target.position.distance_to(self.position) <= 100 and is_range == true):
-		state = ATTACK
-	
 	move_and_slide()
 
 func attack_state(target):
 	
-	if my_target == null:
+	if target == null:
 		state = IDLE
 		return
 	

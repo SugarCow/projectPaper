@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://688adwb4a5jo"]
+[gd_scene load_steps=68 format=3 uid="uid://rlk7l2nko52i"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Player/player.gd" id="1_xvunx"]
 [ext_resource type="Texture2D" uid="uid://da2i5ix8d1u6a" path="res://Assets/Player/Necromancer/Necromancer135.png" id="2_miqmn"]
@@ -619,6 +619,9 @@ offset_left = -177.0
 offset_top = -95.0
 offset_right = -177.0
 offset_bottom = -95.0
+
+[node name="RallyPoint" type="Node2D" parent="."]
+position = Vector2(161, 0)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="DustParticleCD" to="." method="_on_dust_particle_cd_timeout"]
