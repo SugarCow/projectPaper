@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://ddmi1t1s6jcci"]
+[gd_scene load_steps=80 format=3 uid="uid://ddmi1t1s6jcci"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_6awox"]
 [ext_resource type="Texture2D" uid="uid://t8w6hco7yqft" path="res://Assets/Enemies/Knights/StandardKnights/Knight19.png" id="2_r8cxj"]
@@ -372,16 +372,13 @@ radius = 7.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r7cf5"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tflih"]
-
 [node name="StandardKnight" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_6awox")
-speed = 40
-max_health = 100.0
-max_cost = 20.0
+speed = 30
+max_health = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -402,25 +399,18 @@ sprite_frames = SubResource("SpriteFrames_y446f")
 animation = &"AttackLeft"
 
 [node name="HurtBox" type="Area2D" parent="."]
-position = Vector2(0, -0.833333)
+position = Vector2(0.833333, -0.833333)
 collision_layer = 8
-collision_mask = 1024
+collision_mask = 1280
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, -8.33333)
 shape = SubResource("CircleShape2D_mhhjk")
 
-[node name="CostBox" type="Area2D" parent="."]
-collision_layer = 128
-collision_mask = 256
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CostBox"]
-position = Vector2(0, -8.33333)
-shape = SubResource("CircleShape2D_mhhjk")
-
 [node name="HitBox" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
-collision_mask = 64
+collision_mask = 2112
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -8.33333)
@@ -428,23 +418,15 @@ shape = SubResource("CircleShape2D_gs8s7")
 debug_color = Color(0.980392, 0, 0.388235, 0.419608)
 
 [node name="DetectEnemies" type="Area2D" parent="."]
+visible = false
+position = Vector2(-1.66667, -0.833333)
 collision_layer = 512
-collision_mask = 32
+collision_mask = 2112
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectEnemies"]
 position = Vector2(-0.833333, -18.3333)
 scale = Vector2(5.29157, 5.23137)
 shape = SubResource("CircleShape2D_r7cf5")
-disabled = true
-
-[node name="MyIdentification" type="Area2D" parent="."]
-collision_layer = 32
-collision_mask = 512
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MyIdentification"]
-position = Vector2(0, -6.66667)
-shape = SubResource("CircleShape2D_tflih")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 visible = false
@@ -460,7 +442,6 @@ wait_time = 2.0
 one_shot = true
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
-[connection signal="area_entered" from="CostBox" to="." method="_on_cost_box_area_entered"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="DetectEnemies" to="." method="_on_detect_enemies_area_entered"]
 [connection signal="area_exited" from="DetectEnemies" to="." method="_on_detect_enemies_area_exited"]
