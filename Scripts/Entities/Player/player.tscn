@@ -569,7 +569,7 @@ collision_mask = 16
 script = ExtResource("1_xvunx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(10, -54)
+position = Vector2(2, -54)
 sprite_frames = SubResource("SpriteFrames_qalai")
 animation = &"IdleLeft"
 
@@ -620,8 +620,10 @@ offset_top = -95.0
 offset_right = -177.0
 offset_bottom = -95.0
 
-[node name="RallyPoint" type="Node2D" parent="."]
-position = Vector2(161, 0)
+[node name="RallyPoint" type="Area2D" parent="."]
+position = Vector2(87, 0)
+collision_layer = 0
+collision_mask = 32
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="DustParticleCD" to="." method="_on_dust_particle_cd_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://bifbeq6ee1q1t"]
+[gd_scene load_steps=95 format=3 uid="uid://bifbeq6ee1q1t"]
 
 [ext_resource type="Shader" path="res://Scripts/Entities/Player/Minions/hurtShader.gdshader" id="1_r4en1"]
 [ext_resource type="Script" path="res://Scripts/Entities/Player/Minions/minion.gd" id="1_ug8ul"]
@@ -75,6 +75,7 @@
 [ext_resource type="Texture2D" uid="uid://cd18f4npni3bh" path="res://Assets/Enemies/Orcs/Phase2/Barbarian/OrcBarbarian71.png" id="72_k6gnb"]
 [ext_resource type="Texture2D" uid="uid://dtlyvahtafbsv" path="res://Assets/UI/HealthBar2.png" id="73_1jr0q"]
 [ext_resource type="Texture2D" uid="uid://nh0r3vo0nqg7" path="res://Assets/UI/HealthBar1.png" id="74_evvfd"]
+[ext_resource type="PackedScene" uid="uid://dunj7lje5far3" path="res://Scripts/Entities/soft_collision.tscn" id="76_yin4e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oall4"]
 radius = 3.29711
@@ -270,6 +271,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../HitBox:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_57xju"]
 length = 0.001
@@ -300,19 +313,19 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../HitBox:rotation")
+tracks/2/path = NodePath("../HitBox/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"update": 1,
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../HitBox/CollisionShape2D:disabled")
+tracks/3/path = NodePath("../HurtBox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -324,7 +337,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath(".:flip_h")
+tracks/4/path = NodePath("../DetectEnemies/CollisionShape2D:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -336,26 +349,14 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../HurtBox/CollisionShape2D:disabled")
+tracks/5/path = NodePath("../HitBox:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../DetectEnemies/CollisionShape2D:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [3.14159]
 }
 
 [sub_resource type="Animation" id="Animation_qcgem"]
@@ -392,7 +393,7 @@ tracks/2/path = NodePath("../HitBox:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.2),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
@@ -404,24 +405,10 @@ tracks/3/path = NodePath("../HitBox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../AttackCD")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0.4),
 "transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"start"
-}]
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ohptx"]
@@ -474,18 +461,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [3.14159]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../HitBox/CollisionShape2D:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_1lxdk"]
@@ -755,7 +730,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../HitBox/CollisionShape2D:disabled")
+tracks/3/path = NodePath("../DetectEnemies/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -767,22 +742,10 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../DetectEnemies/CollisionShape2D:disabled")
+tracks/4/path = NodePath(".:flip_h")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:flip_h")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -955,16 +918,20 @@ radius = 14.6076
 height = 29.2152
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r7cf5"]
+radius = 21.5805
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jk2pu"]
+radius = 4.48371
 
 [node name="OrcBarbarianMinion" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_ug8ul")
-speed = 30
+speed = 100
 max_health = 100.0
 max_cost = 30.0
-attack_cd = 2.0
+attack_cd = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -977,7 +944,6 @@ material = SubResource("ShaderMaterial_ys2k5")
 position = Vector2(0.833333, -14.1667)
 sprite_frames = SubResource("SpriteFrames_0rwu0")
 animation = &"IdleLeft"
-flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../EnemyMode")
@@ -1001,17 +967,9 @@ position = Vector2(0, -8.33333)
 shape = SubResource("CircleShape2D_mhhjk")
 disabled = true
 
-[node name="CostBox" type="Area2D" parent="."]
-visible = false
-collision_layer = 128
-collision_mask = 256
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CostBox"]
-position = Vector2(0, -8.33333)
-shape = SubResource("CircleShape2D_mhhjk")
-
 [node name="HitBox" type="Area2D" parent="."]
 position = Vector2(0, -18.3333)
+rotation = 3.14159
 collision_layer = 1024
 collision_mask = 8
 
@@ -1027,7 +985,7 @@ collision_layer = 512
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectEnemies"]
-position = Vector2(-0.833333, -18.3333)
+position = Vector2(0, -21.6667)
 scale = Vector2(5.29157, 5.23137)
 shape = SubResource("CircleShape2D_r7cf5")
 disabled = true
@@ -1046,17 +1004,30 @@ wait_time = 2.0
 one_shot = true
 
 [node name="AttackCD" type="Timer" parent="."]
+wait_time = 0.05
 one_shot = true
 
 [node name="FlashTimer" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
 
+[node name="SoftCollision" parent="." instance=ExtResource("76_yin4e")]
+scale = Vector2(0.521675, 1)
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+position = Vector2(0, -13.3333)
+scale = Vector2(4.07293, -2.42181)
+shape = SubResource("CircleShape2D_jk2pu")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
-[connection signal="area_entered" from="CostBox" to="." method="_on_cost_box_area_entered"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="DetectEnemies" to="." method="_on_detect_enemies_area_entered"]
 [connection signal="area_exited" from="DetectEnemies" to="." method="_on_detect_enemies_area_exited"]
 [connection signal="timeout" from="AliveTimer" to="." method="_on_alive_timer_timeout"]
 [connection signal="timeout" from="AttackCD" to="." method="_on_attack_cd_timeout"]
 [connection signal="timeout" from="FlashTimer" to="." method="_on_flash_timer_timeout"]
+
+[editable path="SoftCollision"]

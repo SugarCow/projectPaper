@@ -151,10 +151,7 @@ func stun_state():
 		
 		if input_dir.y <0 and facing_dir.x <0: 
 			animation_player.play("HurtLeft")
-		
-		
-		
-		
+
 		state = MOVE
 
 
@@ -167,7 +164,7 @@ func _on_hurt_box_area_entered(_area):
 	if invincible == false:
 
 		PlayerStats.health -=1
-		
+
 		invincible = true
 		$HurtTimer.start()
 		$HurtBox/CollisionShape2D.set_deferred("disabled", true)
@@ -176,8 +173,6 @@ func _on_hurt_box_area_entered(_area):
 func _on_hurt_timer_timeout():
 	$HurtBox/CollisionShape2D.disabled = false
 	invincible = false
-	
-	
 
 
 func _on_animation_player_animation_finished(anim_name):

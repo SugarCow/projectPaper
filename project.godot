@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Pulper"
 config/tags=PackedStringArray("project")
-run/main_scene="res://Scripts/game.tscn"
+run/main_scene="res://Scripts/game_2.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 PlayerStats="*res://Scripts/Entities/Player/player_stats.tscn"
 Game="*res://Scripts/game.gd"
+Player="*res://Scripts/Entities/Player/player.tscn"
 
 [display]
 
@@ -80,6 +81,7 @@ Shoot={
 2d_physics/layer_10="EnemyDetector"
 2d_physics/layer_11="AllyHitBox"
 2d_physics/layer_12="AllyHurtBox"
+2d_physics/layer_13="AllySoftCollision"
 
 [rendering]
 

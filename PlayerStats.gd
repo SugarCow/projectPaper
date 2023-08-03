@@ -16,6 +16,7 @@ var health:
 		if health <= 0:
 			emit_signal("no_health")
 			PlayerStats.reset()
+			Player.queue_free()
 			get_tree().change_scene_to_file("res://Scripts/game_over_screen.tscn")
 			
 		
