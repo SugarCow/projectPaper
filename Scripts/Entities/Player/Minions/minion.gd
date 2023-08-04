@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var hit_effect = preload("res://Scripts/Particle/hit_effect.tscn")
 @onready var projectile = preload("res://Scripts/Entities/enemyProjectile.tscn")
 # Called when the node enters the scene tree for the first time.
+signal delete_enemy
 enum{
 	IDLE,
 	FOLLOW,
@@ -24,31 +25,34 @@ enum{
 @onready var soft_collision = $SoftCollision
 var attack_ready: bool = true
 var state: int
-var player
+var destination
 var dropped_exp: bool = false
 var my_target: Node2D
 var facing_dir = Vector2(0,0)
 var my_attacker: CharacterBody2D
+var my_enemy: Node2D
 func _ready():
 	$HurtBox/CollisionShape2D.set_deferred("disabled", false)
 	$HitBox/CollisionShape2D.set_deferred("disabled", false)
 	$DetectEnemies/CollisionShape2D.set_deferred("disabled", false)
 	
 	$AttackCD.wait_time = attack_cd
-	player = $"../Player".get_node("RallyPoint")
+	destination = $"../RallyPoint"
 	state = FOLLOW
 	my_target = null
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 
 	match state:
 		IDLE:
 			idle_state()
 		FOLLOW:
+			
 			if my_target == null:
-				follow_state(player,delta)
+				follow_state(destination,delta)
 			else:
 				follow_state(my_target,delta)
 		ATTACK:
@@ -60,12 +64,14 @@ func _process(delta):
 
 
 func idle_state():
-	velocity = velocity.move_toward(Vector2.ZERO, 400)
+	if $HitBox.has_overlapping_areas():
+			state = ATTACK
+	velocity = velocity.move_toward(Vector2.ZERO, 1000)
 	if facing_dir.x > 0:
 		animation.play("IdleRight")
 	else:
 		animation.play("IdleLeft")
-	if player.global_position.distance_to(self.global_position) >= randf_range(20,30):
+	if destination.global_position.distance_to(self.global_position) >= randf_range(20,30):
 		state = FOLLOW
 
 func flash():
@@ -75,7 +81,8 @@ func flash():
 func follow_state(target,delta):
 	
 	#when close to enemy, attack them
-	if my_target != null:
+	if my_target != null and $DetectEnemies.has_overlapping_areas():
+		print(my_target.owner.name)
 		if $HitBox.has_overlapping_areas():
 			state = ATTACK
 #		if my_target.global_position.distance_to(self.global_position) <= 5:
@@ -89,7 +96,7 @@ func follow_state(target,delta):
 		state = IDLE
 		return
 	
-	var target_direction = ((target.global_position - self.global_position) - Vector2(5,5)).normalized()
+	var target_direction = ((target.global_position - self.global_position)).normalized()
 
 	if target_direction.x > 0:
 		animation.play("MoveRight")
@@ -100,18 +107,19 @@ func follow_state(target,delta):
 		facing_dir = Vector2(-1,0)
 		
 	var desired_velocity = target_direction 
-
+				
 	if soft_collision.is_colliding():
-		var push_vector = soft_collision.get_push_vector() * 1
+		var push_vector = soft_collision.get_push_vector() 
 		desired_velocity += push_vector
-	velocity = velocity.move_toward(desired_velocity * speed, 200 * delta)
+	velocity = velocity.move_toward(desired_velocity * speed, 300 * delta)
 	move_and_slide()
 
 func attack_state(target):
 	#if attack is ready
 	if attack_ready == true:
 		if target == null:
-			state = IDLE
+			$DetectEnemies/CollisionShape2D.set_deferred("disabled", false)
+			state = FOLLOW
 			return
 
 		velocity = Vector2.ZERO
@@ -119,19 +127,20 @@ func attack_state(target):
 		var target_direction = ((target.global_position - self.global_position)- Vector2(2,2)).normalized()
 		if target_direction.x > 0:
 			animation.play("AttackRight")
-			
+
 		else:
 			animation.play("AttackLeft")
-		
-		if $HitBox.has_overlapping_areas() == true:
-			
-			state = ATTACK
+
+#		if $HitBox.has_overlapping_areas() == true:
+#
+#			state = ATTACK
 #		else:
-#			state = FOLLOW
+#			print($HitBox.get_overlapping_areas())
+#			state = FOLLOW  
 
 		if is_range == true:
 			spawn_projectile()
-		
+
 		attack_ready = false
 
 
@@ -160,7 +169,7 @@ func dead_state():
 		my_exp.get_node("AnimatedSprite2D").play("animate")
 		my_exp.global_position = $EnemyMode.global_position
 		dropped_exp = true
-	queue_free()
+	
 
 func stun_state():
 	velocity = Vector2.ZERO
@@ -189,9 +198,9 @@ func _on_hurt_box_area_entered(area):
 			flash()
 
 func _on_hit_box_area_entered(area):
-	if area.owner == my_target:
-		state = ATTACK
-
+#	if area.owner == my_target:
+#		state = ATTACK
+	pass
 
 func _on_cost_box_area_entered(_area):
 	cost -=15
@@ -200,27 +209,63 @@ func _on_cost_box_area_entered(_area):
 	else:
 		state = STUN
 
-
+func _on_enemy_killed():
+	var temp = my_target
+	emit_signal("delete_enemy")
+	await delete_enemy
+	$DetectEnemies.emit_signal("area_exited",my_target)
 func _on_detect_enemies_area_entered(area):
+	
+		
 	if my_target == null:
+		area.owner.enemy_dead.connect(_on_enemy_killed)
+		delete_enemy.connect(area.owner.delete_self)
+		
 		my_target = area.owner
+		state = FOLLOW
+#		$DetectEnemies/CollisionShape2D.disabled = true
+
+func _on_detect_enemies_area_exited( area):
+	var overlapping_areas = $DetectEnemies.get_overlapping_areas()
+	print(overlapping_areas.size())
+	if overlapping_areas.size() > 0:
+		# If there are other enemies, find the closest one and set it as the new target
+		var closest_target: Area2D =area
+		var second_closest_target: Area2D
+		var closest_range: float = INF 
+		for enemy in overlapping_areas:
+			var distance = enemy.global_position.distance_to(self.global_position)
+			if enemy != closest_target and distance < closest_range:
+				closest_range = distance
+#				second_closest_target = closest_target
+#				print(second_closest_target.owner.name)
+				closest_target = enemy
+		my_target = closest_target
+		print(my_target.owner.name)
+		state = FOLLOW
+	else:
+		# If there are no other enemies, set the target to null and change the state to FOLLOW
+		my_target = null
 		state = FOLLOW
 
 
-func _on_detect_enemies_area_exited(_area):
-	if $DetectEnemies.get_overlapping_areas() == null:
-		my_target = null
-	#finds the nearest target to begin attacking
-	
-	elif $DetectEnemies.get_overlapping_areas() != null and my_target == null:
-		var closest_target: Area2D
-		var closest_range: float = INF 
-		for enemy in $DetectEnemies.get_overlapping_areas():
-			if enemy.global_distance.distance_to(self.global_position) < closest_range:
-				closest_range = enemy.global_distance.distance_to(self.global_position)
-				closest_target = enemy
-		my_target = closest_target
 
+
+#	if $DetectEnemies.get_overlapping_areas() == null:
+#		my_target = null
+#		state = FOLLOW
+#	#finds the nearest target to begin attacking
+#
+#	elif $DetectEnemies.get_overlapping_areas() != null and my_target == null:
+#		var closest_target: Area2D
+#		var closest_range: float = INF 
+#		for enemy in $DetectEnemies.get_overlapping_areas():
+#			if enemy.global_position.distance_to(self.global_position) < closest_range:
+#				closest_range = enemy.global_position.distance_to(self.global_position)
+#				closest_target = enemy
+#		my_target = closest_target
+#
+#		state = FOLLOW
 	
 	
 
@@ -244,3 +289,5 @@ func _on_animation_player_animation_finished(anim_name):
 	if anim_name.contains("Attack"):
 		print($AttackCD.wait_time)
 		$AttackCD.start()
+	if anim_name.contains("Death"):
+		queue_free()

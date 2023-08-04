@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal enemy_dead
+
 @onready var animation = $AnimationPlayer
 @onready var experience = preload("res://Scripts/Entities/Pickups/exp.tscn")
 @onready var main = get_tree().current_scene
@@ -92,7 +94,7 @@ func follow_state(target,delta):
 		state = IDLE
 		return
 	
-	var target_direction = ((target.global_position - self.global_position) - Vector2(5,5)).normalized()
+	var target_direction = (target.global_position - self.global_position).normalized()
 
 	if target_direction.x > 0:
 		animation.play("MoveRight")
@@ -114,7 +116,7 @@ func attack_state(target):
 	#if attack is ready
 	if attack_ready == true:
 		if target == null:
-			state = IDLE
+			state = FOLLOW
 			return
 
 		velocity = Vector2.ZERO
@@ -127,10 +129,11 @@ func attack_state(target):
 			animation.play("AttackLeft")
 		
 		if $HitBox.has_overlapping_areas() == true:
-			
+
 			state = ATTACK
-#		else:
-#			state = FOLLOW
+		else:
+
+			state = FOLLOW
 
 		if is_range == true:
 			spawn_projectile()
@@ -163,6 +166,11 @@ func dead_state():
 		my_exp.get_node("AnimatedSprite2D").play("animate")
 		my_exp.global_position = $EnemyMode.global_position
 		dropped_exp = true
+	emit_signal("enemy_dead")
+	
+
+func delete_self():
+	main.remove_child(self)
 	queue_free()
 
 func stun_state():
@@ -209,11 +217,12 @@ func _on_detect_enemies_area_entered(area):
 	if my_target == null:
 		my_target = area.owner
 		state = FOLLOW
-
+	
 
 func _on_detect_enemies_area_exited(_area):
 	if $DetectEnemies.get_overlapping_areas() == null:
 		my_target = null
+		state = IDLE
 	#finds the nearest target to begin attacking
 	
 	elif $DetectEnemies.get_overlapping_areas() != null and my_target == null:
@@ -224,15 +233,11 @@ func _on_detect_enemies_area_exited(_area):
 				closest_range = enemy.global_distance.distance_to(self.global_position)
 				closest_target = enemy
 		my_target = closest_target
-
-	
-	
-
+		state = FOLLOW
 
 func _on_alive_timer_timeout():
 	state = DEAD
 	dropped_exp =true
-
 
 func _on_attack_cd_timeout():
 	$HitBox/CollisionShape2D.disabled = false
@@ -242,9 +247,9 @@ func _on_attack_cd_timeout():
 func _on_flash_timer_timeout():
 	$EnemyMode.material.set_shader_parameter("flash_modifier", 0)
 
-
-
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name.contains("Attack"):
 		print($AttackCD.wait_time)
 		$AttackCD.start()
+	if anim_name.contains("Death"):
+		queue_free()
