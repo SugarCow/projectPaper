@@ -15,7 +15,6 @@ func spawn_enemy():
 	main.get_node("World").add_child(my_enemy)
 	my_enemy.global_position = self.global_position
 
-	
 func load_enemies(): 
 	var scenePaths = []
 	var folder_path = "res://Scripts/Entities/Enemies/"

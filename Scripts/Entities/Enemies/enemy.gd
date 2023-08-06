@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var main =  get_tree().current_scene
 @onready var hit_effect = preload("res://Scripts/Particle/hit_effect.tscn")
 @onready var projectile = preload("res://Scripts/Entities/enemyProjectile.tscn")
+@export var arrow = preload("res://Scripts/Entities/enemyArrow.tscn")
 # Called when the node enters the scene tree for the first time.
 enum{
 	IDLE,
@@ -112,7 +113,14 @@ func attack_state(target):
 	
 	
 func spawn_projectile():
-	var my_projectile = projectile.instantiate()
+	if my_target == null:
+		return
+	var my_projectile
+	if self.name == "OrcArcher":
+		my_projectile =  arrow.instantiate()
+	else:
+		my_projectile = projectile.instantiate()
+		
 	my_projectile.position  = $ProjectileSpawn.global_position
 	
 	var direction = (my_target.global_position - self.global_position).normalized()

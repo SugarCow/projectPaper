@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqhjoyooxhfys"]
+
+[ext_resource type="Texture2D" uid="uid://dowlxt1akivcr" path="res://Assets/Sceneries/Tower.png" id="1_tcveo"]
+[ext_resource type="Texture2D" uid="uid://baocx50q0m6vq" path="res://Assets/Sceneries/Banner.png" id="2_6cidu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2l3th"]
+size = Vector2(36, 38.6667)
+
+[node name="Tower" type="StaticBody2D"]
+scale = Vector2(1.5, 1.5)
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -31.3333)
+texture = ExtResource("1_tcveo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.33333, -20.6667)
+shape = SubResource("RectangleShape2D_2l3th")
+
+[node name="Banner" type="Sprite2D" parent="."]
+position = Vector2(12, -60.6667)
+texture = ExtResource("2_6cidu")

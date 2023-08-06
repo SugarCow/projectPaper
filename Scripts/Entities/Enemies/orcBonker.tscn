@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://dgacv2a8ohwt2"]
+[gd_scene load_steps=83 format=3 uid="uid://bmmjwii03lh36"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_2tas8"]
 [ext_resource type="Texture2D" uid="uid://bi2wop5j16bsi" path="res://Assets/Enemies/Orcs/Phase1/Bonker/OrcBonker1.png" id="2_h8dv8"]
@@ -376,8 +376,7 @@ shape = SubResource("CircleShape2D_oall4")
 [node name="EnemyMode" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_0rwu0")
-animation = &"IdleLeft"
-frame_progress = 0.246834
+animation = &"AttackLeft"
 
 [node name="AllyMode" type="AnimatedSprite2D" parent="."]
 visible = false

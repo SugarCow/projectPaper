@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://dlfm7hf6nctuv"]
+[gd_scene load_steps=82 format=3 uid="uid://bghxnsnbk4w37"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_baqxa"]
 [ext_resource type="Texture2D" uid="uid://m3spvf3vya6b" path="res://Assets/Enemies/Orcs/Phase2/Chopper/OrcChopper1.png" id="2_r2t33"]

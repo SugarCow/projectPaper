@@ -1,0 +1,65 @@
+[gd_scene load_steps=12 format=3 uid="uid://phutr0lrkois"]
+
+[ext_resource type="Texture2D" uid="uid://c7jjyoeefa6ge" path="res://Assets/Sceneries/FireBowl/FireBowl1.png" id="1_3odwk"]
+[ext_resource type="Script" path="res://Scripts/Entities/Sceneries/FireBowl.gd" id="1_jveb6"]
+[ext_resource type="Texture2D" uid="uid://bb2iljmae8yc8" path="res://Assets/Sceneries/FireBowl/FireBowl2.png" id="2_m1jy3"]
+[ext_resource type="Texture2D" uid="uid://b64efalhpkxh5" path="res://Assets/Sceneries/FireBowl/FireBowl3.png" id="3_r2dqc"]
+[ext_resource type="Texture2D" uid="uid://tlypsxsfk0q4" path="res://Assets/Sceneries/FireBowl/FireBowl4.png" id="4_hq5qu"]
+[ext_resource type="Texture2D" uid="uid://bxscm1soaje2o" path="res://Assets/Sceneries/FireBowl/FireBowl5.png" id="5_e3ti2"]
+[ext_resource type="Texture2D" uid="uid://cigbna5k4nrtk" path="res://Assets/Sceneries/FireBowl/FireBowl6.png" id="6_fts64"]
+[ext_resource type="Texture2D" uid="uid://ds88ujuqivk0g" path="res://Assets/Sceneries/FireBowl/FireBowl7.png" id="7_4yuy8"]
+[ext_resource type="Texture2D" uid="uid://bbapk6qdr2yrp" path="res://Assets/Sceneries/FireBowl/FireBowl8.png" id="8_2830b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2l3th"]
+size = Vector2(13.3333, 8.66667)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ty2tk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3odwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m1jy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r2dqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hq5qu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e3ti2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fts64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4yuy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2830b")
+}],
+"loop": true,
+"name": &"animate",
+"speed": 15.0
+}]
+
+[node name="FireBowl" type="StaticBody2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_jveb6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_2l3th")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8.66667)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ty2tk")
+animation = &"animate"
+frame_progress = 0.46637
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_3odwk")

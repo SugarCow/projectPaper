@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://765e4pmjk4qy"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Player/Weapon/projectile.gd" id="1_yxfgk"]
+[ext_resource type="Texture2D" uid="uid://bck13lgileaa5" path="res://Assets/Weapon/arrow.png" id="2_4y0xy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ac53x"]
+radius = 1.36074
+height = 7.31698
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_humyg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4y0xy")
+}],
+"loop": true,
+"name": &"animate",
+"speed": 5.0
+}]
+
+[node name="Arrow" type="CharacterBody2D"]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_yxfgk")
+projectile_speed = 2.0
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 64
+
+[node name="CollisionArea2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0.596112, 4.76837e-07)
+scale = Vector2(3.0455, 3.88002)
+shape = SubResource("CapsuleShape2D_ac53x")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="SelfDeletedTimer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -1.57079
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_humyg")
+animation = &"animate"
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="timeout" from="SelfDeletedTimer" to="." method="_on_self_deleted_timer_timeout"]

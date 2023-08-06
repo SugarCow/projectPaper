@@ -1,64 +1,64 @@
-[gd_scene load_steps=84 format=3 uid="uid://688adwb4a5jo"]
+[gd_scene load_steps=85 format=3 uid="uid://rlk7l2nko52i"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Player/player.gd" id="1_xvunx"]
-[ext_resource type="Texture2D" uid="uid://o0i2w2lk22d1" path="res://Assets/Player/Merchant/Merchant42.png" id="2_r30sk"]
-[ext_resource type="Texture2D" uid="uid://q18vpmrjvsl1" path="res://Assets/Player/Merchant/Merchant43.png" id="3_ecief"]
-[ext_resource type="Texture2D" uid="uid://jdhdbv3rxdr3" path="res://Assets/Player/Merchant/Merchant44.png" id="4_tmn4p"]
-[ext_resource type="Texture2D" uid="uid://bjawjkyryecut" path="res://Assets/Player/Merchant/Merchant45.png" id="5_lae2g"]
-[ext_resource type="Texture2D" uid="uid://v6pv8l6vlwjn" path="res://Assets/Player/Merchant/Merchant46.png" id="6_e0mau"]
-[ext_resource type="Texture2D" uid="uid://m8mmnbhqombf" path="res://Assets/Player/Merchant/Merchant47.png" id="7_hvn4m"]
-[ext_resource type="Texture2D" uid="uid://k85xbjupd6yc" path="res://Assets/Player/Merchant/Merchant48.png" id="8_rd1dc"]
-[ext_resource type="Texture2D" uid="uid://bph5tt34psbfc" path="res://Assets/Player/Merchant/Merchant49.png" id="9_tebqd"]
-[ext_resource type="Texture2D" uid="uid://d2qpdl3om0o63" path="res://Assets/Player/Merchant/Merchant50.png" id="10_406oe"]
-[ext_resource type="Texture2D" uid="uid://donu1dminqcve" path="res://Assets/Player/Merchant/Merchant51.png" id="11_ha7bu"]
-[ext_resource type="Texture2D" uid="uid://cged2i7jlrpeo" path="res://Assets/Player/Merchant/Merchant52.png" id="12_y80ma"]
-[ext_resource type="Texture2D" uid="uid://ew2t3e87tmkm" path="res://Assets/Player/Merchant/Merchant53.png" id="13_qbbe5"]
-[ext_resource type="Texture2D" uid="uid://b5pae8np5rbe4" path="res://Assets/Player/Merchant/Merchant54.png" id="14_xdm11"]
-[ext_resource type="Texture2D" uid="uid://c4a4nr71at7m1" path="res://Assets/Player/Merchant/Merchant55.png" id="15_nwmru"]
-[ext_resource type="Texture2D" uid="uid://coogmo1urkw0b" path="res://Assets/Player/Merchant/Merchant56.png" id="16_pehiy"]
-[ext_resource type="Texture2D" uid="uid://c23q4myjpf4u6" path="res://Assets/Player/Merchant/Merchant57.png" id="17_l2xpw"]
-[ext_resource type="Texture2D" uid="uid://c5f8prn3dxf33" path="res://Assets/Player/Merchant/Merchant58.png" id="18_lk1dn"]
-[ext_resource type="Texture2D" uid="uid://bei4lu3m638e1" path="res://Assets/Player/Merchant/Merchant59.png" id="19_u35uf"]
-[ext_resource type="Texture2D" uid="uid://dxkoemhkbx1pu" path="res://Assets/Player/Merchant/Merchant60.png" id="20_l4bfs"]
-[ext_resource type="Texture2D" uid="uid://bplgeru6x7mjl" path="res://Assets/Player/Merchant/Merchant61.png" id="21_43kf2"]
-[ext_resource type="Texture2D" uid="uid://bx5s8njnvwxc1" path="res://Assets/Player/Merchant/Merchant62.png" id="22_6orxq"]
-[ext_resource type="Texture2D" uid="uid://cllmg08c4psqu" path="res://Assets/Player/Merchant/Merchant63.png" id="23_u0urb"]
-[ext_resource type="Texture2D" uid="uid://b1rm1o4i4tlve" path="res://Assets/Player/Merchant/Merchant64.png" id="24_ejcqc"]
-[ext_resource type="Texture2D" uid="uid://lrlpphxoyn32" path="res://Assets/Player/Merchant/Merchant65.png" id="25_chieq"]
-[ext_resource type="Texture2D" uid="uid://ddccqpk66akjb" path="res://Assets/Player/Merchant/Merchant66.png" id="26_o5l0q"]
-[ext_resource type="Texture2D" uid="uid://7op4i6g354lg" path="res://Assets/Player/Merchant/Merchant67.png" id="27_hvrmr"]
-[ext_resource type="Texture2D" uid="uid://6octmyw1qkbu" path="res://Assets/Player/Merchant/Merchant68.png" id="28_edfy0"]
-[ext_resource type="Texture2D" uid="uid://bsj8p5bbd7wax" path="res://Assets/Player/Merchant/Merchant69.png" id="29_l6ewl"]
-[ext_resource type="Texture2D" uid="uid://dfgm6ibah73wf" path="res://Assets/Player/Merchant/Merchant70.png" id="30_74ell"]
-[ext_resource type="Texture2D" uid="uid://bv742qbmrsuml" path="res://Assets/Player/Merchant/Merchant71.png" id="31_lepl7"]
-[ext_resource type="Texture2D" uid="uid://bojhkx6oph0ev" path="res://Assets/Player/Merchant/Merchant72.png" id="32_3ee4k"]
-[ext_resource type="Texture2D" uid="uid://b3hc00ji8lqoa" path="res://Assets/Player/Merchant/Merchant73.png" id="33_t11lo"]
-[ext_resource type="Texture2D" uid="uid://25cok4e8iiyi" path="res://Assets/Player/Merchant/Merchant1.png" id="34_xq5dp"]
-[ext_resource type="Texture2D" uid="uid://y8f52y13epi1" path="res://Assets/Player/Merchant/Merchant2.png" id="35_b3pd1"]
-[ext_resource type="Texture2D" uid="uid://cwy3tqfyyam80" path="res://Assets/Player/Merchant/Merchant3.png" id="36_imyvr"]
-[ext_resource type="Texture2D" uid="uid://bnfmsdklykh7q" path="res://Assets/Player/Merchant/Merchant4.png" id="37_sl617"]
-[ext_resource type="Texture2D" uid="uid://bfyhj0svffx0v" path="res://Assets/Player/Merchant/Merchant5.png" id="38_acaic"]
-[ext_resource type="Texture2D" uid="uid://epw1kmp58rjv" path="res://Assets/Player/Merchant/Merchant6.png" id="39_d8irh"]
-[ext_resource type="Texture2D" uid="uid://df23ehemaddg0" path="res://Assets/Player/Merchant/Merchant7.png" id="40_r3tjv"]
-[ext_resource type="Texture2D" uid="uid://cygifko2dq616" path="res://Assets/Player/Merchant/Merchant8.png" id="41_yw4h3"]
-[ext_resource type="Texture2D" uid="uid://d5315b4xeo2k" path="res://Assets/Player/Merchant/Merchant9.png" id="42_vei6r"]
-[ext_resource type="Texture2D" uid="uid://dee0455o2i3p" path="res://Assets/Player/Merchant/Merchant10.png" id="43_6tyrc"]
-[ext_resource type="Texture2D" uid="uid://by0dc6crb0ymv" path="res://Assets/Player/Merchant/Merchant11.png" id="44_cl8ar"]
-[ext_resource type="Texture2D" uid="uid://crx2lx1h4qalt" path="res://Assets/Player/Merchant/Merchant12.png" id="45_48fvo"]
-[ext_resource type="Texture2D" uid="uid://bgcwh6qkj7s0k" path="res://Assets/Player/Merchant/Merchant13.png" id="46_gjqtr"]
-[ext_resource type="Texture2D" uid="uid://grrqbhhraqmq" path="res://Assets/Player/Merchant/Merchant14.png" id="47_flguw"]
-[ext_resource type="Texture2D" uid="uid://b6rykw44ebdvw" path="res://Assets/Player/Merchant/Merchant15.png" id="48_rfb32"]
-[ext_resource type="Texture2D" uid="uid://cqqiuobcef40i" path="res://Assets/Player/Merchant/Merchant16.png" id="49_akpe0"]
-[ext_resource type="Texture2D" uid="uid://ctir171owskls" path="res://Assets/Player/Merchant/Merchant17.png" id="50_8gfi5"]
-[ext_resource type="Texture2D" uid="uid://d217kdt88wjgw" path="res://Assets/Player/Merchant/Merchant18.png" id="51_khptn"]
-[ext_resource type="Texture2D" uid="uid://4w3e1rv6qh85" path="res://Assets/Player/Merchant/Merchant19.png" id="52_3k1xd"]
-[ext_resource type="Texture2D" uid="uid://c444dhctnrvft" path="res://Assets/Player/Merchant/Merchant20.png" id="53_ye7rm"]
-[ext_resource type="Texture2D" uid="uid://lbtqd10ywhs0" path="res://Assets/Player/Merchant/Merchant21.png" id="54_ws4f3"]
-[ext_resource type="Texture2D" uid="uid://b7b6x43qifcvb" path="res://Assets/Player/Merchant/Merchant22.png" id="55_mcomf"]
-[ext_resource type="Texture2D" uid="uid://c6fdlghvgg2o8" path="res://Assets/Player/Merchant/Merchant23.png" id="56_w3c36"]
-[ext_resource type="Texture2D" uid="uid://do543a2veowby" path="res://Assets/Player/Merchant/Merchant24.png" id="57_2kfvh"]
-[ext_resource type="Texture2D" uid="uid://c0ion3eh0moqe" path="res://Assets/Player/Merchant/Merchant25.png" id="58_g32wm"]
-[ext_resource type="Texture2D" uid="uid://cpaprvtfamdm" path="res://Assets/Player/Merchant/Merchant26.png" id="59_1h6bh"]
+[ext_resource type="Texture2D" uid="uid://o0i2w2lk22d1" path="res://Assets/Player/Merchant/Merchant42.png" id="2_340ub"]
+[ext_resource type="Texture2D" uid="uid://q18vpmrjvsl1" path="res://Assets/Player/Merchant/Merchant43.png" id="3_idih4"]
+[ext_resource type="Texture2D" uid="uid://jdhdbv3rxdr3" path="res://Assets/Player/Merchant/Merchant44.png" id="4_mukn7"]
+[ext_resource type="Texture2D" uid="uid://bjawjkyryecut" path="res://Assets/Player/Merchant/Merchant45.png" id="5_6xklc"]
+[ext_resource type="Texture2D" uid="uid://v6pv8l6vlwjn" path="res://Assets/Player/Merchant/Merchant46.png" id="6_dyfu7"]
+[ext_resource type="Texture2D" uid="uid://m8mmnbhqombf" path="res://Assets/Player/Merchant/Merchant47.png" id="7_7mhl1"]
+[ext_resource type="Texture2D" uid="uid://k85xbjupd6yc" path="res://Assets/Player/Merchant/Merchant48.png" id="8_fb56m"]
+[ext_resource type="Texture2D" uid="uid://bph5tt34psbfc" path="res://Assets/Player/Merchant/Merchant49.png" id="9_uicl3"]
+[ext_resource type="Texture2D" uid="uid://d2qpdl3om0o63" path="res://Assets/Player/Merchant/Merchant50.png" id="10_3cey8"]
+[ext_resource type="Texture2D" uid="uid://donu1dminqcve" path="res://Assets/Player/Merchant/Merchant51.png" id="11_ou18f"]
+[ext_resource type="Texture2D" uid="uid://cged2i7jlrpeo" path="res://Assets/Player/Merchant/Merchant52.png" id="12_jygy7"]
+[ext_resource type="Texture2D" uid="uid://ew2t3e87tmkm" path="res://Assets/Player/Merchant/Merchant53.png" id="13_tefel"]
+[ext_resource type="Texture2D" uid="uid://b5pae8np5rbe4" path="res://Assets/Player/Merchant/Merchant54.png" id="14_8sgu3"]
+[ext_resource type="Texture2D" uid="uid://c4a4nr71at7m1" path="res://Assets/Player/Merchant/Merchant55.png" id="15_ef12r"]
+[ext_resource type="Texture2D" uid="uid://coogmo1urkw0b" path="res://Assets/Player/Merchant/Merchant56.png" id="16_vfkll"]
+[ext_resource type="Texture2D" uid="uid://c23q4myjpf4u6" path="res://Assets/Player/Merchant/Merchant57.png" id="17_m4cr7"]
+[ext_resource type="Texture2D" uid="uid://c5f8prn3dxf33" path="res://Assets/Player/Merchant/Merchant58.png" id="18_5u2ko"]
+[ext_resource type="Texture2D" uid="uid://bei4lu3m638e1" path="res://Assets/Player/Merchant/Merchant59.png" id="19_imqll"]
+[ext_resource type="Texture2D" uid="uid://dxkoemhkbx1pu" path="res://Assets/Player/Merchant/Merchant60.png" id="20_wpdkf"]
+[ext_resource type="Texture2D" uid="uid://bplgeru6x7mjl" path="res://Assets/Player/Merchant/Merchant61.png" id="21_uer43"]
+[ext_resource type="Texture2D" uid="uid://bx5s8njnvwxc1" path="res://Assets/Player/Merchant/Merchant62.png" id="22_u3hx5"]
+[ext_resource type="Texture2D" uid="uid://cllmg08c4psqu" path="res://Assets/Player/Merchant/Merchant63.png" id="23_7ngrf"]
+[ext_resource type="Texture2D" uid="uid://b1rm1o4i4tlve" path="res://Assets/Player/Merchant/Merchant64.png" id="24_78y51"]
+[ext_resource type="Texture2D" uid="uid://lrlpphxoyn32" path="res://Assets/Player/Merchant/Merchant65.png" id="25_fwlui"]
+[ext_resource type="Texture2D" uid="uid://ddccqpk66akjb" path="res://Assets/Player/Merchant/Merchant66.png" id="26_jjgx5"]
+[ext_resource type="Texture2D" uid="uid://7op4i6g354lg" path="res://Assets/Player/Merchant/Merchant67.png" id="27_drbjy"]
+[ext_resource type="Texture2D" uid="uid://6octmyw1qkbu" path="res://Assets/Player/Merchant/Merchant68.png" id="28_h5c47"]
+[ext_resource type="Texture2D" uid="uid://bsj8p5bbd7wax" path="res://Assets/Player/Merchant/Merchant69.png" id="29_d78x7"]
+[ext_resource type="Texture2D" uid="uid://dfgm6ibah73wf" path="res://Assets/Player/Merchant/Merchant70.png" id="30_7hkwe"]
+[ext_resource type="Texture2D" uid="uid://bv742qbmrsuml" path="res://Assets/Player/Merchant/Merchant71.png" id="31_sxk8e"]
+[ext_resource type="Texture2D" uid="uid://bojhkx6oph0ev" path="res://Assets/Player/Merchant/Merchant72.png" id="32_ky3db"]
+[ext_resource type="Texture2D" uid="uid://b3hc00ji8lqoa" path="res://Assets/Player/Merchant/Merchant73.png" id="33_6aktt"]
+[ext_resource type="Texture2D" uid="uid://25cok4e8iiyi" path="res://Assets/Player/Merchant/Merchant1.png" id="34_ms6y1"]
+[ext_resource type="Texture2D" uid="uid://y8f52y13epi1" path="res://Assets/Player/Merchant/Merchant2.png" id="35_3yo1x"]
+[ext_resource type="Texture2D" uid="uid://cwy3tqfyyam80" path="res://Assets/Player/Merchant/Merchant3.png" id="36_d31vq"]
+[ext_resource type="Texture2D" uid="uid://bnfmsdklykh7q" path="res://Assets/Player/Merchant/Merchant4.png" id="37_mtipr"]
+[ext_resource type="Texture2D" uid="uid://bfyhj0svffx0v" path="res://Assets/Player/Merchant/Merchant5.png" id="38_knd7l"]
+[ext_resource type="Texture2D" uid="uid://epw1kmp58rjv" path="res://Assets/Player/Merchant/Merchant6.png" id="39_8551d"]
+[ext_resource type="Texture2D" uid="uid://df23ehemaddg0" path="res://Assets/Player/Merchant/Merchant7.png" id="40_8v5iq"]
+[ext_resource type="Texture2D" uid="uid://cygifko2dq616" path="res://Assets/Player/Merchant/Merchant8.png" id="41_88mwn"]
+[ext_resource type="Texture2D" uid="uid://d5315b4xeo2k" path="res://Assets/Player/Merchant/Merchant9.png" id="42_3bscy"]
+[ext_resource type="Texture2D" uid="uid://dee0455o2i3p" path="res://Assets/Player/Merchant/Merchant10.png" id="43_etlax"]
+[ext_resource type="Texture2D" uid="uid://by0dc6crb0ymv" path="res://Assets/Player/Merchant/Merchant11.png" id="44_3ghgb"]
+[ext_resource type="Texture2D" uid="uid://crx2lx1h4qalt" path="res://Assets/Player/Merchant/Merchant12.png" id="45_88ueq"]
+[ext_resource type="Texture2D" uid="uid://bgcwh6qkj7s0k" path="res://Assets/Player/Merchant/Merchant13.png" id="46_64pi3"]
+[ext_resource type="Texture2D" uid="uid://grrqbhhraqmq" path="res://Assets/Player/Merchant/Merchant14.png" id="47_c4b8u"]
+[ext_resource type="Texture2D" uid="uid://b6rykw44ebdvw" path="res://Assets/Player/Merchant/Merchant15.png" id="48_8capg"]
+[ext_resource type="Texture2D" uid="uid://cqqiuobcef40i" path="res://Assets/Player/Merchant/Merchant16.png" id="49_s3gxb"]
+[ext_resource type="Texture2D" uid="uid://ctir171owskls" path="res://Assets/Player/Merchant/Merchant17.png" id="50_fsl66"]
+[ext_resource type="Texture2D" uid="uid://d217kdt88wjgw" path="res://Assets/Player/Merchant/Merchant18.png" id="51_eom8h"]
+[ext_resource type="Texture2D" uid="uid://4w3e1rv6qh85" path="res://Assets/Player/Merchant/Merchant19.png" id="52_yo5eu"]
+[ext_resource type="Texture2D" uid="uid://c444dhctnrvft" path="res://Assets/Player/Merchant/Merchant20.png" id="53_ex28i"]
+[ext_resource type="Texture2D" uid="uid://lbtqd10ywhs0" path="res://Assets/Player/Merchant/Merchant21.png" id="54_w6aqw"]
+[ext_resource type="Texture2D" uid="uid://b7b6x43qifcvb" path="res://Assets/Player/Merchant/Merchant22.png" id="55_jkpkc"]
+[ext_resource type="Texture2D" uid="uid://c6fdlghvgg2o8" path="res://Assets/Player/Merchant/Merchant23.png" id="56_4sfsk"]
+[ext_resource type="Texture2D" uid="uid://do543a2veowby" path="res://Assets/Player/Merchant/Merchant24.png" id="57_cklq5"]
+[ext_resource type="Texture2D" uid="uid://c0ion3eh0moqe" path="res://Assets/Player/Merchant/Merchant25.png" id="58_5ehxy"]
+[ext_resource type="Texture2D" uid="uid://cpaprvtfamdm" path="res://Assets/Player/Merchant/Merchant26.png" id="59_nnb5c"]
 [ext_resource type="PackedScene" uid="uid://r8mfx3cskh87" path="res://Scripts/Entities/Player/Weapon/Weapon.tscn" id="62_giqej"]
 [ext_resource type="PackedScene" uid="uid://cgq1aqmy03m0t" path="res://Scripts/UI/player_ui.tscn" id="103_gkl3w"]
 
@@ -66,28 +66,28 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_r30sk")
+"texture": ExtResource("2_340ub")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ecief")
+"texture": ExtResource("3_idih4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_tmn4p")
+"texture": ExtResource("4_mukn7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_lae2g")
+"texture": ExtResource("5_6xklc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_e0mau")
+"texture": ExtResource("6_dyfu7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_hvn4m")
+"texture": ExtResource("7_7mhl1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_rd1dc")
+"texture": ExtResource("8_fb56m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_tebqd")
+"texture": ExtResource("9_uicl3")
 }],
 "loop": false,
 "name": &"HurtIdleLeft",
@@ -95,28 +95,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_406oe")
+"texture": ExtResource("10_3cey8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_ha7bu")
+"texture": ExtResource("11_ou18f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_y80ma")
+"texture": ExtResource("12_jygy7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_qbbe5")
+"texture": ExtResource("13_tefel")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_xdm11")
+"texture": ExtResource("14_8sgu3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_nwmru")
+"texture": ExtResource("15_ef12r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_pehiy")
+"texture": ExtResource("16_vfkll")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_l2xpw")
+"texture": ExtResource("17_m4cr7")
 }],
 "loop": false,
 "name": &"HurtIdleRight",
@@ -124,28 +124,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_lk1dn")
+"texture": ExtResource("18_5u2ko")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_u35uf")
+"texture": ExtResource("19_imqll")
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_l4bfs")
+"texture": ExtResource("20_wpdkf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_43kf2")
+"texture": ExtResource("21_uer43")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_6orxq")
+"texture": ExtResource("22_u3hx5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_u0urb")
+"texture": ExtResource("23_7ngrf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_ejcqc")
+"texture": ExtResource("24_78y51")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_chieq")
+"texture": ExtResource("25_fwlui")
 }],
 "loop": false,
 "name": &"HurtLeft",
@@ -153,28 +153,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("26_o5l0q")
+"texture": ExtResource("26_jjgx5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_hvrmr")
+"texture": ExtResource("27_drbjy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_edfy0")
+"texture": ExtResource("28_h5c47")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_l6ewl")
+"texture": ExtResource("29_d78x7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_74ell")
+"texture": ExtResource("30_7hkwe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_lepl7")
+"texture": ExtResource("31_sxk8e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_3ee4k")
+"texture": ExtResource("32_ky3db")
 }, {
 "duration": 1.0,
-"texture": ExtResource("33_t11lo")
+"texture": ExtResource("33_6aktt")
 }],
 "loop": false,
 "name": &"HurtRight",
@@ -182,19 +182,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("34_xq5dp")
+"texture": ExtResource("34_ms6y1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_b3pd1")
+"texture": ExtResource("35_3yo1x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_imyvr")
+"texture": ExtResource("36_d31vq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_sl617")
+"texture": ExtResource("37_mtipr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_acaic")
+"texture": ExtResource("38_knd7l")
 }],
 "loop": true,
 "name": &"IdleLeft",
@@ -202,19 +202,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("39_d8irh")
+"texture": ExtResource("39_8551d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_r3tjv")
+"texture": ExtResource("40_8v5iq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("41_yw4h3")
+"texture": ExtResource("41_88mwn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_vei6r")
+"texture": ExtResource("42_3bscy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_6tyrc")
+"texture": ExtResource("43_etlax")
 }],
 "loop": true,
 "name": &"IdleRight",
@@ -222,28 +222,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("44_cl8ar")
+"texture": ExtResource("44_3ghgb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_48fvo")
+"texture": ExtResource("45_88ueq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_gjqtr")
+"texture": ExtResource("46_64pi3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_flguw")
+"texture": ExtResource("47_c4b8u")
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_rfb32")
+"texture": ExtResource("48_8capg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_akpe0")
+"texture": ExtResource("49_s3gxb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("50_8gfi5")
+"texture": ExtResource("50_fsl66")
 }, {
 "duration": 1.0,
-"texture": ExtResource("51_khptn")
+"texture": ExtResource("51_eom8h")
 }],
 "loop": true,
 "name": &"MoveLeft",
@@ -251,28 +251,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("52_3k1xd")
+"texture": ExtResource("52_yo5eu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("53_ye7rm")
+"texture": ExtResource("53_ex28i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("54_ws4f3")
+"texture": ExtResource("54_w6aqw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("55_mcomf")
+"texture": ExtResource("55_jkpkc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("56_w3c36")
+"texture": ExtResource("56_4sfsk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("57_2kfvh")
+"texture": ExtResource("57_cklq5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("58_g32wm")
+"texture": ExtResource("58_5ehxy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("59_1h6bh")
+"texture": ExtResource("59_nnb5c")
 }],
 "loop": true,
 "name": &"MoveRight",
@@ -597,13 +597,17 @@ radius = 25.1794
 [sub_resource type="CircleShape2D" id="CircleShape2D_0dppj"]
 radius = 5.83333
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gr2td"]
+radius = 4.0
+height = 8.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 16
 script = ExtResource("1_xvunx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -14)
+position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_qalai")
 animation = &"IdleLeft"
 
@@ -646,13 +650,22 @@ scale = Vector2(1.08396, 2.08631)
 shape = SubResource("CircleShape2D_0dppj")
 
 [node name="HurtTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.5
 
 [node name="PlayerUI" parent="." instance=ExtResource("103_gkl3w")]
 offset_left = -177.0
 offset_top = -95.0
 offset_right = -177.0
 offset_bottom = -95.0
+
+[node name="RallyPoint" type="Area2D" parent="."]
+position = Vector2(87, 0)
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CapsuleShape2D_gr2td")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="DustParticleCD" to="." method="_on_dust_particle_cd_timeout"]

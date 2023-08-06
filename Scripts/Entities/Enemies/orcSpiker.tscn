@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://bnh5n6ofktjkb"]
+[gd_scene load_steps=84 format=3 uid="uid://llap8f212vtd"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_gx5hw"]
 [ext_resource type="Texture2D" uid="uid://bn47w2uqho035" path="res://Assets/Enemies/Orcs/Phase1/Spiker/OrcSpiker2.png" id="2_4yt1b"]
@@ -388,7 +388,7 @@ radius = 7.5
 
 [node name="OrcSpiker" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
-collision_layer = 0
+collision_layer = 32
 collision_mask = 0
 script = ExtResource("1_gx5hw")
 speed = 40

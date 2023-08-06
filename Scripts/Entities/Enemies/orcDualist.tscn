@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://bhnvpym5c46dt"]
+[gd_scene load_steps=83 format=3 uid="uid://v8fgfcupl60t"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_tlhoo"]
 [ext_resource type="Texture2D" uid="uid://thuc06do8r3m" path="res://Assets/Enemies/Orcs/Phase2/Dualist/OrcDualist1.png" id="2_lp6fe"]
@@ -384,7 +384,7 @@ radius = 7.5
 
 [node name="OrcDualist" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
-collision_layer = 0
+collision_layer = 32
 collision_mask = 0
 script = ExtResource("1_tlhoo")
 speed = 40
