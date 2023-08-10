@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://rlk7l2nko52i"]
+[gd_scene load_steps=89 format=3 uid="uid://rlk7l2nko52i"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Player/player.gd" id="1_xvunx"]
 [ext_resource type="Texture2D" uid="uid://o0i2w2lk22d1" path="res://Assets/Player/Merchant/Merchant42.png" id="2_340ub"]
@@ -59,7 +59,11 @@
 [ext_resource type="Texture2D" uid="uid://do543a2veowby" path="res://Assets/Player/Merchant/Merchant24.png" id="57_cklq5"]
 [ext_resource type="Texture2D" uid="uid://c0ion3eh0moqe" path="res://Assets/Player/Merchant/Merchant25.png" id="58_5ehxy"]
 [ext_resource type="Texture2D" uid="uid://cpaprvtfamdm" path="res://Assets/Player/Merchant/Merchant26.png" id="59_nnb5c"]
+[ext_resource type="PackedScene" uid="uid://ks7duoqdnx2b" path="res://Scripts/Entities/Player/spawner_circle.tscn" id="62_cs3ag"]
 [ext_resource type="PackedScene" uid="uid://r8mfx3cskh87" path="res://Scripts/Entities/Player/Weapon/Weapon.tscn" id="62_giqej"]
+[ext_resource type="AudioStream" uid="uid://du38hbw4fsehi" path="res://Sound/The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala/General Sounds/Negative Sounds/sfx_sounds_error6.wav" id="63_sfke1"]
+[ext_resource type="AudioStream" uid="uid://63c5gf4snk1e" path="res://Sound/Heroic Demise (New).mp3" id="64_b6fys"]
+[ext_resource type="AudioStream" uid="uid://dec0rxipvv7c" path="res://Sound/sfx_sounds_damage1.mp3" id="65_qio7x"]
 [ext_resource type="PackedScene" uid="uid://cgq1aqmy03m0t" path="res://Scripts/UI/player_ui.tscn" id="103_gkl3w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qalai"]
@@ -650,7 +654,7 @@ scale = Vector2(1.08396, 2.08631)
 shape = SubResource("CircleShape2D_0dppj")
 
 [node name="HurtTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.6
 
 [node name="PlayerUI" parent="." instance=ExtResource("103_gkl3w")]
 offset_left = -177.0
@@ -666,6 +670,17 @@ collision_mask = 32
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("CapsuleShape2D_gr2td")
+
+[node name="SpawnerCircle" parent="." instance=ExtResource("62_cs3ag")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("63_sfke1")
+
+[node name="bgMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("64_b6fys")
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("65_qio7x")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="DustParticleCD" to="." method="_on_dust_particle_cd_timeout"]

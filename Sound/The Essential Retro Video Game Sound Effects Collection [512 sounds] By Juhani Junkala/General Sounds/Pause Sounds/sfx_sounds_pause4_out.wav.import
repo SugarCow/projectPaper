@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://6urs7mt4bsmf"
+path="res://.godot/imported/sfx_sounds_pause4_out.wav-0b116844dd06fe576b8ceef519d2fae3.sample"
+
+[deps]
+
+source_file="res://Sound/The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala/General Sounds/Pause Sounds/sfx_sounds_pause4_out.wav"
+dest_files=["res://.godot/imported/sfx_sounds_pause4_out.wav-0b116844dd06fe576b8ceef519d2fae3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

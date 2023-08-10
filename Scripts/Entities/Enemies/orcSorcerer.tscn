@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://o43j4jwir5fg"]
+[gd_scene load_steps=114 format=3 uid="uid://o43j4jwir5fg"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_2h3qe"]
 [ext_resource type="Texture2D" uid="uid://c1hy2i4jnc3f4" path="res://Assets/Enemies/Orcs/Phase2/Sorcerer/OrcSorcer14.png" id="2_wnwev"]
@@ -104,6 +104,8 @@
 [ext_resource type="Texture2D" uid="uid://d1va8sqit6vvq" path="res://Assets/Enemies/Orcs/Phase2/Sorcerer/OrcSorcer58.png" id="91_xnee8"]
 [ext_resource type="Texture2D" uid="uid://b14dyulmwpub1" path="res://Assets/Enemies/Orcs/Phase2/Sorcerer/OrcSorcer59.png" id="92_brkrx"]
 [ext_resource type="Texture2D" uid="uid://d2s5fn60pf2hl" path="res://Assets/Enemies/Orcs/Phase2/Sorcerer/OrcSorcer60.png" id="93_mvdb5"]
+[ext_resource type="AudioStream" uid="uid://2n1cq785rg8x" path="res://Sound/sfx_sounds_error6.mp3" id="105_f37l1"]
+[ext_resource type="AudioStream" uid="uid://cfk2cso5ocknr" path="res://Sound/sfx_sounds_powerup2_2.mp3" id="106_ejs0d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oall4"]
 radius = 3.29711
@@ -503,9 +505,9 @@ scale = Vector2(1.2, 1.2)
 collision_layer = 32
 collision_mask = 0
 script = ExtResource("1_2h3qe")
-speed = 40
-max_health = 100.0
-max_cost = 20.0
+speed = 10
+max_health = 40.0
+max_cost = 40.0
 is_range = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -578,15 +580,25 @@ offset_left = -10.8333
 offset_top = -33.3333
 offset_right = 29.1667
 offset_bottom = 6.66667
+max_value = 1.0
+step = 0.1
 texture_under = ExtResource("73_ewnuh")
 texture_progress = ExtResource("74_fhl4e")
 
 [node name="AliveTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 10.0
 one_shot = true
 
 [node name="ProjectileSpawn" type="Marker2D" parent="."]
 position = Vector2(0, -25)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("105_f37l1")
+volume_db = 0.25
+
+[node name="AlliedMode" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(0.833333, 0.833333)
+stream = ExtResource("106_ejs0d")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="CostBox" to="." method="_on_cost_box_area_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ca2526exibmg0"
+path="res://.godot/imported/sfx_sounds_powerup2_2.mp3-3fb595915e94c18f35f2f1c3dc81ee4b.mp3str"
+
+[deps]
+
+source_file="res://Sound/The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala/General Sounds/Positive Sounds/sfx_sounds_powerup2_2.mp3"
+dest_files=["res://.godot/imported/sfx_sounds_powerup2_2.mp3-3fb595915e94c18f35f2f1c3dc81ee4b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

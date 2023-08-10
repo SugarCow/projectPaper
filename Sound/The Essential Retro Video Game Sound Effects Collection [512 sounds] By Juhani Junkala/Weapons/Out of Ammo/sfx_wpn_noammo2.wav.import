@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dh5macjeppu7a"
+path="res://.godot/imported/sfx_wpn_noammo2.wav-530b5a74e757cb9197459ed39ce8c03d.sample"
+
+[deps]
+
+source_file="res://Sound/The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala/Weapons/Out of Ammo/sfx_wpn_noammo2.wav"
+dest_files=["res://.godot/imported/sfx_wpn_noammo2.wav-530b5a74e757cb9197459ed39ce8c03d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

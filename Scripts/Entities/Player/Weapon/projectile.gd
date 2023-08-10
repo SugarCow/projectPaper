@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var projectile_speed: float
-
+@export var type: String
 enum {
 	STUN
 }
@@ -20,6 +20,7 @@ func _process(_delta):
 	if direction != Vector2.ZERO:
 		velocity = direction * projectile_speed
 		global_position += velocity
+		move_and_slide()
 	
 func set_direction(dir: Vector2):
 	self.direction = dir

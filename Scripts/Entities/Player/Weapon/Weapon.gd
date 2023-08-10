@@ -5,7 +5,7 @@ extends Node2D
 @onready var weapon_shoot = $Pivot/Weapon
 
 @onready var projectile = preload("res://Scripts/Entities/Player/Weapon/plasma_shot.tscn")
-
+@onready var shotsound = $shotsound
 var mouse_left_down: bool
 var attack_ready: bool = true
 
@@ -17,19 +17,20 @@ func _input(event):
 			
 		elif event.button_index ==1 and not event.is_pressed():
 			mouse_left_down = false
-			
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	look_at(get_global_mouse_position())
-	if mouse_left_down ==true and attack_ready == true:
+	if mouse_left_down ==true and attack_ready == true and PlayerStats.coin != 0:
 		muzzle_flash.play("animate")
 		weapon_shoot.play("Shoot")
 		spawn_projectile()
 		attack_ready = false
-		
+		PlayerStats.coin -= 1
 
 func spawn_projectile():
+	shotsound.play()
 	var my_projectile = projectile.instantiate()
 	my_projectile.position = $Pivot/muzzleFlash.global_position
 	

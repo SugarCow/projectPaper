@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b6rnjn88x4svm"
+path="res://.godot/imported/sfx_vehicle_breaks.wav-ccf9aa72f48795a70dba2dd6a64fe2a7.sample"
+
+[deps]
+
+source_file="res://Sound/The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala/Movement/Vehicles/sfx_vehicle_breaks.wav"
+dest_files=["res://.godot/imported/sfx_vehicle_breaks.wav-ccf9aa72f48795a70dba2dd6a64fe2a7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

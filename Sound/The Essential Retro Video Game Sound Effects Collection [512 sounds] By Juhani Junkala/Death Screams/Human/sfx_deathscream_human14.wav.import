@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://byr2j2y2pj1bo"
+path="res://.godot/imported/sfx_deathscream_human14.wav-dbdce2616804732a923d1ad11463910b.sample"
+
+[deps]
+
+source_file="res://Sound/The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala/Death Screams/Human/sfx_deathscream_human14.wav"
+dest_files=["res://.godot/imported/sfx_deathscream_human14.wav-dbdce2616804732a923d1ad11463910b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

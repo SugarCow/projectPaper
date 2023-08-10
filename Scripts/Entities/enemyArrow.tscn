@@ -22,7 +22,7 @@ animations = [{
 rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_yxfgk")
-projectile_speed = 2.0
+projectile_speed = 1.4
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://bw7pp1qs0dlh2"]
+[gd_scene load_steps=86 format=3 uid="uid://bw7pp1qs0dlh2"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Enemies/enemy.gd" id="1_c52sg"]
 [ext_resource type="Texture2D" uid="uid://ds7epnjbqj43m" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer2.png" id="2_v204y"]
@@ -76,6 +76,8 @@
 [ext_resource type="Texture2D" uid="uid://buth8fx3apg6s" path="res://Assets/Enemies/Orcs/Phase1/Slicer/OrcSlicer69.png" id="74_piu4d"]
 [ext_resource type="Texture2D" uid="uid://dtlyvahtafbsv" path="res://Assets/UI/HealthBar2.png" id="75_wvdxt"]
 [ext_resource type="Texture2D" uid="uid://nh0r3vo0nqg7" path="res://Assets/UI/HealthBar1.png" id="76_5cbiw"]
+[ext_resource type="AudioStream" uid="uid://2n1cq785rg8x" path="res://Sound/sfx_sounds_error6.mp3" id="77_x5qpm"]
+[ext_resource type="AudioStream" uid="uid://cfk2cso5ocknr" path="res://Sound/sfx_sounds_powerup2_2.mp3" id="78_u11st"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oall4"]
 radius = 2.5
@@ -384,15 +386,17 @@ radius = 7.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jrrv4"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k30k3"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_mlxjp"]
 
 [node name="OrcSlicer" type="CharacterBody2D"]
 scale = Vector2(1.2, 1.2)
 collision_layer = 32
 collision_mask = 0
 script = ExtResource("1_c52sg")
-speed = 40
-max_health = 100.0
+speed = 50
+max_health = 120.0
+max_cost = 45.0
+type = "slicer"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.33333)
@@ -448,27 +452,38 @@ scale = Vector2(5.29157, 5.23137)
 shape = SubResource("CircleShape2D_jrrv4")
 disabled = true
 
-[node name="MyIdentification" type="Area2D" parent="."]
-collision_layer = 32
-collision_mask = 512
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MyIdentification"]
-position = Vector2(0, -6.66667)
-shape = SubResource("CircleShape2D_k30k3")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 visible = false
 offset_left = -10.8333
 offset_top = -33.3333
 offset_right = 29.1667
 offset_bottom = 6.66667
+max_value = 1.0
+step = 0.1
 texture_under = ExtResource("75_wvdxt")
 texture_progress = ExtResource("76_5cbiw")
 
 [node name="AliveTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 5.0
 one_shot = true
+
+[node name="MyIdentification" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MyIdentification"]
+position = Vector2(0, -6.66667)
+shape = SubResource("CircleShape2D_mlxjp")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("77_x5qpm")
+volume_db = 2.0
+pitch_scale = 0.5
+
+[node name="AlliedMode" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(0.833333, 0.833333)
+stream = ExtResource("78_u11st")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="CostBox" to="." method="_on_cost_box_area_entered"]

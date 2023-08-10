@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://bihb8hibkm3ny"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Pickups/pickup.gd" id="1_oyxhf"]
+[ext_resource type="Texture2D" uid="uid://cxu2i0xnb7sw5" path="res://Assets/Drops/Coin_PickUp1.png" id="2_3wkgr"]
+[ext_resource type="Texture2D" uid="uid://doc18pa7nceo6" path="res://Assets/Drops/Coin_PickUp2.png" id="3_od22w"]
+[ext_resource type="Texture2D" uid="uid://oxbu4xdcvcoy" path="res://Assets/Drops/Coin_PickUp3.png" id="4_qbrxp"]
+[ext_resource type="Texture2D" uid="uid://by1fb48lfx0ly" path="res://Assets/Drops/Coin_PickUp4.png" id="5_ejo7i"]
+[ext_resource type="Texture2D" uid="uid://d4d7vk54rby01" path="res://Assets/Drops/Coin_PickUp5.png" id="6_n5cr0"]
+[ext_resource type="Texture2D" uid="uid://bccc6uhjn7gax" path="res://Assets/Drops/Coin_PickUp6.png" id="7_rbp6j"]
+[ext_resource type="AudioStream" uid="uid://bevxyoikcxhyn" path="res://Sound/The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala/General Sounds/Coins/sfx_coin_double3.wav" id="8_mh86w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1qqk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3wkgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_od22w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qbrxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ejo7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n5cr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rbp6j")
+}],
+"loop": true,
+"name": &"animate",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tsm3j"]
+
+[node name="coin" type="CharacterBody2D"]
+script = ExtResource("1_oyxhf")
+type = "coin"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_f1qqk")
+animation = &"animate"
+frame_progress = 0.825345
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_tsm3j")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_mh86w")
+pitch_scale = 1.5
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

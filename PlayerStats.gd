@@ -8,6 +8,12 @@ var max_health:
 	set(value):
 		max_health = max(value, 1)
 
+
+var coin:
+	get: return coin
+	set(value):
+		coin = max(value, 0 )
+
 var health:
 	get: return health
 	set(value):
@@ -32,7 +38,7 @@ var experience:
 			experience = max(experience - experience_threshold,0)
 			experience_threshold += 2
 			emit_signal("level_up")
-			print("leveled up!")
+			
 
 
 var base_speed = 100
@@ -58,3 +64,4 @@ func reset():
 
 	movement_speed = 150
 	
+	coin = 20

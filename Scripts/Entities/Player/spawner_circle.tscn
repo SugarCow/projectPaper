@@ -1,41 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://ks7duoqdnx2b"]
+[gd_scene load_steps=3 format=3 uid="uid://ks7duoqdnx2b"]
 
-[ext_resource type="PackedScene" uid="uid://cqsf7gpsdnpg3" path="res://Scripts/enemy_spawner.tscn" id="1_1g1wa"]
+[ext_resource type="PackedScene" uid="uid://cqsf7gpsdnpg3" path="res://Scripts/Spawner/enemy_spawner.tscn" id="1_1g1wa"]
+[ext_resource type="PackedScene" uid="uid://cr8pvbebyim7y" path="res://Scripts/Spawner/pick_up_spawner.tscn" id="2_mx6g5"]
 
 [node name="SpawnerCircle" type="Node2D"]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("1_1g1wa")]
-position = Vector2(101, 205)
+position = Vector2(106, 269)
 
 [node name="EnemySpawner2" parent="." instance=ExtResource("1_1g1wa")]
 position = Vector2(367, -127)
 
 [node name="EnemySpawner5" parent="." instance=ExtResource("1_1g1wa")]
-position = Vector2(254, 188)
+position = Vector2(300, 104)
 
 [node name="EnemySpawner6" parent="." instance=ExtResource("1_1g1wa")]
-position = Vector2(-301, 186)
+position = Vector2(-139, 269)
 
 [node name="EnemySpawner7" parent="." instance=ExtResource("1_1g1wa")]
 position = Vector2(324, -226)
 
 [node name="EnemySpawner8" parent="." instance=ExtResource("1_1g1wa")]
-position = Vector2(-301, -215)
+position = Vector2(-331, -127)
 
 [node name="EnemySpawner3" parent="." instance=ExtResource("1_1g1wa")]
-position = Vector2(-128, -226)
+position = Vector2(-77, -251)
 
 [node name="EnemySpawner4" parent="." instance=ExtResource("1_1g1wa")]
-position = Vector2(-301, 73)
+position = Vector2(-244, 65)
 
-[node name="EnemySpawner9" parent="." instance=ExtResource("1_1g1wa")]
-position = Vector2(-385, 0)
+[node name="PickUpSpawner" parent="." instance=ExtResource("2_mx6g5")]
+position = Vector2(254, 423)
 
-[node name="EnemySpawner10" parent="." instance=ExtResource("1_1g1wa")]
-position = Vector2(0, -269)
+[node name="PickUpSpawner3" parent="." instance=ExtResource("2_mx6g5")]
+position = Vector2(254, -397)
 
-[node name="EnemySpawner11" parent="." instance=ExtResource("1_1g1wa")]
-position = Vector2(401, 2)
+[node name="PickUpSpawner2" parent="." instance=ExtResource("2_mx6g5")]
+position = Vector2(560, -163)
 
-[node name="EnemySpawner12" parent="." instance=ExtResource("1_1g1wa")]
-position = Vector2(0, 240)
+[node name="PickUpSpawner4" parent="." instance=ExtResource("2_mx6g5")]
+position = Vector2(-301, -397)
+
+[node name="PickUpSpawner7" parent="." instance=ExtResource("2_mx6g5")]
+position = Vector2(-580, 186)
+
+[node name="PickUpSpawner8" parent="." instance=ExtResource("2_mx6g5")]
+position = Vector2(-244, 373)
+
+[node name="PickUpSpawner13" parent="." instance=ExtResource("2_mx6g5")]
+position = Vector2(673, 141)

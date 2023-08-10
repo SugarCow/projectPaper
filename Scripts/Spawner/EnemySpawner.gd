@@ -42,7 +42,7 @@ func load_enemies():
 
 func _on_timer_timeout():
 	spawn_enemy()
-	$Timer.set_deferred("wait_time", randf_range(5,6))
+	$Timer.set_deferred("wait_time", randf_range(7,10))
 
 	
 	

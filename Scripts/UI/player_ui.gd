@@ -7,6 +7,9 @@ var ms: float =0
 var second = 0
 var minute = 0
 
+var coin:
+	set(value):
+		coin = max(value, 0)
 
 var max_hearts:
 	set(value):
@@ -24,12 +27,12 @@ var hearts:
 var max_exp_charge:
 	set(value):
 		max_exp_charge = max(value, 0)
-		$TextureProgressBar.max_value = max_exp_charge
-		$TextureProgressBar.min_value = 0
+#		$TextureProgressBar.max_value = max_exp_charge
+#		$TextureProgressBar.min_value = 0
 var exp_charge:
 	set(value):
 		exp_charge = clamp(value, 0, max_exp_charge) 
-		$TextureProgressBar.value = exp_charge
+#		$TextureProgressBar.value = exp_charge
 		
 	get:
 		return exp_charge
@@ -50,17 +53,18 @@ func _process(_delta):
 	$timer_text.text = str(minute) + ":" + str(second) + ":" + str(ms)
 	
 	
-	
 	max_hearts = PlayerStats.max_health
 	hearts = PlayerStats.health
 	
 	max_exp_charge = PlayerStats.experience_threshold
 	exp_charge = PlayerStats.experience
 	
+	coin = PlayerStats.coin
 	
+	$CoinText.text =str(coin)
 	
 #	$Label.text = "Health: " +  str(hearts)
-	$experience.text = "Experience: " + str(exp_charge)
+#	$experience.text = "Experience: " + str(exp_charge)
 #	$Time.text = str(Game.minute) + ":" + str(Game.second) + ":" + str(Game.ms)
 	
 	

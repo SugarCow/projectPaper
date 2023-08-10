@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b6hlprfwhk0qw"
+path="res://.godot/imported/sfx_sound_neutral3.wav-549af4c644a8a0319bc9b8fc4106ae7e.sample"
+
+[deps]
+
+source_file="res://Sound/The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala/General Sounds/Neutral Sounds/sfx_sound_neutral3.wav"
+dest_files=["res://.godot/imported/sfx_sound_neutral3.wav-549af4c644a8a0319bc9b8fc4106ae7e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

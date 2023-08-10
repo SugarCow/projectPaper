@@ -27,7 +27,7 @@ var ouch_countrer:int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	animation_player = $AnimationPlayer
-	
+	$bgMusic.play()
 	state = IDLE
 	facing_dir = Vector2(1,1)
 	speed = PlayerStats.movement_speed 
@@ -154,7 +154,7 @@ func stun_state():
 		
 		
 		
-		
+		$Hurt.play()
 		state = MOVE
 
 
@@ -171,6 +171,7 @@ func _on_hurt_box_area_entered(_area):
 		invincible = true
 		$HurtTimer.start()
 		$HurtBox/CollisionShape2D.set_deferred("disabled", true)
+		
 		state = STUN
 
 func _on_hurt_timer_timeout():

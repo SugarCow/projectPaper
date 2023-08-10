@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cgq1aqmy03m0t"]
+[gd_scene load_steps=24 format=3 uid="uid://cgq1aqmy03m0t"]
 
 [ext_resource type="Script" path="res://Scripts/UI/player_ui.gd" id="1_mr2ot"]
 [ext_resource type="Texture2D" uid="uid://c0xnla33ofape" path="res://Assets/UI/Heart/Heartt28.png" id="2_0dabg"]
@@ -15,8 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://dlumwvy4r7mch" path="res://Assets/UI/Heart/Heartt8.png" id="12_nv41j"]
 [ext_resource type="Texture2D" uid="uid://cylel62rdwjeg" path="res://Assets/UI/Heart/Heartt9.png" id="13_v1w4o"]
 [ext_resource type="Texture2D" uid="uid://ompgs4q1yqjb" path="res://Assets/UI/Heart/Heartt10.png" id="14_vgshq"]
-[ext_resource type="Texture2D" uid="uid://vukxkndovmx1" path="res://Assets/UI/Exp1.png" id="15_8tgfc"]
-[ext_resource type="Texture2D" uid="uid://ipr0ryv8h7g2" path="res://Assets/UI/Exp2.png" id="16_jiqxr"]
+[ext_resource type="Texture2D" uid="uid://bvk8cbgv3kjks" path="res://Assets/Drops/Coin1.png" id="18_hfa5e"]
+[ext_resource type="Texture2D" uid="uid://cs3ip7ntq0868" path="res://Assets/Drops/Coin2.png" id="19_erue7"]
+[ext_resource type="Texture2D" uid="uid://bqlc5kuka0nh0" path="res://Assets/Drops/Coin3.png" id="20_oud63"]
+[ext_resource type="Texture2D" uid="uid://xwgcey2rpnfy" path="res://Assets/Drops/Coin4.png" id="21_8nrov"]
+[ext_resource type="Texture2D" uid="uid://o58g8x4odiwd" path="res://Assets/Drops/Coin5.png" id="22_ey3gc"]
+[ext_resource type="Texture2D" uid="uid://c7flipg7tkd0x" path="res://Assets/Drops/Coin6.png" id="23_7bwvq"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_phwry"]
 frames = 12
@@ -46,6 +50,22 @@ frame_10/duration = 0.1
 frame_11/texture = ExtResource("6_5keod")
 frame_11/duration = 0.1
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_3g8ji"]
+resource_local_to_scene = true
+frames = 6
+speed_scale = 12.0
+frame_0/texture = ExtResource("18_hfa5e")
+frame_1/texture = ExtResource("19_erue7")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("20_oud63")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("21_8nrov")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("22_ey3gc")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("23_7bwvq")
+frame_5/duration = 1.0
+
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -55,19 +75,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mr2ot")
 
-[node name="experience" type="Label" parent="."]
-layout_mode = 0
-offset_left = 112.0
-offset_right = 152.0
-offset_bottom = 23.0
-text = "Experience: "
-
 [node name="timer_text" type="Label" parent="."]
 layout_mode = 0
-offset_left = 279.0
-offset_top = 4.0
-offset_right = 364.0
-offset_bottom = 41.0
+offset_left = 6.0
+offset_top = 46.0
+offset_right = 91.0
+offset_bottom = 83.0
 theme_override_colors/font_color = Color(0.823529, 0.788235, 0.647059, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
@@ -75,6 +88,21 @@ theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("2_ae0gy")
 text = "Timer"
+
+[node name="CoinText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 110.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.823529, 0.788235, 0.647059, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_ae0gy")
+text = "Coin
+"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
@@ -98,13 +126,12 @@ offset_bottom = 21.0
 texture = SubResource("AnimatedTexture_phwry")
 stretch_mode = 1
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 23.0
-offset_right = 130.0
-offset_bottom = 31.0
-texture_under = ExtResource("15_8tgfc")
-texture_progress = ExtResource("16_jiqxr")
+offset_top = 21.0
+offset_right = 40.0
+offset_bottom = 61.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AnimatedTexture_3g8ji")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
